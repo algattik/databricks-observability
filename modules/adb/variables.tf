@@ -1,12 +1,9 @@
-variable "owner_custom" {
-  description = "Short name of owner"
+variable "name_part1" {
 }
 
-variable "purpose_custom" {
-  description = "Custom purpose"
+variable "name_part2" {
 }
 variable "location" {
-  description = "Location in which resource needs to be spinned up"
 }
 variable "resource_group_name" {
 }
@@ -15,6 +12,12 @@ variable "key_vault_id" {
 }
 
 variable "key_vault_uri" {
+}
+
+variable "username_secret_name" {
+}
+
+variable "password_secret_name" {
 }
 
 variable "metastore_connection_string" {

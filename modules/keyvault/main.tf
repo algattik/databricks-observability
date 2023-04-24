@@ -1,7 +1,7 @@
 data "azurerm_client_config" "current" {}
 
 resource "azurerm_key_vault" "adb_kv" {
-  name                       = format("kv-%s-%s", var.owner_custom, var.purpose_custom)
+  name                       = format("kv-%s-%s", var.name_part1, var.name_part2)
   location                   = var.location
   resource_group_name        = var.resource_group_name
   tenant_id                  = data.azurerm_client_config.current.tenant_id

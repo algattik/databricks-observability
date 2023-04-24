@@ -1,12 +1,9 @@
 variable "resource_group_name" {
 }
-variable "owner_custom" {
-  description = "Short name of owner"
+variable "name_part1" {
 }
 
-variable "purpose_custom" {
-  description = "Custom purpose"
+variable "name_part2" {
 }
 variable "location" {
-  description = "Location in which resource needs to be spinned up"
 }

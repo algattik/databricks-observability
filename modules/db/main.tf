@@ -20,7 +20,7 @@ resource "azurerm_key_vault_secret" "db_pw" {
 }
 
 resource "azurerm_mssql_server" "sql-server" {
-  name                         = format("sqlserver-%s-%s", var.owner_custom, var.purpose_custom)
+  name                         = format("sqlserver-%s-%s", var.name_part1, var.name_part2)
   resource_group_name          = var.resource_group_name
   location                     = var.location
   version                      = "12.0"
