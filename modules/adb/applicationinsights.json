@@ -139,11 +139,6 @@
             "attribute": "FiveMinuteRate"
         },
         {
-            "name": "${DB_NODE_TYPE}.DAGScheduler.messageProcessingTime MeanRate",
-            "objectName": "metrics:name=${DB_METRICS_PREFIX}.DAGScheduler.messageProcessingTime,type=timers",
-            "attribute": "MeanRate"
-        },
-        {
             "name": "${DB_NODE_TYPE}.DAGScheduler.messageProcessingTime OneMinuteRate",
             "objectName": "metrics:name=${DB_METRICS_PREFIX}.DAGScheduler.messageProcessingTime,type=timers",
             "attribute": "OneMinuteRate"
@@ -499,11 +494,6 @@
             "attribute": "FiveMinuteRate"
         },
         {
-            "name": "${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.backend.daemon.driver.DBCEventLoggingListener MeanRate",
-            "objectName": "metrics:name=${DB_METRICS_PREFIX}.LiveListenerBus.listenerProcessingTime.com.databricks.backend.daemon.driver.DBCEventLoggingListener,type=timers",
-            "attribute": "MeanRate"
-        },
-        {
             "name": "${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.backend.daemon.driver.DBCEventLoggingListener OneMinuteRate",
             "objectName": "metrics:name=${DB_METRICS_PREFIX}.LiveListenerBus.listenerProcessingTime.com.databricks.backend.daemon.driver.DBCEventLoggingListener,type=timers",
             "attribute": "OneMinuteRate"
@@ -532,11 +522,6 @@
             "name": "${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.backend.daemon.driver.DataPlaneEventListener FiveMinuteRate",
             "objectName": "metrics:name=${DB_METRICS_PREFIX}.LiveListenerBus.listenerProcessingTime.com.databricks.backend.daemon.driver.DataPlaneEventListener,type=timers",
             "attribute": "FiveMinuteRate"
-        },
-        {
-            "name": "${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.backend.daemon.driver.DataPlaneEventListener MeanRate",
-            "objectName": "metrics:name=${DB_METRICS_PREFIX}.LiveListenerBus.listenerProcessingTime.com.databricks.backend.daemon.driver.DataPlaneEventListener,type=timers",
-            "attribute": "MeanRate"
         },
         {
             "name": "${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.backend.daemon.driver.DataPlaneEventListener OneMinuteRate",
@@ -569,11 +554,6 @@
             "attribute": "FiveMinuteRate"
         },
         {
-            "name": "${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.backend.daemon.driver.NephosColdQueryListener MeanRate",
-            "objectName": "metrics:name=${DB_METRICS_PREFIX}.LiveListenerBus.listenerProcessingTime.com.databricks.backend.daemon.driver.NephosColdQueryListener,type=timers",
-            "attribute": "MeanRate"
-        },
-        {
             "name": "${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.backend.daemon.driver.NephosColdQueryListener OneMinuteRate",
             "objectName": "metrics:name=${DB_METRICS_PREFIX}.LiveListenerBus.listenerProcessingTime.com.databricks.backend.daemon.driver.NephosColdQueryListener,type=timers",
             "attribute": "OneMinuteRate"
@@ -602,11 +582,6 @@
             "name": "${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.photon.PhotonCleanupListener FiveMinuteRate",
             "objectName": "metrics:name=${DB_METRICS_PREFIX}.LiveListenerBus.listenerProcessingTime.com.databricks.photon.PhotonCleanupListener,type=timers",
             "attribute": "FiveMinuteRate"
-        },
-        {
-            "name": "${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.photon.PhotonCleanupListener MeanRate",
-            "objectName": "metrics:name=${DB_METRICS_PREFIX}.LiveListenerBus.listenerProcessingTime.com.databricks.photon.PhotonCleanupListener,type=timers",
-            "attribute": "MeanRate"
         },
         {
             "name": "${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.photon.PhotonCleanupListener OneMinuteRate",
@@ -639,11 +614,6 @@
             "attribute": "FiveMinuteRate"
         },
         {
-            "name": "${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.spark.sql.execution.SparkEBJCleanupListener MeanRate",
-            "objectName": "metrics:name=${DB_METRICS_PREFIX}.LiveListenerBus.listenerProcessingTime.com.databricks.spark.sql.execution.SparkEBJCleanupListener,type=timers",
-            "attribute": "MeanRate"
-        },
-        {
             "name": "${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.spark.sql.execution.SparkEBJCleanupListener OneMinuteRate",
             "objectName": "metrics:name=${DB_METRICS_PREFIX}.LiveListenerBus.listenerProcessingTime.com.databricks.spark.sql.execution.SparkEBJCleanupListener,type=timers",
             "attribute": "OneMinuteRate"
@@ -672,11 +642,6 @@
             "name": "${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.spark.util.ExecutorTimeLoggingListener$ FiveMinuteRate",
             "objectName": "metrics:name=${DB_METRICS_PREFIX}.LiveListenerBus.listenerProcessingTime.com.databricks.spark.util.ExecutorTimeLoggingListener$,type=timers",
             "attribute": "FiveMinuteRate"
-        },
-        {
-            "name": "${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.spark.util.ExecutorTimeLoggingListener$ MeanRate",
-            "objectName": "metrics:name=${DB_METRICS_PREFIX}.LiveListenerBus.listenerProcessingTime.com.databricks.spark.util.ExecutorTimeLoggingListener$,type=timers",
-            "attribute": "MeanRate"
         },
         {
             "name": "${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.spark.util.ExecutorTimeLoggingListener$ OneMinuteRate",
@@ -709,11 +674,6 @@
             "attribute": "FiveMinuteRate"
         },
         {
-            "name": "${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.spark.util.UsageLoggingListener MeanRate",
-            "objectName": "metrics:name=${DB_METRICS_PREFIX}.LiveListenerBus.listenerProcessingTime.com.databricks.spark.util.UsageLoggingListener,type=timers",
-            "attribute": "MeanRate"
-        },
-        {
             "name": "${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.spark.util.UsageLoggingListener OneMinuteRate",
             "objectName": "metrics:name=${DB_METRICS_PREFIX}.LiveListenerBus.listenerProcessingTime.com.databricks.spark.util.UsageLoggingListener,type=timers",
             "attribute": "OneMinuteRate"
@@ -742,11 +702,6 @@
             "name": "${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.advice.AdvisorListener FiveMinuteRate",
             "objectName": "metrics:name=${DB_METRICS_PREFIX}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.advice.AdvisorListener,type=timers",
             "attribute": "FiveMinuteRate"
-        },
-        {
-            "name": "${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.advice.AdvisorListener MeanRate",
-            "objectName": "metrics:name=${DB_METRICS_PREFIX}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.advice.AdvisorListener,type=timers",
-            "attribute": "MeanRate"
         },
         {
             "name": "${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.advice.AdvisorListener OneMinuteRate",
@@ -779,11 +734,6 @@
             "attribute": "FiveMinuteRate"
         },
         {
-            "name": "${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.debugger.QueryWatchdogListener MeanRate",
-            "objectName": "metrics:name=${DB_METRICS_PREFIX}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.debugger.QueryWatchdogListener,type=timers",
-            "attribute": "MeanRate"
-        },
-        {
             "name": "${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.debugger.QueryWatchdogListener OneMinuteRate",
             "objectName": "metrics:name=${DB_METRICS_PREFIX}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.debugger.QueryWatchdogListener,type=timers",
             "attribute": "OneMinuteRate"
@@ -812,11 +762,6 @@
             "name": "${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.execution.ui.IOCacheListener FiveMinuteRate",
             "objectName": "metrics:name=${DB_METRICS_PREFIX}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.execution.ui.IOCacheListener,type=timers",
             "attribute": "FiveMinuteRate"
-        },
-        {
-            "name": "${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.execution.ui.IOCacheListener MeanRate",
-            "objectName": "metrics:name=${DB_METRICS_PREFIX}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.execution.ui.IOCacheListener,type=timers",
-            "attribute": "MeanRate"
         },
         {
             "name": "${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.execution.ui.IOCacheListener OneMinuteRate",
@@ -849,11 +794,6 @@
             "attribute": "FiveMinuteRate"
         },
         {
-            "name": "${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.io.caching.RepeatedReadsEstimator$ MeanRate",
-            "objectName": "metrics:name=${DB_METRICS_PREFIX}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.io.caching.RepeatedReadsEstimator$,type=timers",
-            "attribute": "MeanRate"
-        },
-        {
             "name": "${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.io.caching.RepeatedReadsEstimator$ OneMinuteRate",
             "objectName": "metrics:name=${DB_METRICS_PREFIX}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.io.caching.RepeatedReadsEstimator$,type=timers",
             "attribute": "OneMinuteRate"
@@ -882,11 +822,6 @@
             "name": "${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.logging.QueryProfileListener FiveMinuteRate",
             "objectName": "metrics:name=${DB_METRICS_PREFIX}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.logging.QueryProfileListener,type=timers",
             "attribute": "FiveMinuteRate"
-        },
-        {
-            "name": "${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.logging.QueryProfileListener MeanRate",
-            "objectName": "metrics:name=${DB_METRICS_PREFIX}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.logging.QueryProfileListener,type=timers",
-            "attribute": "MeanRate"
         },
         {
             "name": "${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.logging.QueryProfileListener OneMinuteRate",
@@ -919,11 +854,6 @@
             "attribute": "FiveMinuteRate"
         },
         {
-            "name": "${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.QueryProfileListener MeanRate",
-            "objectName": "metrics:name=${DB_METRICS_PREFIX}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.QueryProfileListener,type=timers",
-            "attribute": "MeanRate"
-        },
-        {
             "name": "${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.QueryProfileListener OneMinuteRate",
             "objectName": "metrics:name=${DB_METRICS_PREFIX}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.QueryProfileListener,type=timers",
             "attribute": "OneMinuteRate"
@@ -952,11 +882,6 @@
             "name": "${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.execution.SQLExecution$ FiveMinuteRate",
             "objectName": "metrics:name=${DB_METRICS_PREFIX}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.execution.SQLExecution$,type=timers",
             "attribute": "FiveMinuteRate"
-        },
-        {
-            "name": "${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.execution.SQLExecution$ MeanRate",
-            "objectName": "metrics:name=${DB_METRICS_PREFIX}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.execution.SQLExecution$,type=timers",
-            "attribute": "MeanRate"
         },
         {
             "name": "${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.execution.SQLExecution$ OneMinuteRate",
@@ -989,11 +914,6 @@
             "attribute": "FiveMinuteRate"
         },
         {
-            "name": "${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.execution.streaming.StreamingQueryListenerBus MeanRate",
-            "objectName": "metrics:name=${DB_METRICS_PREFIX}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.execution.streaming.StreamingQueryListenerBus,type=timers",
-            "attribute": "MeanRate"
-        },
-        {
             "name": "${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.execution.streaming.StreamingQueryListenerBus OneMinuteRate",
             "objectName": "metrics:name=${DB_METRICS_PREFIX}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.execution.streaming.StreamingQueryListenerBus,type=timers",
             "attribute": "OneMinuteRate"
@@ -1022,11 +942,6 @@
             "name": "${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.execution.ui.SQLAppStatusListener FiveMinuteRate",
             "objectName": "metrics:name=${DB_METRICS_PREFIX}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.execution.ui.SQLAppStatusListener,type=timers",
             "attribute": "FiveMinuteRate"
-        },
-        {
-            "name": "${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.execution.ui.SQLAppStatusListener MeanRate",
-            "objectName": "metrics:name=${DB_METRICS_PREFIX}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.execution.ui.SQLAppStatusListener,type=timers",
-            "attribute": "MeanRate"
         },
         {
             "name": "${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.execution.ui.SQLAppStatusListener OneMinuteRate",
@@ -1059,11 +974,6 @@
             "attribute": "FiveMinuteRate"
         },
         {
-            "name": "${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.hive.thriftserver.ui.HiveThriftServer2Listener MeanRate",
-            "objectName": "metrics:name=${DB_METRICS_PREFIX}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.hive.thriftserver.ui.HiveThriftServer2Listener,type=timers",
-            "attribute": "MeanRate"
-        },
-        {
             "name": "${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.hive.thriftserver.ui.HiveThriftServer2Listener OneMinuteRate",
             "objectName": "metrics:name=${DB_METRICS_PREFIX}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.hive.thriftserver.ui.HiveThriftServer2Listener,type=timers",
             "attribute": "OneMinuteRate"
@@ -1092,11 +1002,6 @@
             "name": "${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.status.AppStatusListener FiveMinuteRate",
             "objectName": "metrics:name=${DB_METRICS_PREFIX}.LiveListenerBus.listenerProcessingTime.org.apache.spark.status.AppStatusListener,type=timers",
             "attribute": "FiveMinuteRate"
-        },
-        {
-            "name": "${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.status.AppStatusListener MeanRate",
-            "objectName": "metrics:name=${DB_METRICS_PREFIX}.LiveListenerBus.listenerProcessingTime.org.apache.spark.status.AppStatusListener,type=timers",
-            "attribute": "MeanRate"
         },
         {
             "name": "${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.status.AppStatusListener OneMinuteRate",
@@ -1132,11 +1037,6 @@
             "name": "${DB_NODE_TYPE}.LiveListenerBus.queue.appStatus.listenerProcessingTime FiveMinuteRate",
             "objectName": "metrics:name=${DB_METRICS_PREFIX}.LiveListenerBus.queue.appStatus.listenerProcessingTime,type=timers",
             "attribute": "FiveMinuteRate"
-        },
-        {
-            "name": "${DB_NODE_TYPE}.LiveListenerBus.queue.appStatus.listenerProcessingTime MeanRate",
-            "objectName": "metrics:name=${DB_METRICS_PREFIX}.LiveListenerBus.queue.appStatus.listenerProcessingTime,type=timers",
-            "attribute": "MeanRate"
         },
         {
             "name": "${DB_NODE_TYPE}.LiveListenerBus.queue.appStatus.listenerProcessingTime OneMinuteRate",
@@ -1179,11 +1079,6 @@
             "attribute": "FiveMinuteRate"
         },
         {
-            "name": "${DB_NODE_TYPE}.LiveListenerBus.queue.executorManagement.listenerProcessingTime MeanRate",
-            "objectName": "metrics:name=${DB_METRICS_PREFIX}.LiveListenerBus.queue.executorManagement.listenerProcessingTime,type=timers",
-            "attribute": "MeanRate"
-        },
-        {
             "name": "${DB_NODE_TYPE}.LiveListenerBus.queue.executorManagement.listenerProcessingTime OneMinuteRate",
             "objectName": "metrics:name=${DB_METRICS_PREFIX}.LiveListenerBus.queue.executorManagement.listenerProcessingTime,type=timers",
             "attribute": "OneMinuteRate"
@@ -1222,11 +1117,6 @@
             "name": "${DB_NODE_TYPE}.LiveListenerBus.queue.query-profile-logging-queue.listenerProcessingTime FiveMinuteRate",
             "objectName": "metrics:name=${DB_METRICS_PREFIX}.LiveListenerBus.queue.query-profile-logging-queue.listenerProcessingTime,type=timers",
             "attribute": "FiveMinuteRate"
-        },
-        {
-            "name": "${DB_NODE_TYPE}.LiveListenerBus.queue.query-profile-logging-queue.listenerProcessingTime MeanRate",
-            "objectName": "metrics:name=${DB_METRICS_PREFIX}.LiveListenerBus.queue.query-profile-logging-queue.listenerProcessingTime,type=timers",
-            "attribute": "MeanRate"
         },
         {
             "name": "${DB_NODE_TYPE}.LiveListenerBus.queue.query-profile-logging-queue.listenerProcessingTime OneMinuteRate",
@@ -1269,11 +1159,6 @@
             "attribute": "FiveMinuteRate"
         },
         {
-            "name": "${DB_NODE_TYPE}.LiveListenerBus.queue.shared.listenerProcessingTime MeanRate",
-            "objectName": "metrics:name=${DB_METRICS_PREFIX}.LiveListenerBus.queue.shared.listenerProcessingTime,type=timers",
-            "attribute": "MeanRate"
-        },
-        {
             "name": "${DB_NODE_TYPE}.LiveListenerBus.queue.shared.listenerProcessingTime OneMinuteRate",
             "objectName": "metrics:name=${DB_METRICS_PREFIX}.LiveListenerBus.queue.shared.listenerProcessingTime,type=timers",
             "attribute": "OneMinuteRate"
@@ -1312,11 +1197,6 @@
             "name": "${DB_NODE_TYPE}.LiveListenerBus.queue.streams.listenerProcessingTime FiveMinuteRate",
             "objectName": "metrics:name=${DB_METRICS_PREFIX}.LiveListenerBus.queue.streams.listenerProcessingTime,type=timers",
             "attribute": "FiveMinuteRate"
-        },
-        {
-            "name": "${DB_NODE_TYPE}.LiveListenerBus.queue.streams.listenerProcessingTime MeanRate",
-            "objectName": "metrics:name=${DB_METRICS_PREFIX}.LiveListenerBus.queue.streams.listenerProcessingTime,type=timers",
-            "attribute": "MeanRate"
         },
         {
             "name": "${DB_NODE_TYPE}.LiveListenerBus.queue.streams.listenerProcessingTime OneMinuteRate",
