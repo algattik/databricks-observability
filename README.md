@@ -8,3 +8,14 @@ Rename the file to `applicationinsights-agent.jar`.
 terraform init
 terraform apply
 ```
+
+
+## Outcomes
+
+Sample metrics, e.g. for `ExecutorMetrics.TotalGCTime`:
+
+![Metrics screenshot](assets/metrics.png)
+
+As well as logs:
+
+![Logs screenshot](assets/logs.png)
