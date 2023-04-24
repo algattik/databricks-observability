@@ -5,7 +5,7 @@ set -euxo pipefail  # stop on error
 if [[ ${DB_IS_DRIVER:-TRUE} = "TRUE" ]]; then
   # Driver JMX metrics are named e.g. `databricks.driver.ExecutorMetrics.DirectPoolMemory`
   DB_NODE_TYPE="driver"
-  DB_NODE_TYPE="databricks.driver"
+  DB_METRICS_PREFIX="databricks.driver"
 else
   # Executor JMX metrics are named e.g. `databricks.0.ExecutorMetrics.DirectPoolMemory`
   # Note that Databricks always runs one executor per worker node.
