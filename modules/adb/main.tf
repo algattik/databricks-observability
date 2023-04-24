@@ -44,15 +44,19 @@ resource "databricks_dbfs_file" "agent" {
   path   = "/observability/applicationinsights-agent.jar"
 }
 
+resource "databricks_dbfs_file" "init-observability" {
+  source = "${path.module}/init-observability.sh"
+  path   = "/observability/init-observability.sh"
+}
+
 resource "databricks_dbfs_file" "applicationinsights-json" {
-  content_base64 = base64encode(local.applicationinsights_json)
-  path           = "/observability/applicationinsights.json"
+  source = "${path.module}/applicationinsights.json"
+  path   = "/observability/applicationinsights.json"
 }
 
 locals {
-  applicationinsights_json = templatefile("${path.module}/applicationinsights.json", { connectionString = var.app_insights_connection_string })
-  dbfs_prefix              = "/dbfs"
-  java_options             = "-javaagent:${local.dbfs_prefix}${databricks_dbfs_file.agent.path} -Dlog4j2.configurationFile=${local.dbfs_prefix}${databricks_dbfs_file.log4j2-properties.path}"
+  dbfs_prefix  = "/dbfs"
+  java_options = "-javaagent:/tmp/applicationinsights-agent.jar -Dlog4j2.configurationFile=${local.dbfs_prefix}${databricks_dbfs_file.log4j2-properties.path}"
 }
 
 
@@ -81,6 +85,16 @@ resource "databricks_cluster" "shared_autoscaling" {
     "spark.driver.extraJavaOptions" : "${local.java_options}",
     "spark.metrics.conf.*.sink.jmx.class" : "org.apache.spark.metrics.sink.JmxSink",
     "spark.metrics.namespace" : "databricks",
+  }
+
+  spark_env_vars = {
+    APPLICATIONINSIGHTS_CONNECTION_STRING = var.app_insights_connection_string
+  }
+
+  init_scripts {
+    dbfs {
+      destination = "dbfs:/observability/init-observability.sh"
+    }
   }
 
   cluster_log_conf {

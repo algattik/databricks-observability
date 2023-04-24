@@ -1,5 +1,4 @@
 {
-    "connectionString": "${connectionString}",
     "instrumentation": {
         "logging": {
             "level": "DEBUG"
@@ -9,8 +8,13 @@
         "level": "DEBUG"
     },
     "customDimensions": {
-        "source": "mydatabrickscluster",
-        "env": "dev"
+        "DB_CLUSTER_ID": "${DB_CLUSTER_ID}",
+        "DB_CONTAINER_IP": "${DB_CONTAINER_IP}",
+        "DB_IS_DRIVER": "${DB_IS_DRIVER}",
+        "DB_DRIVER_IP": "${DB_DRIVER_IP}",
+        "DB_INSTANCE_TYPE": "${DB_INSTANCE_TYPE}",
+        "DB_CLUSTER_NAME": "${DB_CLUSTER_NAME}",
+        "DB_IS_JOB_CLUSTER": "${DB_IS_JOB_CLUSTER}"
     },
     "role": {
         "name": "my-data-bricks"
@@ -1560,6 +1564,6 @@
             "name": "databricks.driver.SparkStatusTracker.numInconsistentGetJobInfoResponses Count",
             "objectName": "metrics:name=databricks.driver.SparkStatusTracker.numInconsistentGetJobInfoResponses,type=counters",
             "attribute": "Count"
-        },
+        }
     ]
 }
