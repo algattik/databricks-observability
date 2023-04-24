@@ -45,30 +45,13 @@ resource "databricks_cluster" "shared_autoscaling" {
     max_workers = 2
   }
   spark_conf = {
-    "spark.databricks.io.cache.enabled" : true,
     "spark.hadoop.javax.jdo.option.ConnectionDriverName" : "com.microsoft.sqlserver.jdbc.SQLServerDriver",
     "spark.hadoop.javax.jdo.option.ConnectionURL" : var.metastore_connection_string
-    "spark.hadoop.javax.jdo.option.ConnectionURLFIXME" : "jdbc:sqlserver://sqlserver-algattik-dbobs.database.windows.net:1433;database=metastoredb"
-    "spark.databricks.delta.preview.enabled" : true,
     "spark.hadoop.javax.jdo.option.ConnectionUserName" : data.azurerm_key_vault_secret.db-un.value,
-    "datanucleus.fixedDatastore" : false,
     "spark.hadoop.javax.jdo.option.ConnectionPassword" : data.azurerm_key_vault_secret.db-pw.value,
-    "spark.driver.maxResultSize" : "32gb",
+    "datanucleus.fixedDatastore" : false,
     "datanucleus.autoCreateSchema" : true,
-    "spark.sql.hive.metastore.jars" : "builtin",
     "hive.metastore.schema.verification" : false,
     "datanucleus.schema.autoCreateTables" : true,
-    "spark.sql.hive.metastore.version" : "2.3.9"
-
-
   }
 }
-
-# resource "databricks_secret_scope" "kv" {
-#   name = "keyvault-managed"
-
-#   keyvault_metadata {
-#     resource_id = var.key_vault_id
-#     dns_name    = var.key_vault_uri
-#   }
-# }

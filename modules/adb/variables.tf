@@ -11,9 +11,6 @@ variable "resource_group_name" {
 variable "key_vault_id" {
 }
 
-variable "key_vault_uri" {
-}
-
 variable "username_secret_name" {
 }
 

@@ -28,6 +28,13 @@ resource "azurerm_mssql_server" "sql-server" {
   administrator_login_password = azurerm_key_vault_secret.db_pw.value
 }
 
+resource "azurerm_mssql_firewall_rule" "azure-services" {
+  name             = "Allow"
+  server_id        = azurerm_mssql_server.sql-server.id
+  start_ip_address = "0.0.0.0"
+  end_ip_address   = "0.0.0.0"
+}
+
 resource "azurerm_mssql_database" "sql-db" {
   name      = "metastoredb"
   server_id = azurerm_mssql_server.sql-server.id
