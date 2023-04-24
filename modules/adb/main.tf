@@ -58,6 +58,8 @@ resource "databricks_dbfs_file" "applicationinsights-json" {
 locals {
   dbfs_prefix  = "/dbfs"
   java_options = "-javaagent:/tmp/applicationinsights-agent.jar -Dlog4j2.configurationFile=${local.dbfs_prefix}${databricks_dbfs_file.log4j2-properties.path}"
+  # Not used, but defined in order to ensure the file is valid JSON.
+  user_data    = jsondecode(file("${path.module}/applicationinsights.json"))
 }
 
 
