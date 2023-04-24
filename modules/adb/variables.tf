@@ -19,3 +19,7 @@ variable "password_secret_name" {
 
 variable "metastore_connection_string" {
 }
+
+variable "app_insights_connection_string" {
+  sensitive = true
+}

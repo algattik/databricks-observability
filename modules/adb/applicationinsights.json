@@ -1,0 +1,30 @@
+{
+    "connectionString": "${connectionString}",
+    "instrumentation": {
+        "logging": {
+            "level": "DEBUG"
+        }
+    },
+    "selfDiagnostics": {
+        "level": "DEBUG"
+    },
+    "customDimensions": {
+        "source": "mydatabrickscluster",
+        "env": "dev"
+    },
+    "role": {
+        "name": "my-data-bricks"
+    },
+    "jmxMetrics": [
+        {
+            "name": "HiveExternalCatalog.FileCacheHits",
+            "objectName": "metrics:name=databricks.driver.HiveExternalCatalog.fileCacheHits,type=counters",
+            "attribute": "Count"
+        },
+        {
+            "name": "ExecutorMetrics.TotalGCTime",
+            "objectName": "metrics:name=databricks.driver.ExecutorMetrics.TotalGCTime,type=gauges",
+            "attribute": "Value"
+        }
+    ]
+}

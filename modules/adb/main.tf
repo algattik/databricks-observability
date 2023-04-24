@@ -34,6 +34,27 @@ resource "azurerm_databricks_workspace" "adb" {
   sku                 = "premium"
 }
 
+resource "databricks_dbfs_file" "log4j2-properties" {
+  source = "${path.module}/log4j2.properties"
+  path   = "/observability/log4j2.properties"
+}
+
+resource "databricks_dbfs_file" "agent" {
+  source = "applicationinsights-agent.jar"
+  path   = "/observability/applicationinsights-agent.jar"
+}
+
+resource "databricks_dbfs_file" "applicationinsights-json" {
+  content_base64 = base64encode(local.applicationinsights_json)
+  path           = "/observability/applicationinsights.json"
+}
+
+locals {
+  applicationinsights_json = templatefile("${path.module}/applicationinsights.json", { connectionString = var.app_insights_connection_string })
+  dbfs_prefix              = "/dbfs"
+  java_options             = "-javaagent:${local.dbfs_prefix}${databricks_dbfs_file.agent.path} -Dlog4j2.configurationFile=${local.dbfs_prefix}${databricks_dbfs_file.log4j2-properties.path}"
+}
+
 
 resource "databricks_cluster" "shared_autoscaling" {
   cluster_name            = format("%s-%s-cluster", var.name_part1, var.name_part2)
@@ -45,6 +66,7 @@ resource "databricks_cluster" "shared_autoscaling" {
     max_workers = 2
   }
   spark_conf = {
+    # Metastore config
     "spark.hadoop.javax.jdo.option.ConnectionDriverName" : "com.microsoft.sqlserver.jdbc.SQLServerDriver",
     "spark.hadoop.javax.jdo.option.ConnectionURL" : var.metastore_connection_string
     "spark.hadoop.javax.jdo.option.ConnectionUserName" : data.azurerm_key_vault_secret.db-un.value,
@@ -53,5 +75,11 @@ resource "databricks_cluster" "shared_autoscaling" {
     "datanucleus.autoCreateSchema" : true,
     "hive.metastore.schema.verification" : false,
     "datanucleus.schema.autoCreateTables" : true,
+
+    # Observability
+    "spark.executor.extraJavaOptions" : "${local.java_options}",
+    "spark.driver.extraJavaOptions" : "${local.java_options}",
+    "spark.metrics.conf.*.sink.jmx.class" : "org.apache.spark.metrics.sink.JmxSink",
+    "spark.metrics.namespace" : "databricks",
   }
 }
