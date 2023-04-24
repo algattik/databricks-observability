@@ -1,6 +1,21 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 set -euxo pipefail  # stop on error
 
-envsubst < /dbfs/observability/applicationinsights.json > /tmp/applicationinsights.json
+if [[ ${DB_IS_DRIVER:-TRUE} = "TRUE" ]]; then
+  type="driver"
+else
+  type="executor"
+fi
+
+echo "Listing /dbfs/observability"
+find /dbfs/observability
+
+echo "Installing envsubst"
+apt-get install -y gettext
+
+echo "Generating /tmp/applicationinsights.json"
+envsubst < /dbfs/observability/applicationinsights-$type.json > /tmp/applicationinsights.json
+
+echo "Copying /tmp/applicationinsights-agent.jar"
 cp /dbfs/observability/applicationinsights-agent.jar /tmp/

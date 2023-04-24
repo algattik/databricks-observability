@@ -17,7 +17,7 @@
         "DB_IS_JOB_CLUSTER": "${DB_IS_JOB_CLUSTER}"
     },
     "role": {
-        "name": "my-data-bricks"
+        "name": "my-data-bricks-driver"
     },
     "jmxMetrics": [
         {
