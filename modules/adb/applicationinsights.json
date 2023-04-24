@@ -1,0 +1,1566 @@
+{
+    "instrumentation": {
+        "logging": {
+            "level": "DEBUG"
+        }
+    },
+    "selfDiagnostics": {
+        "level": "DEBUG"
+    },
+    "customDimensions": {
+        "DB_CLUSTER_ID": "${DB_CLUSTER_ID}",
+        "DB_IS_DRIVER": "${DB_IS_DRIVER}",
+        "DB_INSTANCE_TYPE": "${DB_INSTANCE_TYPE}",
+        "DB_IS_JOB_CLUSTER": "${DB_IS_JOB_CLUSTER}"
+    },
+    "role": {
+        "name": "${DB_CLUSTER_NAME}"
+    },
+    "jmxMetrics": [
+        {
+            "name": "databricks.${DB_NODE_TYPE}.BlockManager.memory.diskSpaceUsed_MB Number",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.BlockManager.memory.diskSpaceUsed_MB,type=gauges",
+            "attribute": "Number"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.BlockManager.memory.diskSpaceUsed_MB Value",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.BlockManager.memory.diskSpaceUsed_MB,type=gauges",
+            "attribute": "Value"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.BlockManager.memory.maxMem_MB Number",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.BlockManager.memory.maxMem_MB,type=gauges",
+            "attribute": "Number"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.BlockManager.memory.maxMem_MB Value",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.BlockManager.memory.maxMem_MB,type=gauges",
+            "attribute": "Value"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.BlockManager.memory.maxOffHeapMem_MB Number",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.BlockManager.memory.maxOffHeapMem_MB,type=gauges",
+            "attribute": "Number"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.BlockManager.memory.maxOffHeapMem_MB Value",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.BlockManager.memory.maxOffHeapMem_MB,type=gauges",
+            "attribute": "Value"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.BlockManager.memory.maxOnHeapMem_MB Number",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.BlockManager.memory.maxOnHeapMem_MB,type=gauges",
+            "attribute": "Number"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.BlockManager.memory.maxOnHeapMem_MB Value",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.BlockManager.memory.maxOnHeapMem_MB,type=gauges",
+            "attribute": "Value"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.BlockManager.memory.memUsed_MB Number",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.BlockManager.memory.memUsed_MB,type=gauges",
+            "attribute": "Number"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.BlockManager.memory.memUsed_MB Value",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.BlockManager.memory.memUsed_MB,type=gauges",
+            "attribute": "Value"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.BlockManager.memory.offHeapMemUsed_MB Number",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.BlockManager.memory.offHeapMemUsed_MB,type=gauges",
+            "attribute": "Number"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.BlockManager.memory.offHeapMemUsed_MB Value",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.BlockManager.memory.offHeapMemUsed_MB,type=gauges",
+            "attribute": "Value"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.BlockManager.memory.onHeapMemUsed_MB Number",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.BlockManager.memory.onHeapMemUsed_MB,type=gauges",
+            "attribute": "Number"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.BlockManager.memory.onHeapMemUsed_MB Value",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.BlockManager.memory.onHeapMemUsed_MB,type=gauges",
+            "attribute": "Value"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.BlockManager.memory.remainingMem_MB Number",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.BlockManager.memory.remainingMem_MB,type=gauges",
+            "attribute": "Number"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.BlockManager.memory.remainingMem_MB Value",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.BlockManager.memory.remainingMem_MB,type=gauges",
+            "attribute": "Value"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.BlockManager.memory.remainingOffHeapMem_MB Number",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.BlockManager.memory.remainingOffHeapMem_MB,type=gauges",
+            "attribute": "Number"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.BlockManager.memory.remainingOffHeapMem_MB Value",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.BlockManager.memory.remainingOffHeapMem_MB,type=gauges",
+            "attribute": "Value"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.BlockManager.memory.remainingOnHeapMem_MB Number",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.BlockManager.memory.remainingOnHeapMem_MB,type=gauges",
+            "attribute": "Number"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.BlockManager.memory.remainingOnHeapMem_MB Value",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.BlockManager.memory.remainingOnHeapMem_MB,type=gauges",
+            "attribute": "Value"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.CodeGenerator.compilationTime Count",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.CodeGenerator.compilationTime,type=histograms",
+            "attribute": "Count"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.CodeGenerator.compilationTime SnapshotSize",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.CodeGenerator.compilationTime,type=histograms",
+            "attribute": "SnapshotSize"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.CodeGenerator.generatedClassSize Count",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.CodeGenerator.generatedClassSize,type=histograms",
+            "attribute": "Count"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.CodeGenerator.generatedClassSize SnapshotSize",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.CodeGenerator.generatedClassSize,type=histograms",
+            "attribute": "SnapshotSize"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.CodeGenerator.generatedMethodSize Count",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.CodeGenerator.generatedMethodSize,type=histograms",
+            "attribute": "Count"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.CodeGenerator.generatedMethodSize SnapshotSize",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.CodeGenerator.generatedMethodSize,type=histograms",
+            "attribute": "SnapshotSize"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.CodeGenerator.sourceCodeSize Count",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.CodeGenerator.sourceCodeSize,type=histograms",
+            "attribute": "Count"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.CodeGenerator.sourceCodeSize SnapshotSize",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.CodeGenerator.sourceCodeSize,type=histograms",
+            "attribute": "SnapshotSize"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.DAGScheduler.job.activeJobs Number",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.DAGScheduler.job.activeJobs,type=gauges",
+            "attribute": "Number"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.DAGScheduler.job.activeJobs Value",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.DAGScheduler.job.activeJobs,type=gauges",
+            "attribute": "Value"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.DAGScheduler.job.allJobs Number",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.DAGScheduler.job.allJobs,type=gauges",
+            "attribute": "Number"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.DAGScheduler.job.allJobs Value",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.DAGScheduler.job.allJobs,type=gauges",
+            "attribute": "Value"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.DAGScheduler.messageProcessingTime Count",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.DAGScheduler.messageProcessingTime,type=timers",
+            "attribute": "Count"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.DAGScheduler.messageProcessingTime DurationUnit",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.DAGScheduler.messageProcessingTime,type=timers",
+            "attribute": "DurationUnit"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.DAGScheduler.messageProcessingTime FifteenMinuteRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.DAGScheduler.messageProcessingTime,type=timers",
+            "attribute": "FifteenMinuteRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.DAGScheduler.messageProcessingTime FiveMinuteRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.DAGScheduler.messageProcessingTime,type=timers",
+            "attribute": "FiveMinuteRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.DAGScheduler.messageProcessingTime MeanRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.DAGScheduler.messageProcessingTime,type=timers",
+            "attribute": "MeanRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.DAGScheduler.messageProcessingTime OneMinuteRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.DAGScheduler.messageProcessingTime,type=timers",
+            "attribute": "OneMinuteRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.DAGScheduler.messageProcessingTime RateUnit",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.DAGScheduler.messageProcessingTime,type=timers",
+            "attribute": "RateUnit"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.DAGScheduler.stage.failedStages Number",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.DAGScheduler.stage.failedStages,type=gauges",
+            "attribute": "Number"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.DAGScheduler.stage.failedStages Value",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.DAGScheduler.stage.failedStages,type=gauges",
+            "attribute": "Value"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.DAGScheduler.stage.runningStages Number",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.DAGScheduler.stage.runningStages,type=gauges",
+            "attribute": "Number"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.DAGScheduler.stage.runningStages Value",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.DAGScheduler.stage.runningStages,type=gauges",
+            "attribute": "Value"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.DAGScheduler.stage.waitingStages Number",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.DAGScheduler.stage.waitingStages,type=gauges",
+            "attribute": "Number"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.DAGScheduler.stage.waitingStages Value",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.DAGScheduler.stage.waitingStages,type=gauges",
+            "attribute": "Value"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.Databricks.directoryCommit.autoVacuumCount Count",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.Databricks.directoryCommit.autoVacuumCount,type=counters",
+            "attribute": "Count"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.Databricks.directoryCommit.deletedFilesFiltered Count",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.Databricks.directoryCommit.deletedFilesFiltered,type=counters",
+            "attribute": "Count"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.Databricks.directoryCommit.filterListingCount Count",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.Databricks.directoryCommit.filterListingCount,type=counters",
+            "attribute": "Count"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.Databricks.directoryCommit.jobCommitCompleted Count",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.Databricks.directoryCommit.jobCommitCompleted,type=counters",
+            "attribute": "Count"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.Databricks.directoryCommit.markerReadErrors Count",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.Databricks.directoryCommit.markerReadErrors,type=counters",
+            "attribute": "Count"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.Databricks.directoryCommit.markerRefreshCount Count",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.Databricks.directoryCommit.markerRefreshCount,type=counters",
+            "attribute": "Count"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.Databricks.directoryCommit.markerRefreshErrors Count",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.Databricks.directoryCommit.markerRefreshErrors,type=counters",
+            "attribute": "Count"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.Databricks.directoryCommit.markersRead Count",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.Databricks.directoryCommit.markersRead,type=counters",
+            "attribute": "Count"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.Databricks.directoryCommit.repeatedListCount Count",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.Databricks.directoryCommit.repeatedListCount,type=counters",
+            "attribute": "Count"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.Databricks.directoryCommit.uncommittedFilesFiltered Count",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.Databricks.directoryCommit.uncommittedFilesFiltered,type=counters",
+            "attribute": "Count"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.Databricks.directoryCommit.untrackedFilesFound Count",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.Databricks.directoryCommit.untrackedFilesFound,type=counters",
+            "attribute": "Count"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.Databricks.directoryCommit.vacuumCount Count",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.Databricks.directoryCommit.vacuumCount,type=counters",
+            "attribute": "Count"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.Databricks.directoryCommit.vacuumErrors Count",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.Databricks.directoryCommit.vacuumErrors,type=counters",
+            "attribute": "Count"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.Databricks.preemption.numChecks Count",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.Databricks.preemption.numChecks,type=counters",
+            "attribute": "Count"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.Databricks.preemption.numPoolsAutoExpired Count",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.Databricks.preemption.numPoolsAutoExpired,type=counters",
+            "attribute": "Count"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.Databricks.preemption.numTasksPreempted Count",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.Databricks.preemption.numTasksPreempted,type=counters",
+            "attribute": "Count"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.Databricks.preemption.poolStarvationMillis Count",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.Databricks.preemption.poolStarvationMillis,type=counters",
+            "attribute": "Count"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.Databricks.preemption.schedulerOverheadNanos Count",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.Databricks.preemption.schedulerOverheadNanos,type=counters",
+            "attribute": "Count"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.Databricks.preemption.taskTimeWastedMillis Count",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.Databricks.preemption.taskTimeWastedMillis,type=counters",
+            "attribute": "Count"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.Databricks.taskSchedulingLanes.activePools Count",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.Databricks.taskSchedulingLanes.activePools,type=counters",
+            "attribute": "Count"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.Databricks.taskSchedulingLanes.bypassLaneActivePools Count",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.Databricks.taskSchedulingLanes.bypassLaneActivePools,type=counters",
+            "attribute": "Count"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.Databricks.taskSchedulingLanes.fastLaneActivePools Count",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.Databricks.taskSchedulingLanes.fastLaneActivePools,type=counters",
+            "attribute": "Count"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.Databricks.taskSchedulingLanes.finishedQueriesTotalTaskTimeNs Count",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.Databricks.taskSchedulingLanes.finishedQueriesTotalTaskTimeNs,type=counters",
+            "attribute": "Count"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.Databricks.taskSchedulingLanes.laneCleanup.markedPools Count",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.Databricks.taskSchedulingLanes.laneCleanup.markedPools,type=counters",
+            "attribute": "Count"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.Databricks.taskSchedulingLanes.laneCleanup.twoPhasePoolsCleaned Count",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.Databricks.taskSchedulingLanes.laneCleanup.twoPhasePoolsCleaned,type=counters",
+            "attribute": "Count"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.Databricks.taskSchedulingLanes.laneCleanup.zombiePoolsCleaned Count",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.Databricks.taskSchedulingLanes.laneCleanup.zombiePoolsCleaned,type=counters",
+            "attribute": "Count"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.Databricks.taskSchedulingLanes.preemption.slotTransferNumSuccessfulPreemptionIterations Count",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.Databricks.taskSchedulingLanes.preemption.slotTransferNumSuccessfulPreemptionIterations,type=counters",
+            "attribute": "Count"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.Databricks.taskSchedulingLanes.preemption.slotTransferNumTasksPreempted Count",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.Databricks.taskSchedulingLanes.preemption.slotTransferNumTasksPreempted,type=counters",
+            "attribute": "Count"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.Databricks.taskSchedulingLanes.preemption.slotTransferWastedTaskTimeNs Count",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.Databricks.taskSchedulingLanes.preemption.slotTransferWastedTaskTimeNs,type=counters",
+            "attribute": "Count"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.Databricks.taskSchedulingLanes.slotReservation.numGradualDecrease Count",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.Databricks.taskSchedulingLanes.slotReservation.numGradualDecrease,type=counters",
+            "attribute": "Count"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.Databricks.taskSchedulingLanes.slotReservation.numQuickDrop Count",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.Databricks.taskSchedulingLanes.slotReservation.numQuickDrop,type=counters",
+            "attribute": "Count"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.Databricks.taskSchedulingLanes.slotReservation.numQuickJump Count",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.Databricks.taskSchedulingLanes.slotReservation.numQuickJump,type=counters",
+            "attribute": "Count"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.Databricks.taskSchedulingLanes.slotReservation.slotsReserved Count",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.Databricks.taskSchedulingLanes.slotReservation.slotsReserved,type=counters",
+            "attribute": "Count"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.Databricks.taskSchedulingLanes.slowLaneActivePools Count",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.Databricks.taskSchedulingLanes.slowLaneActivePools,type=counters",
+            "attribute": "Count"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.Databricks.taskSchedulingLanes.totalQueryGroupsFinished Count",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.Databricks.taskSchedulingLanes.totalQueryGroupsFinished,type=counters",
+            "attribute": "Count"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.ExecutorMetrics.DirectPoolMemory Number",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.ExecutorMetrics.DirectPoolMemory,type=gauges",
+            "attribute": "Number"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.ExecutorMetrics.DirectPoolMemory Value",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.ExecutorMetrics.DirectPoolMemory,type=gauges",
+            "attribute": "Value"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.ExecutorMetrics.JVMHeapMemory Number",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.ExecutorMetrics.JVMHeapMemory,type=gauges",
+            "attribute": "Number"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.ExecutorMetrics.JVMHeapMemory Value",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.ExecutorMetrics.JVMHeapMemory,type=gauges",
+            "attribute": "Value"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.ExecutorMetrics.JVMOffHeapMemory Number",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.ExecutorMetrics.JVMOffHeapMemory,type=gauges",
+            "attribute": "Number"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.ExecutorMetrics.JVMOffHeapMemory Value",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.ExecutorMetrics.JVMOffHeapMemory,type=gauges",
+            "attribute": "Value"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.ExecutorMetrics.MajorGCCount Number",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.ExecutorMetrics.MajorGCCount,type=gauges",
+            "attribute": "Number"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.ExecutorMetrics.MajorGCCount Value",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.ExecutorMetrics.MajorGCCount,type=gauges",
+            "attribute": "Value"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.ExecutorMetrics.MajorGCTime Number",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.ExecutorMetrics.MajorGCTime,type=gauges",
+            "attribute": "Number"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.ExecutorMetrics.MajorGCTime Value",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.ExecutorMetrics.MajorGCTime,type=gauges",
+            "attribute": "Value"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.ExecutorMetrics.MappedPoolMemory Number",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.ExecutorMetrics.MappedPoolMemory,type=gauges",
+            "attribute": "Number"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.ExecutorMetrics.MappedPoolMemory Value",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.ExecutorMetrics.MappedPoolMemory,type=gauges",
+            "attribute": "Value"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.ExecutorMetrics.MinorGCCount Number",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.ExecutorMetrics.MinorGCCount,type=gauges",
+            "attribute": "Number"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.ExecutorMetrics.MinorGCCount Value",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.ExecutorMetrics.MinorGCCount,type=gauges",
+            "attribute": "Value"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.ExecutorMetrics.MinorGCTime Number",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.ExecutorMetrics.MinorGCTime,type=gauges",
+            "attribute": "Number"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.ExecutorMetrics.MinorGCTime Value",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.ExecutorMetrics.MinorGCTime,type=gauges",
+            "attribute": "Value"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.ExecutorMetrics.OffHeapExecutionMemory Number",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.ExecutorMetrics.OffHeapExecutionMemory,type=gauges",
+            "attribute": "Number"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.ExecutorMetrics.OffHeapExecutionMemory Value",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.ExecutorMetrics.OffHeapExecutionMemory,type=gauges",
+            "attribute": "Value"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.ExecutorMetrics.OffHeapStorageMemory Number",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.ExecutorMetrics.OffHeapStorageMemory,type=gauges",
+            "attribute": "Number"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.ExecutorMetrics.OffHeapStorageMemory Value",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.ExecutorMetrics.OffHeapStorageMemory,type=gauges",
+            "attribute": "Value"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.ExecutorMetrics.OffHeapUnifiedMemory Number",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.ExecutorMetrics.OffHeapUnifiedMemory,type=gauges",
+            "attribute": "Number"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.ExecutorMetrics.OffHeapUnifiedMemory Value",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.ExecutorMetrics.OffHeapUnifiedMemory,type=gauges",
+            "attribute": "Value"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.ExecutorMetrics.OnHeapExecutionMemory Number",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.ExecutorMetrics.OnHeapExecutionMemory,type=gauges",
+            "attribute": "Number"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.ExecutorMetrics.OnHeapExecutionMemory Value",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.ExecutorMetrics.OnHeapExecutionMemory,type=gauges",
+            "attribute": "Value"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.ExecutorMetrics.OnHeapStorageMemory Number",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.ExecutorMetrics.OnHeapStorageMemory,type=gauges",
+            "attribute": "Number"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.ExecutorMetrics.OnHeapStorageMemory Value",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.ExecutorMetrics.OnHeapStorageMemory,type=gauges",
+            "attribute": "Value"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.ExecutorMetrics.OnHeapUnifiedMemory Number",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.ExecutorMetrics.OnHeapUnifiedMemory,type=gauges",
+            "attribute": "Number"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.ExecutorMetrics.OnHeapUnifiedMemory Value",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.ExecutorMetrics.OnHeapUnifiedMemory,type=gauges",
+            "attribute": "Value"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.ExecutorMetrics.ProcessTreeJVMRSSMemory Number",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.ExecutorMetrics.ProcessTreeJVMRSSMemory,type=gauges",
+            "attribute": "Number"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.ExecutorMetrics.ProcessTreeJVMRSSMemory Value",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.ExecutorMetrics.ProcessTreeJVMRSSMemory,type=gauges",
+            "attribute": "Value"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.ExecutorMetrics.ProcessTreeJVMVMemory Number",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.ExecutorMetrics.ProcessTreeJVMVMemory,type=gauges",
+            "attribute": "Number"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.ExecutorMetrics.ProcessTreeJVMVMemory Value",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.ExecutorMetrics.ProcessTreeJVMVMemory,type=gauges",
+            "attribute": "Value"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.ExecutorMetrics.ProcessTreeOtherRSSMemory Number",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.ExecutorMetrics.ProcessTreeOtherRSSMemory,type=gauges",
+            "attribute": "Number"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.ExecutorMetrics.ProcessTreeOtherRSSMemory Value",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.ExecutorMetrics.ProcessTreeOtherRSSMemory,type=gauges",
+            "attribute": "Value"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.ExecutorMetrics.ProcessTreeOtherVMemory Number",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.ExecutorMetrics.ProcessTreeOtherVMemory,type=gauges",
+            "attribute": "Number"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.ExecutorMetrics.ProcessTreeOtherVMemory Value",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.ExecutorMetrics.ProcessTreeOtherVMemory,type=gauges",
+            "attribute": "Value"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.ExecutorMetrics.ProcessTreePythonRSSMemory Number",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.ExecutorMetrics.ProcessTreePythonRSSMemory,type=gauges",
+            "attribute": "Number"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.ExecutorMetrics.ProcessTreePythonRSSMemory Value",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.ExecutorMetrics.ProcessTreePythonRSSMemory,type=gauges",
+            "attribute": "Value"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.ExecutorMetrics.ProcessTreePythonVMemory Number",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.ExecutorMetrics.ProcessTreePythonVMemory,type=gauges",
+            "attribute": "Number"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.ExecutorMetrics.ProcessTreePythonVMemory Value",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.ExecutorMetrics.ProcessTreePythonVMemory,type=gauges",
+            "attribute": "Value"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.ExecutorMetrics.TotalGCTime Number",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.ExecutorMetrics.TotalGCTime,type=gauges",
+            "attribute": "Number"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.ExecutorMetrics.TotalGCTime Value",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.ExecutorMetrics.TotalGCTime,type=gauges",
+            "attribute": "Value"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.HiveExternalCatalog.fileCacheHits Count",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.HiveExternalCatalog.fileCacheHits,type=counters",
+            "attribute": "Count"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.HiveExternalCatalog.filesDiscovered Count",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.HiveExternalCatalog.filesDiscovered,type=counters",
+            "attribute": "Count"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.HiveExternalCatalog.hiveClientCalls Count",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.HiveExternalCatalog.hiveClientCalls,type=counters",
+            "attribute": "Count"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.HiveExternalCatalog.parallelListingJobCount Count",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.HiveExternalCatalog.parallelListingJobCount,type=counters",
+            "attribute": "Count"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.HiveExternalCatalog.partitionsFetched Count",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.HiveExternalCatalog.partitionsFetched,type=counters",
+            "attribute": "Count"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.JVMCPU.jvmCpuTime Number",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.JVMCPU.jvmCpuTime,type=gauges",
+            "attribute": "Number"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.JVMCPU.jvmCpuTime Value",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.JVMCPU.jvmCpuTime,type=gauges",
+            "attribute": "Value"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.backend.daemon.driver.DBCEventLoggingListener Count",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.backend.daemon.driver.DBCEventLoggingListener,type=timers",
+            "attribute": "Count"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.backend.daemon.driver.DBCEventLoggingListener DurationUnit",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.backend.daemon.driver.DBCEventLoggingListener,type=timers",
+            "attribute": "DurationUnit"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.backend.daemon.driver.DBCEventLoggingListener FifteenMinuteRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.backend.daemon.driver.DBCEventLoggingListener,type=timers",
+            "attribute": "FifteenMinuteRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.backend.daemon.driver.DBCEventLoggingListener FiveMinuteRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.backend.daemon.driver.DBCEventLoggingListener,type=timers",
+            "attribute": "FiveMinuteRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.backend.daemon.driver.DBCEventLoggingListener MeanRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.backend.daemon.driver.DBCEventLoggingListener,type=timers",
+            "attribute": "MeanRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.backend.daemon.driver.DBCEventLoggingListener OneMinuteRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.backend.daemon.driver.DBCEventLoggingListener,type=timers",
+            "attribute": "OneMinuteRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.backend.daemon.driver.DBCEventLoggingListener RateUnit",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.backend.daemon.driver.DBCEventLoggingListener,type=timers",
+            "attribute": "RateUnit"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.backend.daemon.driver.DataPlaneEventListener Count",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.backend.daemon.driver.DataPlaneEventListener,type=timers",
+            "attribute": "Count"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.backend.daemon.driver.DataPlaneEventListener DurationUnit",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.backend.daemon.driver.DataPlaneEventListener,type=timers",
+            "attribute": "DurationUnit"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.backend.daemon.driver.DataPlaneEventListener FifteenMinuteRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.backend.daemon.driver.DataPlaneEventListener,type=timers",
+            "attribute": "FifteenMinuteRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.backend.daemon.driver.DataPlaneEventListener FiveMinuteRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.backend.daemon.driver.DataPlaneEventListener,type=timers",
+            "attribute": "FiveMinuteRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.backend.daemon.driver.DataPlaneEventListener MeanRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.backend.daemon.driver.DataPlaneEventListener,type=timers",
+            "attribute": "MeanRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.backend.daemon.driver.DataPlaneEventListener OneMinuteRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.backend.daemon.driver.DataPlaneEventListener,type=timers",
+            "attribute": "OneMinuteRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.backend.daemon.driver.DataPlaneEventListener RateUnit",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.backend.daemon.driver.DataPlaneEventListener,type=timers",
+            "attribute": "RateUnit"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.backend.daemon.driver.NephosColdQueryListener Count",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.backend.daemon.driver.NephosColdQueryListener,type=timers",
+            "attribute": "Count"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.backend.daemon.driver.NephosColdQueryListener DurationUnit",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.backend.daemon.driver.NephosColdQueryListener,type=timers",
+            "attribute": "DurationUnit"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.backend.daemon.driver.NephosColdQueryListener FifteenMinuteRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.backend.daemon.driver.NephosColdQueryListener,type=timers",
+            "attribute": "FifteenMinuteRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.backend.daemon.driver.NephosColdQueryListener FiveMinuteRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.backend.daemon.driver.NephosColdQueryListener,type=timers",
+            "attribute": "FiveMinuteRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.backend.daemon.driver.NephosColdQueryListener MeanRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.backend.daemon.driver.NephosColdQueryListener,type=timers",
+            "attribute": "MeanRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.backend.daemon.driver.NephosColdQueryListener OneMinuteRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.backend.daemon.driver.NephosColdQueryListener,type=timers",
+            "attribute": "OneMinuteRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.backend.daemon.driver.NephosColdQueryListener RateUnit",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.backend.daemon.driver.NephosColdQueryListener,type=timers",
+            "attribute": "RateUnit"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.photon.PhotonCleanupListener Count",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.photon.PhotonCleanupListener,type=timers",
+            "attribute": "Count"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.photon.PhotonCleanupListener DurationUnit",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.photon.PhotonCleanupListener,type=timers",
+            "attribute": "DurationUnit"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.photon.PhotonCleanupListener FifteenMinuteRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.photon.PhotonCleanupListener,type=timers",
+            "attribute": "FifteenMinuteRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.photon.PhotonCleanupListener FiveMinuteRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.photon.PhotonCleanupListener,type=timers",
+            "attribute": "FiveMinuteRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.photon.PhotonCleanupListener MeanRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.photon.PhotonCleanupListener,type=timers",
+            "attribute": "MeanRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.photon.PhotonCleanupListener OneMinuteRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.photon.PhotonCleanupListener,type=timers",
+            "attribute": "OneMinuteRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.photon.PhotonCleanupListener RateUnit",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.photon.PhotonCleanupListener,type=timers",
+            "attribute": "RateUnit"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.spark.sql.execution.SparkEBJCleanupListener Count",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.spark.sql.execution.SparkEBJCleanupListener,type=timers",
+            "attribute": "Count"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.spark.sql.execution.SparkEBJCleanupListener DurationUnit",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.spark.sql.execution.SparkEBJCleanupListener,type=timers",
+            "attribute": "DurationUnit"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.spark.sql.execution.SparkEBJCleanupListener FifteenMinuteRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.spark.sql.execution.SparkEBJCleanupListener,type=timers",
+            "attribute": "FifteenMinuteRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.spark.sql.execution.SparkEBJCleanupListener FiveMinuteRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.spark.sql.execution.SparkEBJCleanupListener,type=timers",
+            "attribute": "FiveMinuteRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.spark.sql.execution.SparkEBJCleanupListener MeanRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.spark.sql.execution.SparkEBJCleanupListener,type=timers",
+            "attribute": "MeanRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.spark.sql.execution.SparkEBJCleanupListener OneMinuteRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.spark.sql.execution.SparkEBJCleanupListener,type=timers",
+            "attribute": "OneMinuteRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.spark.sql.execution.SparkEBJCleanupListener RateUnit",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.spark.sql.execution.SparkEBJCleanupListener,type=timers",
+            "attribute": "RateUnit"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.spark.util.ExecutorTimeLoggingListener$ Count",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.spark.util.ExecutorTimeLoggingListener$,type=timers",
+            "attribute": "Count"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.spark.util.ExecutorTimeLoggingListener$ DurationUnit",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.spark.util.ExecutorTimeLoggingListener$,type=timers",
+            "attribute": "DurationUnit"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.spark.util.ExecutorTimeLoggingListener$ FifteenMinuteRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.spark.util.ExecutorTimeLoggingListener$,type=timers",
+            "attribute": "FifteenMinuteRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.spark.util.ExecutorTimeLoggingListener$ FiveMinuteRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.spark.util.ExecutorTimeLoggingListener$,type=timers",
+            "attribute": "FiveMinuteRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.spark.util.ExecutorTimeLoggingListener$ MeanRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.spark.util.ExecutorTimeLoggingListener$,type=timers",
+            "attribute": "MeanRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.spark.util.ExecutorTimeLoggingListener$ OneMinuteRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.spark.util.ExecutorTimeLoggingListener$,type=timers",
+            "attribute": "OneMinuteRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.spark.util.ExecutorTimeLoggingListener$ RateUnit",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.spark.util.ExecutorTimeLoggingListener$,type=timers",
+            "attribute": "RateUnit"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.spark.util.UsageLoggingListener Count",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.spark.util.UsageLoggingListener,type=timers",
+            "attribute": "Count"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.spark.util.UsageLoggingListener DurationUnit",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.spark.util.UsageLoggingListener,type=timers",
+            "attribute": "DurationUnit"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.spark.util.UsageLoggingListener FifteenMinuteRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.spark.util.UsageLoggingListener,type=timers",
+            "attribute": "FifteenMinuteRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.spark.util.UsageLoggingListener FiveMinuteRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.spark.util.UsageLoggingListener,type=timers",
+            "attribute": "FiveMinuteRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.spark.util.UsageLoggingListener MeanRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.spark.util.UsageLoggingListener,type=timers",
+            "attribute": "MeanRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.spark.util.UsageLoggingListener OneMinuteRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.spark.util.UsageLoggingListener,type=timers",
+            "attribute": "OneMinuteRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.spark.util.UsageLoggingListener RateUnit",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.spark.util.UsageLoggingListener,type=timers",
+            "attribute": "RateUnit"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.advice.AdvisorListener Count",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.advice.AdvisorListener,type=timers",
+            "attribute": "Count"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.advice.AdvisorListener DurationUnit",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.advice.AdvisorListener,type=timers",
+            "attribute": "DurationUnit"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.advice.AdvisorListener FifteenMinuteRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.advice.AdvisorListener,type=timers",
+            "attribute": "FifteenMinuteRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.advice.AdvisorListener FiveMinuteRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.advice.AdvisorListener,type=timers",
+            "attribute": "FiveMinuteRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.advice.AdvisorListener MeanRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.advice.AdvisorListener,type=timers",
+            "attribute": "MeanRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.advice.AdvisorListener OneMinuteRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.advice.AdvisorListener,type=timers",
+            "attribute": "OneMinuteRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.advice.AdvisorListener RateUnit",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.advice.AdvisorListener,type=timers",
+            "attribute": "RateUnit"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.debugger.QueryWatchdogListener Count",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.debugger.QueryWatchdogListener,type=timers",
+            "attribute": "Count"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.debugger.QueryWatchdogListener DurationUnit",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.debugger.QueryWatchdogListener,type=timers",
+            "attribute": "DurationUnit"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.debugger.QueryWatchdogListener FifteenMinuteRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.debugger.QueryWatchdogListener,type=timers",
+            "attribute": "FifteenMinuteRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.debugger.QueryWatchdogListener FiveMinuteRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.debugger.QueryWatchdogListener,type=timers",
+            "attribute": "FiveMinuteRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.debugger.QueryWatchdogListener MeanRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.debugger.QueryWatchdogListener,type=timers",
+            "attribute": "MeanRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.debugger.QueryWatchdogListener OneMinuteRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.debugger.QueryWatchdogListener,type=timers",
+            "attribute": "OneMinuteRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.debugger.QueryWatchdogListener RateUnit",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.debugger.QueryWatchdogListener,type=timers",
+            "attribute": "RateUnit"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.execution.ui.IOCacheListener Count",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.execution.ui.IOCacheListener,type=timers",
+            "attribute": "Count"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.execution.ui.IOCacheListener DurationUnit",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.execution.ui.IOCacheListener,type=timers",
+            "attribute": "DurationUnit"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.execution.ui.IOCacheListener FifteenMinuteRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.execution.ui.IOCacheListener,type=timers",
+            "attribute": "FifteenMinuteRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.execution.ui.IOCacheListener FiveMinuteRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.execution.ui.IOCacheListener,type=timers",
+            "attribute": "FiveMinuteRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.execution.ui.IOCacheListener MeanRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.execution.ui.IOCacheListener,type=timers",
+            "attribute": "MeanRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.execution.ui.IOCacheListener OneMinuteRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.execution.ui.IOCacheListener,type=timers",
+            "attribute": "OneMinuteRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.execution.ui.IOCacheListener RateUnit",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.execution.ui.IOCacheListener,type=timers",
+            "attribute": "RateUnit"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.io.caching.RepeatedReadsEstimator$ Count",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.io.caching.RepeatedReadsEstimator$,type=timers",
+            "attribute": "Count"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.io.caching.RepeatedReadsEstimator$ DurationUnit",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.io.caching.RepeatedReadsEstimator$,type=timers",
+            "attribute": "DurationUnit"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.io.caching.RepeatedReadsEstimator$ FifteenMinuteRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.io.caching.RepeatedReadsEstimator$,type=timers",
+            "attribute": "FifteenMinuteRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.io.caching.RepeatedReadsEstimator$ FiveMinuteRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.io.caching.RepeatedReadsEstimator$,type=timers",
+            "attribute": "FiveMinuteRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.io.caching.RepeatedReadsEstimator$ MeanRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.io.caching.RepeatedReadsEstimator$,type=timers",
+            "attribute": "MeanRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.io.caching.RepeatedReadsEstimator$ OneMinuteRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.io.caching.RepeatedReadsEstimator$,type=timers",
+            "attribute": "OneMinuteRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.io.caching.RepeatedReadsEstimator$ RateUnit",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.io.caching.RepeatedReadsEstimator$,type=timers",
+            "attribute": "RateUnit"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.logging.QueryProfileListener Count",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.logging.QueryProfileListener,type=timers",
+            "attribute": "Count"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.logging.QueryProfileListener DurationUnit",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.logging.QueryProfileListener,type=timers",
+            "attribute": "DurationUnit"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.logging.QueryProfileListener FifteenMinuteRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.logging.QueryProfileListener,type=timers",
+            "attribute": "FifteenMinuteRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.logging.QueryProfileListener FiveMinuteRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.logging.QueryProfileListener,type=timers",
+            "attribute": "FiveMinuteRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.logging.QueryProfileListener MeanRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.logging.QueryProfileListener,type=timers",
+            "attribute": "MeanRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.logging.QueryProfileListener OneMinuteRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.logging.QueryProfileListener,type=timers",
+            "attribute": "OneMinuteRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.logging.QueryProfileListener RateUnit",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.com.databricks.sql.logging.QueryProfileListener,type=timers",
+            "attribute": "RateUnit"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.QueryProfileListener Count",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.QueryProfileListener,type=timers",
+            "attribute": "Count"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.QueryProfileListener DurationUnit",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.QueryProfileListener,type=timers",
+            "attribute": "DurationUnit"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.QueryProfileListener FifteenMinuteRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.QueryProfileListener,type=timers",
+            "attribute": "FifteenMinuteRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.QueryProfileListener FiveMinuteRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.QueryProfileListener,type=timers",
+            "attribute": "FiveMinuteRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.QueryProfileListener MeanRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.QueryProfileListener,type=timers",
+            "attribute": "MeanRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.QueryProfileListener OneMinuteRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.QueryProfileListener,type=timers",
+            "attribute": "OneMinuteRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.QueryProfileListener RateUnit",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.QueryProfileListener,type=timers",
+            "attribute": "RateUnit"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.execution.SQLExecution$ Count",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.execution.SQLExecution$,type=timers",
+            "attribute": "Count"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.execution.SQLExecution$ DurationUnit",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.execution.SQLExecution$,type=timers",
+            "attribute": "DurationUnit"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.execution.SQLExecution$ FifteenMinuteRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.execution.SQLExecution$,type=timers",
+            "attribute": "FifteenMinuteRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.execution.SQLExecution$ FiveMinuteRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.execution.SQLExecution$,type=timers",
+            "attribute": "FiveMinuteRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.execution.SQLExecution$ MeanRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.execution.SQLExecution$,type=timers",
+            "attribute": "MeanRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.execution.SQLExecution$ OneMinuteRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.execution.SQLExecution$,type=timers",
+            "attribute": "OneMinuteRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.execution.SQLExecution$ RateUnit",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.execution.SQLExecution$,type=timers",
+            "attribute": "RateUnit"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.execution.streaming.StreamingQueryListenerBus Count",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.execution.streaming.StreamingQueryListenerBus,type=timers",
+            "attribute": "Count"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.execution.streaming.StreamingQueryListenerBus DurationUnit",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.execution.streaming.StreamingQueryListenerBus,type=timers",
+            "attribute": "DurationUnit"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.execution.streaming.StreamingQueryListenerBus FifteenMinuteRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.execution.streaming.StreamingQueryListenerBus,type=timers",
+            "attribute": "FifteenMinuteRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.execution.streaming.StreamingQueryListenerBus FiveMinuteRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.execution.streaming.StreamingQueryListenerBus,type=timers",
+            "attribute": "FiveMinuteRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.execution.streaming.StreamingQueryListenerBus MeanRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.execution.streaming.StreamingQueryListenerBus,type=timers",
+            "attribute": "MeanRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.execution.streaming.StreamingQueryListenerBus OneMinuteRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.execution.streaming.StreamingQueryListenerBus,type=timers",
+            "attribute": "OneMinuteRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.execution.streaming.StreamingQueryListenerBus RateUnit",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.execution.streaming.StreamingQueryListenerBus,type=timers",
+            "attribute": "RateUnit"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.execution.ui.SQLAppStatusListener Count",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.execution.ui.SQLAppStatusListener,type=timers",
+            "attribute": "Count"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.execution.ui.SQLAppStatusListener DurationUnit",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.execution.ui.SQLAppStatusListener,type=timers",
+            "attribute": "DurationUnit"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.execution.ui.SQLAppStatusListener FifteenMinuteRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.execution.ui.SQLAppStatusListener,type=timers",
+            "attribute": "FifteenMinuteRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.execution.ui.SQLAppStatusListener FiveMinuteRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.execution.ui.SQLAppStatusListener,type=timers",
+            "attribute": "FiveMinuteRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.execution.ui.SQLAppStatusListener MeanRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.execution.ui.SQLAppStatusListener,type=timers",
+            "attribute": "MeanRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.execution.ui.SQLAppStatusListener OneMinuteRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.execution.ui.SQLAppStatusListener,type=timers",
+            "attribute": "OneMinuteRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.execution.ui.SQLAppStatusListener RateUnit",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.execution.ui.SQLAppStatusListener,type=timers",
+            "attribute": "RateUnit"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.hive.thriftserver.ui.HiveThriftServer2Listener Count",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.hive.thriftserver.ui.HiveThriftServer2Listener,type=timers",
+            "attribute": "Count"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.hive.thriftserver.ui.HiveThriftServer2Listener DurationUnit",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.hive.thriftserver.ui.HiveThriftServer2Listener,type=timers",
+            "attribute": "DurationUnit"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.hive.thriftserver.ui.HiveThriftServer2Listener FifteenMinuteRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.hive.thriftserver.ui.HiveThriftServer2Listener,type=timers",
+            "attribute": "FifteenMinuteRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.hive.thriftserver.ui.HiveThriftServer2Listener FiveMinuteRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.hive.thriftserver.ui.HiveThriftServer2Listener,type=timers",
+            "attribute": "FiveMinuteRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.hive.thriftserver.ui.HiveThriftServer2Listener MeanRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.hive.thriftserver.ui.HiveThriftServer2Listener,type=timers",
+            "attribute": "MeanRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.hive.thriftserver.ui.HiveThriftServer2Listener OneMinuteRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.hive.thriftserver.ui.HiveThriftServer2Listener,type=timers",
+            "attribute": "OneMinuteRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.hive.thriftserver.ui.HiveThriftServer2Listener RateUnit",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.sql.hive.thriftserver.ui.HiveThriftServer2Listener,type=timers",
+            "attribute": "RateUnit"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.status.AppStatusListener Count",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.status.AppStatusListener,type=timers",
+            "attribute": "Count"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.status.AppStatusListener DurationUnit",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.status.AppStatusListener,type=timers",
+            "attribute": "DurationUnit"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.status.AppStatusListener FifteenMinuteRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.status.AppStatusListener,type=timers",
+            "attribute": "FifteenMinuteRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.status.AppStatusListener FiveMinuteRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.status.AppStatusListener,type=timers",
+            "attribute": "FiveMinuteRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.status.AppStatusListener MeanRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.status.AppStatusListener,type=timers",
+            "attribute": "MeanRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.status.AppStatusListener OneMinuteRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.status.AppStatusListener,type=timers",
+            "attribute": "OneMinuteRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.status.AppStatusListener RateUnit",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.listenerProcessingTime.org.apache.spark.status.AppStatusListener,type=timers",
+            "attribute": "RateUnit"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.numEventsPosted Count",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.numEventsPosted,type=counters",
+            "attribute": "Count"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.appStatus.listenerProcessingTime Count",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.appStatus.listenerProcessingTime,type=timers",
+            "attribute": "Count"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.appStatus.listenerProcessingTime DurationUnit",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.appStatus.listenerProcessingTime,type=timers",
+            "attribute": "DurationUnit"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.appStatus.listenerProcessingTime FifteenMinuteRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.appStatus.listenerProcessingTime,type=timers",
+            "attribute": "FifteenMinuteRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.appStatus.listenerProcessingTime FiveMinuteRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.appStatus.listenerProcessingTime,type=timers",
+            "attribute": "FiveMinuteRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.appStatus.listenerProcessingTime MeanRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.appStatus.listenerProcessingTime,type=timers",
+            "attribute": "MeanRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.appStatus.listenerProcessingTime OneMinuteRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.appStatus.listenerProcessingTime,type=timers",
+            "attribute": "OneMinuteRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.appStatus.listenerProcessingTime RateUnit",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.appStatus.listenerProcessingTime,type=timers",
+            "attribute": "RateUnit"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.appStatus.numDroppedEvents Count",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.appStatus.numDroppedEvents,type=counters",
+            "attribute": "Count"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.appStatus.size Number",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.appStatus.size,type=gauges",
+            "attribute": "Number"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.appStatus.size Value",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.appStatus.size,type=gauges",
+            "attribute": "Value"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.executorManagement.listenerProcessingTime Count",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.executorManagement.listenerProcessingTime,type=timers",
+            "attribute": "Count"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.executorManagement.listenerProcessingTime DurationUnit",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.executorManagement.listenerProcessingTime,type=timers",
+            "attribute": "DurationUnit"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.executorManagement.listenerProcessingTime FifteenMinuteRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.executorManagement.listenerProcessingTime,type=timers",
+            "attribute": "FifteenMinuteRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.executorManagement.listenerProcessingTime FiveMinuteRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.executorManagement.listenerProcessingTime,type=timers",
+            "attribute": "FiveMinuteRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.executorManagement.listenerProcessingTime MeanRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.executorManagement.listenerProcessingTime,type=timers",
+            "attribute": "MeanRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.executorManagement.listenerProcessingTime OneMinuteRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.executorManagement.listenerProcessingTime,type=timers",
+            "attribute": "OneMinuteRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.executorManagement.listenerProcessingTime RateUnit",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.executorManagement.listenerProcessingTime,type=timers",
+            "attribute": "RateUnit"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.executorManagement.numDroppedEvents Count",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.executorManagement.numDroppedEvents,type=counters",
+            "attribute": "Count"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.executorManagement.size Number",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.executorManagement.size,type=gauges",
+            "attribute": "Number"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.executorManagement.size Value",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.executorManagement.size,type=gauges",
+            "attribute": "Value"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.query-profile-logging-queue.listenerProcessingTime Count",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.query-profile-logging-queue.listenerProcessingTime,type=timers",
+            "attribute": "Count"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.query-profile-logging-queue.listenerProcessingTime DurationUnit",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.query-profile-logging-queue.listenerProcessingTime,type=timers",
+            "attribute": "DurationUnit"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.query-profile-logging-queue.listenerProcessingTime FifteenMinuteRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.query-profile-logging-queue.listenerProcessingTime,type=timers",
+            "attribute": "FifteenMinuteRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.query-profile-logging-queue.listenerProcessingTime FiveMinuteRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.query-profile-logging-queue.listenerProcessingTime,type=timers",
+            "attribute": "FiveMinuteRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.query-profile-logging-queue.listenerProcessingTime MeanRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.query-profile-logging-queue.listenerProcessingTime,type=timers",
+            "attribute": "MeanRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.query-profile-logging-queue.listenerProcessingTime OneMinuteRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.query-profile-logging-queue.listenerProcessingTime,type=timers",
+            "attribute": "OneMinuteRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.query-profile-logging-queue.listenerProcessingTime RateUnit",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.query-profile-logging-queue.listenerProcessingTime,type=timers",
+            "attribute": "RateUnit"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.query-profile-logging-queue.numDroppedEvents Count",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.query-profile-logging-queue.numDroppedEvents,type=counters",
+            "attribute": "Count"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.query-profile-logging-queue.size Number",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.query-profile-logging-queue.size,type=gauges",
+            "attribute": "Number"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.query-profile-logging-queue.size Value",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.query-profile-logging-queue.size,type=gauges",
+            "attribute": "Value"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.shared.listenerProcessingTime Count",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.shared.listenerProcessingTime,type=timers",
+            "attribute": "Count"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.shared.listenerProcessingTime DurationUnit",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.shared.listenerProcessingTime,type=timers",
+            "attribute": "DurationUnit"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.shared.listenerProcessingTime FifteenMinuteRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.shared.listenerProcessingTime,type=timers",
+            "attribute": "FifteenMinuteRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.shared.listenerProcessingTime FiveMinuteRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.shared.listenerProcessingTime,type=timers",
+            "attribute": "FiveMinuteRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.shared.listenerProcessingTime MeanRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.shared.listenerProcessingTime,type=timers",
+            "attribute": "MeanRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.shared.listenerProcessingTime OneMinuteRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.shared.listenerProcessingTime,type=timers",
+            "attribute": "OneMinuteRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.shared.listenerProcessingTime RateUnit",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.shared.listenerProcessingTime,type=timers",
+            "attribute": "RateUnit"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.shared.numDroppedEvents Count",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.shared.numDroppedEvents,type=counters",
+            "attribute": "Count"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.shared.size Number",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.shared.size,type=gauges",
+            "attribute": "Number"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.shared.size Value",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.shared.size,type=gauges",
+            "attribute": "Value"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.streams.listenerProcessingTime Count",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.streams.listenerProcessingTime,type=timers",
+            "attribute": "Count"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.streams.listenerProcessingTime DurationUnit",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.streams.listenerProcessingTime,type=timers",
+            "attribute": "DurationUnit"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.streams.listenerProcessingTime FifteenMinuteRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.streams.listenerProcessingTime,type=timers",
+            "attribute": "FifteenMinuteRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.streams.listenerProcessingTime FiveMinuteRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.streams.listenerProcessingTime,type=timers",
+            "attribute": "FiveMinuteRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.streams.listenerProcessingTime MeanRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.streams.listenerProcessingTime,type=timers",
+            "attribute": "MeanRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.streams.listenerProcessingTime OneMinuteRate",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.streams.listenerProcessingTime,type=timers",
+            "attribute": "OneMinuteRate"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.streams.listenerProcessingTime RateUnit",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.streams.listenerProcessingTime,type=timers",
+            "attribute": "RateUnit"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.streams.numDroppedEvents Count",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.streams.numDroppedEvents,type=counters",
+            "attribute": "Count"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.streams.size Number",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.streams.size,type=gauges",
+            "attribute": "Number"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.streams.size Value",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.LiveListenerBus.queue.streams.size,type=gauges",
+            "attribute": "Value"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.SparkSQLOperationManager.numHiveOperations Number",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.SparkSQLOperationManager.numHiveOperations,type=gauges",
+            "attribute": "Number"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.SparkSQLOperationManager.numHiveOperations Value",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.SparkSQLOperationManager.numHiveOperations,type=gauges",
+            "attribute": "Value"
+        },
+        {
+            "name": "databricks.${DB_NODE_TYPE}.SparkStatusTracker.numInconsistentGetJobInfoResponses Count",
+            "objectName": "metrics:name=databricks.${DB_NODE_TYPE}.SparkStatusTracker.numInconsistentGetJobInfoResponses,type=counters",
+            "attribute": "Count"
+        }
+    ]
+}
