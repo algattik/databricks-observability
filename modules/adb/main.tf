@@ -82,4 +82,10 @@ resource "databricks_cluster" "shared_autoscaling" {
     "spark.metrics.conf.*.sink.jmx.class" : "org.apache.spark.metrics.sink.JmxSink",
     "spark.metrics.namespace" : "databricks",
   }
+
+  cluster_log_conf {
+    dbfs {
+      destination = "dbfs:/cluster-logs"
+    }
+  }
 }
