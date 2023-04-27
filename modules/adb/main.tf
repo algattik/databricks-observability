@@ -75,8 +75,8 @@ resource "databricks_cluster" "shared_autoscaling" {
   node_type_id            = data.databricks_node_type.smallest.id
   autotermination_minutes = 20
   autoscale {
-    min_workers = 1
-    max_workers = 2
+    min_workers = 2
+    max_workers = 3
   }
   spark_conf = {
     # Metastore config
