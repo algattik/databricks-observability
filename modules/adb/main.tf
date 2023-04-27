@@ -49,9 +49,14 @@ resource "databricks_dbfs_file" "init-observability" {
   path   = "/observability/init-observability.sh"
 }
 
-resource "databricks_dbfs_file" "applicationinsights-json" {
-  source = "${path.module}/applicationinsights.json"
-  path   = "/observability/applicationinsights.json"
+resource "databricks_dbfs_file" "applicationinsights-driver-json" {
+  source = "${path.module}/applicationinsights-driver.json"
+  path   = "/observability/applicationinsights-driver.json"
+}
+
+resource "databricks_dbfs_file" "applicationinsights-executor-json" {
+  source = "${path.module}/applicationinsights-executor.json"
+  path   = "/observability/applicationinsights-executor.json"
 }
 
 
@@ -104,7 +109,8 @@ resource "databricks_cluster" "shared_autoscaling" {
     databricks_dbfs_file.log4j2-properties,
     databricks_dbfs_file.agent,
     databricks_dbfs_file.init-observability,
-    databricks_dbfs_file.applicationinsights-json,
+    databricks_dbfs_file.applicationinsights-driver-json,
+    databricks_dbfs_file.applicationinsights-executor-json
   ]
 
   cluster_log_conf {
