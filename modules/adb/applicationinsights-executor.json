@@ -1299,117 +1299,117 @@
             "attribute": "Count"
         },
         {
-            "name": "spark.worker.ExecutorMetrics.DirectPoolMemory.Number",
+            "name": "spark.worker.ExecutorMetrics.DirectPoolMemory",
             "objectName": "metrics:name=spark.0.ExecutorMetrics.DirectPoolMemory,type=gauges",
             "attribute": "Number"
         },
         {
-            "name": "spark.worker.ExecutorMetrics.JVMHeapMemory.Number",
+            "name": "spark.worker.ExecutorMetrics.JVMHeapMemory",
             "objectName": "metrics:name=spark.0.ExecutorMetrics.JVMHeapMemory,type=gauges",
             "attribute": "Number"
         },
         {
-            "name": "spark.worker.ExecutorMetrics.JVMOffHeapMemory.Number",
+            "name": "spark.worker.ExecutorMetrics.JVMOffHeapMemory",
             "objectName": "metrics:name=spark.0.ExecutorMetrics.JVMOffHeapMemory,type=gauges",
             "attribute": "Number"
         },
         {
-            "name": "spark.worker.ExecutorMetrics.MajorGCCount.Number",
+            "name": "spark.worker.ExecutorMetrics.MajorGCCount",
             "objectName": "metrics:name=spark.0.ExecutorMetrics.MajorGCCount,type=gauges",
             "attribute": "Number"
         },
         {
-            "name": "spark.worker.ExecutorMetrics.MajorGCTime.Number",
+            "name": "spark.worker.ExecutorMetrics.MajorGCTime",
             "objectName": "metrics:name=spark.0.ExecutorMetrics.MajorGCTime,type=gauges",
             "attribute": "Number"
         },
         {
-            "name": "spark.worker.ExecutorMetrics.MappedPoolMemory.Number",
+            "name": "spark.worker.ExecutorMetrics.MappedPoolMemory",
             "objectName": "metrics:name=spark.0.ExecutorMetrics.MappedPoolMemory,type=gauges",
             "attribute": "Number"
         },
         {
-            "name": "spark.worker.ExecutorMetrics.MinorGCCount.Number",
+            "name": "spark.worker.ExecutorMetrics.MinorGCCount",
             "objectName": "metrics:name=spark.0.ExecutorMetrics.MinorGCCount,type=gauges",
             "attribute": "Number"
         },
         {
-            "name": "spark.worker.ExecutorMetrics.MinorGCTime.Number",
+            "name": "spark.worker.ExecutorMetrics.MinorGCTime",
             "objectName": "metrics:name=spark.0.ExecutorMetrics.MinorGCTime,type=gauges",
             "attribute": "Number"
         },
         {
-            "name": "spark.worker.ExecutorMetrics.OffHeapExecutionMemory.Number",
+            "name": "spark.worker.ExecutorMetrics.OffHeapExecutionMemory",
             "objectName": "metrics:name=spark.0.ExecutorMetrics.OffHeapExecutionMemory,type=gauges",
             "attribute": "Number"
         },
         {
-            "name": "spark.worker.ExecutorMetrics.OffHeapStorageMemory.Number",
+            "name": "spark.worker.ExecutorMetrics.OffHeapStorageMemory",
             "objectName": "metrics:name=spark.0.ExecutorMetrics.OffHeapStorageMemory,type=gauges",
             "attribute": "Number"
         },
         {
-            "name": "spark.worker.ExecutorMetrics.OffHeapUnifiedMemory.Number",
+            "name": "spark.worker.ExecutorMetrics.OffHeapUnifiedMemory",
             "objectName": "metrics:name=spark.0.ExecutorMetrics.OffHeapUnifiedMemory,type=gauges",
             "attribute": "Number"
         },
         {
-            "name": "spark.worker.ExecutorMetrics.OnHeapExecutionMemory.Number",
+            "name": "spark.worker.ExecutorMetrics.OnHeapExecutionMemory",
             "objectName": "metrics:name=spark.0.ExecutorMetrics.OnHeapExecutionMemory,type=gauges",
             "attribute": "Number"
         },
         {
-            "name": "spark.worker.ExecutorMetrics.OnHeapStorageMemory.Number",
+            "name": "spark.worker.ExecutorMetrics.OnHeapStorageMemory",
             "objectName": "metrics:name=spark.0.ExecutorMetrics.OnHeapStorageMemory,type=gauges",
             "attribute": "Number"
         },
         {
-            "name": "spark.worker.ExecutorMetrics.OnHeapUnifiedMemory.Number",
+            "name": "spark.worker.ExecutorMetrics.OnHeapUnifiedMemory",
             "objectName": "metrics:name=spark.0.ExecutorMetrics.OnHeapUnifiedMemory,type=gauges",
             "attribute": "Number"
         },
         {
-            "name": "spark.worker.ExecutorMetrics.ProcessTreeJVMRSSMemory.Number",
+            "name": "spark.worker.ExecutorMetrics.ProcessTreeJVMRSSMemory",
             "objectName": "metrics:name=spark.0.ExecutorMetrics.ProcessTreeJVMRSSMemory,type=gauges",
             "attribute": "Number"
         },
         {
-            "name": "spark.worker.ExecutorMetrics.ProcessTreeJVMVMemory.Number",
+            "name": "spark.worker.ExecutorMetrics.ProcessTreeJVMVMemory",
             "objectName": "metrics:name=spark.0.ExecutorMetrics.ProcessTreeJVMVMemory,type=gauges",
             "attribute": "Number"
         },
         {
-            "name": "spark.worker.ExecutorMetrics.ProcessTreeOtherRSSMemory.Number",
+            "name": "spark.worker.ExecutorMetrics.ProcessTreeOtherRSSMemory",
             "objectName": "metrics:name=spark.0.ExecutorMetrics.ProcessTreeOtherRSSMemory,type=gauges",
             "attribute": "Number"
         },
         {
-            "name": "spark.worker.ExecutorMetrics.ProcessTreeOtherVMemory.Number",
+            "name": "spark.worker.ExecutorMetrics.ProcessTreeOtherVMemory",
             "objectName": "metrics:name=spark.0.ExecutorMetrics.ProcessTreeOtherVMemory,type=gauges",
             "attribute": "Number"
         },
         {
-            "name": "spark.worker.ExecutorMetrics.ProcessTreePythonRSSMemory.Number",
+            "name": "spark.worker.ExecutorMetrics.ProcessTreePythonRSSMemory",
             "objectName": "metrics:name=spark.0.ExecutorMetrics.ProcessTreePythonRSSMemory,type=gauges",
             "attribute": "Number"
         },
         {
-            "name": "spark.worker.ExecutorMetrics.ProcessTreePythonVMemory.Number",
+            "name": "spark.worker.ExecutorMetrics.ProcessTreePythonVMemory",
             "objectName": "metrics:name=spark.0.ExecutorMetrics.ProcessTreePythonVMemory,type=gauges",
             "attribute": "Number"
         },
         {
-            "name": "spark.worker.ExecutorMetrics.TotalGCTime.Number",
+            "name": "spark.worker.ExecutorMetrics.TotalGCTime",
             "objectName": "metrics:name=spark.0.ExecutorMetrics.TotalGCTime,type=gauges",
             "attribute": "Number"
         },
         {
-            "name": "spark.worker.ExternalShuffle.shuffle-client.usedDirectMemory.Number",
+            "name": "spark.worker.ExternalShuffle.shuffle-client.usedDirectMemory",
             "objectName": "metrics:name=spark.0.ExternalShuffle.shuffle-client.usedDirectMemory,type=gauges",
             "attribute": "Number"
         },
         {
-            "name": "spark.worker.ExternalShuffle.shuffle-client.usedHeapMemory.Number",
+            "name": "spark.worker.ExternalShuffle.shuffle-client.usedHeapMemory",
             "objectName": "metrics:name=spark.0.ExternalShuffle.shuffle-client.usedHeapMemory,type=gauges",
             "attribute": "Number"
         },
@@ -1439,7 +1439,7 @@
             "attribute": "Count"
         },
         {
-            "name": "spark.worker.JVMCPU.jvmCpuTime.Number",
+            "name": "spark.worker.JVMCPU.jvmCpuTime",
             "objectName": "metrics:name=spark.0.JVMCPU.jvmCpuTime,type=gauges",
             "attribute": "Number"
         },
@@ -1474,52 +1474,52 @@
             "attribute": "Count"
         },
         {
-            "name": "spark.worker.executor.filesystem.file.largeRead_ops.Number",
+            "name": "spark.worker.executor.filesystem.file.largeRead_ops",
             "objectName": "metrics:name=spark.0.executor.filesystem.file.largeRead_ops,type=gauges",
             "attribute": "Number"
         },
         {
-            "name": "spark.worker.executor.filesystem.file.read_bytes.Number",
+            "name": "spark.worker.executor.filesystem.file.read_bytes",
             "objectName": "metrics:name=spark.0.executor.filesystem.file.read_bytes,type=gauges",
             "attribute": "Number"
         },
         {
-            "name": "spark.worker.executor.filesystem.file.read_ops.Number",
+            "name": "spark.worker.executor.filesystem.file.read_ops",
             "objectName": "metrics:name=spark.0.executor.filesystem.file.read_ops,type=gauges",
             "attribute": "Number"
         },
         {
-            "name": "spark.worker.executor.filesystem.file.write_bytes.Number",
+            "name": "spark.worker.executor.filesystem.file.write_bytes",
             "objectName": "metrics:name=spark.0.executor.filesystem.file.write_bytes,type=gauges",
             "attribute": "Number"
         },
         {
-            "name": "spark.worker.executor.filesystem.file.write_ops.Number",
+            "name": "spark.worker.executor.filesystem.file.write_ops",
             "objectName": "metrics:name=spark.0.executor.filesystem.file.write_ops,type=gauges",
             "attribute": "Number"
         },
         {
-            "name": "spark.worker.executor.filesystem.hdfs.largeRead_ops.Number",
+            "name": "spark.worker.executor.filesystem.hdfs.largeRead_ops",
             "objectName": "metrics:name=spark.0.executor.filesystem.hdfs.largeRead_ops,type=gauges",
             "attribute": "Number"
         },
         {
-            "name": "spark.worker.executor.filesystem.hdfs.read_bytes.Number",
+            "name": "spark.worker.executor.filesystem.hdfs.read_bytes",
             "objectName": "metrics:name=spark.0.executor.filesystem.hdfs.read_bytes,type=gauges",
             "attribute": "Number"
         },
         {
-            "name": "spark.worker.executor.filesystem.hdfs.read_ops.Number",
+            "name": "spark.worker.executor.filesystem.hdfs.read_ops",
             "objectName": "metrics:name=spark.0.executor.filesystem.hdfs.read_ops,type=gauges",
             "attribute": "Number"
         },
         {
-            "name": "spark.worker.executor.filesystem.hdfs.write_bytes.Number",
+            "name": "spark.worker.executor.filesystem.hdfs.write_bytes",
             "objectName": "metrics:name=spark.0.executor.filesystem.hdfs.write_bytes,type=gauges",
             "attribute": "Number"
         },
         {
-            "name": "spark.worker.executor.filesystem.hdfs.write_ops.Number",
+            "name": "spark.worker.executor.filesystem.hdfs.write_ops",
             "objectName": "metrics:name=spark.0.executor.filesystem.hdfs.write_ops,type=gauges",
             "attribute": "Number"
         },
@@ -1619,27 +1619,27 @@
             "attribute": "Count"
         },
         {
-            "name": "spark.worker.executor.threadpool.activeTasks.Number",
+            "name": "spark.worker.executor.threadpool.activeTasks",
             "objectName": "metrics:name=spark.0.executor.threadpool.activeTasks,type=gauges",
             "attribute": "Number"
         },
         {
-            "name": "spark.worker.executor.threadpool.completeTasks.Number",
+            "name": "spark.worker.executor.threadpool.completeTasks",
             "objectName": "metrics:name=spark.0.executor.threadpool.completeTasks,type=gauges",
             "attribute": "Number"
         },
         {
-            "name": "spark.worker.executor.threadpool.currentPool_size.Number",
+            "name": "spark.worker.executor.threadpool.currentPool_size",
             "objectName": "metrics:name=spark.0.executor.threadpool.currentPool_size,type=gauges",
             "attribute": "Number"
         },
         {
-            "name": "spark.worker.executor.threadpool.maxPool_size.Number",
+            "name": "spark.worker.executor.threadpool.maxPool_size",
             "objectName": "metrics:name=spark.0.executor.threadpool.maxPool_size,type=gauges",
             "attribute": "Number"
         },
         {
-            "name": "spark.worker.executor.threadpool.startedTasks.Number",
+            "name": "spark.worker.executor.threadpool.startedTasks",
             "objectName": "metrics:name=spark.0.executor.threadpool.startedTasks,type=gauges",
             "attribute": "Number"
         }
