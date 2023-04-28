@@ -69,8 +69,8 @@ locals {
   dbfs_prefix  = "/dbfs"
   java_options = "-javaagent:/tmp/applicationinsights-agent.jar -Dlog4j2.configurationFile=${local.dbfs_prefix}${databricks_dbfs_file.log4j2-properties.path}"
   # Not used, but defined in order to ensure the file is valid JSON.
-  user_data1   = jsondecode(file("${path.module}/applicationinsights-driver.json"))
-  user_data2   = jsondecode(file("${path.module}/applicationinsights-executor.json"))
+  user_data1 = jsondecode(file("${path.module}/applicationinsights-driver.json"))
+  user_data2 = jsondecode(file("${path.module}/applicationinsights-executor.json"))
 }
 
 
@@ -127,5 +127,29 @@ resource "databricks_cluster" "shared_autoscaling" {
     dbfs {
       destination = "dbfs:/cluster-logs"
     }
+  }
+}
+
+resource "databricks_notebook" "sample-notebook" {
+  source = "${path.module}/sample-notebook.py"
+  path   = "/Shared/sample-notebook"
+}
+
+resource "databricks_job" "sql_aggregation_job" {
+  name = "Periodic job"
+
+  task {
+    task_key = "a"
+
+    existing_cluster_id = databricks_cluster.shared_autoscaling.id
+
+    notebook_task {
+      notebook_path = databricks_notebook.sample-notebook.path
+    }
+  }
+
+  schedule {
+    quartz_cron_expression = "0 * * * * ?" # every minute
+    timezone_id            = "UTC"
   }
 }
