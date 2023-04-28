@@ -22,8 +22,4 @@ As well as logs:
 
 ## More information
 
-The configuration for the applicationinsights.json was initially generated with this [notebook](assets/dump-jmx-notebook.html).
-
-Metrics from namespaces related to Logging and JDK internals were removed.
-
-Metrics for the attribute `Value` were removed, since they were found to be always redundant with a metric named `Number` for the same MBean.
+The configuration for the `applicationinsights.json` files was initially generated with this [notebook](assets/dump-jmx.ipynb).
