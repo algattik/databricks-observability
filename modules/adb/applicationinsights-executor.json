@@ -19,6 +19,86 @@
     },
     "jmxMetrics": [
         {
+            "name": "java.lang:name=Code Cache.CollectionUsage",
+            "objectName": "java.lang:name=Code Cache,type=MemoryPool",
+            "attribute": "CollectionUsage"
+        },
+        {
+            "name": "java.lang:name=Code Cache.CollectionUsageThreshold",
+            "objectName": "java.lang:name=Code Cache,type=MemoryPool",
+            "attribute": "CollectionUsageThreshold"
+        },
+        {
+            "name": "java.lang:name=Code Cache.CollectionUsageThresholdCount",
+            "objectName": "java.lang:name=Code Cache,type=MemoryPool",
+            "attribute": "CollectionUsageThresholdCount"
+        },
+        {
+            "name": "java.lang:name=Code Cache.CollectionUsageThresholdExceeded",
+            "objectName": "java.lang:name=Code Cache,type=MemoryPool",
+            "attribute": "CollectionUsageThresholdExceeded"
+        },
+        {
+            "name": "java.lang:name=Code Cache.CollectionUsageThresholdSupported",
+            "objectName": "java.lang:name=Code Cache,type=MemoryPool",
+            "attribute": "CollectionUsageThresholdSupported"
+        },
+        {
+            "name": "java.lang:name=Code Cache.MemoryManagerNames",
+            "objectName": "java.lang:name=Code Cache,type=MemoryPool",
+            "attribute": "MemoryManagerNames"
+        },
+        {
+            "name": "java.lang:name=Code Cache.Name",
+            "objectName": "java.lang:name=Code Cache,type=MemoryPool",
+            "attribute": "Name"
+        },
+        {
+            "name": "java.lang:name=Code Cache.ObjectName",
+            "objectName": "java.lang:name=Code Cache,type=MemoryPool",
+            "attribute": "ObjectName"
+        },
+        {
+            "name": "java.lang:name=Code Cache.PeakUsage",
+            "objectName": "java.lang:name=Code Cache,type=MemoryPool",
+            "attribute": "PeakUsage"
+        },
+        {
+            "name": "java.lang:name=Code Cache.Type",
+            "objectName": "java.lang:name=Code Cache,type=MemoryPool",
+            "attribute": "Type"
+        },
+        {
+            "name": "java.lang:name=Code Cache.Usage",
+            "objectName": "java.lang:name=Code Cache,type=MemoryPool",
+            "attribute": "Usage"
+        },
+        {
+            "name": "java.lang:name=Code Cache.UsageThreshold",
+            "objectName": "java.lang:name=Code Cache,type=MemoryPool",
+            "attribute": "UsageThreshold"
+        },
+        {
+            "name": "java.lang:name=Code Cache.UsageThresholdCount",
+            "objectName": "java.lang:name=Code Cache,type=MemoryPool",
+            "attribute": "UsageThresholdCount"
+        },
+        {
+            "name": "java.lang:name=Code Cache.UsageThresholdExceeded",
+            "objectName": "java.lang:name=Code Cache,type=MemoryPool",
+            "attribute": "UsageThresholdExceeded"
+        },
+        {
+            "name": "java.lang:name=Code Cache.UsageThresholdSupported",
+            "objectName": "java.lang:name=Code Cache,type=MemoryPool",
+            "attribute": "UsageThresholdSupported"
+        },
+        {
+            "name": "java.lang:name=Code Cache.Valid",
+            "objectName": "java.lang:name=Code Cache,type=MemoryPool",
+            "attribute": "Valid"
+        },
+        {
             "name": "java.lang:name=CodeCacheManager.MemoryPoolNames",
             "objectName": "java.lang:name=CodeCacheManager,type=MemoryManager",
             "attribute": "MemoryPoolNames"
@@ -39,523 +119,493 @@
             "attribute": "Valid"
         },
         {
-            "name": "java.lang:name=CodeCacheManager.MemoryPoolNames",
-            "objectName": "java.lang:name=CodeCacheManager,type=MemoryManager",
+            "name": "java.lang:name=Compressed Class Space.CollectionUsage",
+            "objectName": "java.lang:name=Compressed Class Space,type=MemoryPool",
+            "attribute": "CollectionUsage"
+        },
+        {
+            "name": "java.lang:name=Compressed Class Space.CollectionUsageThreshold",
+            "objectName": "java.lang:name=Compressed Class Space,type=MemoryPool",
+            "attribute": "CollectionUsageThreshold"
+        },
+        {
+            "name": "java.lang:name=Compressed Class Space.CollectionUsageThresholdCount",
+            "objectName": "java.lang:name=Compressed Class Space,type=MemoryPool",
+            "attribute": "CollectionUsageThresholdCount"
+        },
+        {
+            "name": "java.lang:name=Compressed Class Space.CollectionUsageThresholdExceeded",
+            "objectName": "java.lang:name=Compressed Class Space,type=MemoryPool",
+            "attribute": "CollectionUsageThresholdExceeded"
+        },
+        {
+            "name": "java.lang:name=Compressed Class Space.CollectionUsageThresholdSupported",
+            "objectName": "java.lang:name=Compressed Class Space,type=MemoryPool",
+            "attribute": "CollectionUsageThresholdSupported"
+        },
+        {
+            "name": "java.lang:name=Compressed Class Space.MemoryManagerNames",
+            "objectName": "java.lang:name=Compressed Class Space,type=MemoryPool",
+            "attribute": "MemoryManagerNames"
+        },
+        {
+            "name": "java.lang:name=Compressed Class Space.Name",
+            "objectName": "java.lang:name=Compressed Class Space,type=MemoryPool",
+            "attribute": "Name"
+        },
+        {
+            "name": "java.lang:name=Compressed Class Space.ObjectName",
+            "objectName": "java.lang:name=Compressed Class Space,type=MemoryPool",
+            "attribute": "ObjectName"
+        },
+        {
+            "name": "java.lang:name=Compressed Class Space.PeakUsage",
+            "objectName": "java.lang:name=Compressed Class Space,type=MemoryPool",
+            "attribute": "PeakUsage"
+        },
+        {
+            "name": "java.lang:name=Compressed Class Space.Type",
+            "objectName": "java.lang:name=Compressed Class Space,type=MemoryPool",
+            "attribute": "Type"
+        },
+        {
+            "name": "java.lang:name=Compressed Class Space.Usage",
+            "objectName": "java.lang:name=Compressed Class Space,type=MemoryPool",
+            "attribute": "Usage"
+        },
+        {
+            "name": "java.lang:name=Compressed Class Space.UsageThreshold",
+            "objectName": "java.lang:name=Compressed Class Space,type=MemoryPool",
+            "attribute": "UsageThreshold"
+        },
+        {
+            "name": "java.lang:name=Compressed Class Space.UsageThresholdCount",
+            "objectName": "java.lang:name=Compressed Class Space,type=MemoryPool",
+            "attribute": "UsageThresholdCount"
+        },
+        {
+            "name": "java.lang:name=Compressed Class Space.UsageThresholdExceeded",
+            "objectName": "java.lang:name=Compressed Class Space,type=MemoryPool",
+            "attribute": "UsageThresholdExceeded"
+        },
+        {
+            "name": "java.lang:name=Compressed Class Space.UsageThresholdSupported",
+            "objectName": "java.lang:name=Compressed Class Space,type=MemoryPool",
+            "attribute": "UsageThresholdSupported"
+        },
+        {
+            "name": "java.lang:name=Compressed Class Space.Valid",
+            "objectName": "java.lang:name=Compressed Class Space,type=MemoryPool",
+            "attribute": "Valid"
+        },
+        {
+            "name": "java.lang:name=Metaspace Manager.MemoryPoolNames",
+            "objectName": "java.lang:name=Metaspace Manager,type=MemoryManager",
             "attribute": "MemoryPoolNames"
         },
         {
-            "name": "java.lang:name=CodeCacheManager.Name",
-            "objectName": "java.lang:name=CodeCacheManager,type=MemoryManager",
+            "name": "java.lang:name=Metaspace Manager.Name",
+            "objectName": "java.lang:name=Metaspace Manager,type=MemoryManager",
             "attribute": "Name"
         },
         {
-            "name": "java.lang:name=CodeCacheManager.ObjectName",
-            "objectName": "java.lang:name=CodeCacheManager,type=MemoryManager",
+            "name": "java.lang:name=Metaspace Manager.ObjectName",
+            "objectName": "java.lang:name=Metaspace Manager,type=MemoryManager",
             "attribute": "ObjectName"
         },
         {
-            "name": "java.lang:name=CodeCacheManager.Valid",
-            "objectName": "java.lang:name=CodeCacheManager,type=MemoryManager",
+            "name": "java.lang:name=Metaspace Manager.Valid",
+            "objectName": "java.lang:name=Metaspace Manager,type=MemoryManager",
             "attribute": "Valid"
         },
         {
-            "name": "java.lang:name=CodeCacheManager.MemoryPoolNames",
-            "objectName": "java.lang:name=CodeCacheManager,type=MemoryManager",
+            "name": "java.lang:name=Metaspace.CollectionUsage",
+            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
+            "attribute": "CollectionUsage"
+        },
+        {
+            "name": "java.lang:name=Metaspace.CollectionUsageThreshold",
+            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
+            "attribute": "CollectionUsageThreshold"
+        },
+        {
+            "name": "java.lang:name=Metaspace.CollectionUsageThresholdCount",
+            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
+            "attribute": "CollectionUsageThresholdCount"
+        },
+        {
+            "name": "java.lang:name=Metaspace.CollectionUsageThresholdExceeded",
+            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
+            "attribute": "CollectionUsageThresholdExceeded"
+        },
+        {
+            "name": "java.lang:name=Metaspace.CollectionUsageThresholdSupported",
+            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
+            "attribute": "CollectionUsageThresholdSupported"
+        },
+        {
+            "name": "java.lang:name=Metaspace.MemoryManagerNames",
+            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
+            "attribute": "MemoryManagerNames"
+        },
+        {
+            "name": "java.lang:name=Metaspace.Name",
+            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
+            "attribute": "Name"
+        },
+        {
+            "name": "java.lang:name=Metaspace.ObjectName",
+            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
+            "attribute": "ObjectName"
+        },
+        {
+            "name": "java.lang:name=Metaspace.PeakUsage",
+            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
+            "attribute": "PeakUsage"
+        },
+        {
+            "name": "java.lang:name=Metaspace.Type",
+            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
+            "attribute": "Type"
+        },
+        {
+            "name": "java.lang:name=Metaspace.Usage",
+            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
+            "attribute": "Usage"
+        },
+        {
+            "name": "java.lang:name=Metaspace.UsageThreshold",
+            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
+            "attribute": "UsageThreshold"
+        },
+        {
+            "name": "java.lang:name=Metaspace.UsageThresholdCount",
+            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
+            "attribute": "UsageThresholdCount"
+        },
+        {
+            "name": "java.lang:name=Metaspace.UsageThresholdExceeded",
+            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
+            "attribute": "UsageThresholdExceeded"
+        },
+        {
+            "name": "java.lang:name=Metaspace.UsageThresholdSupported",
+            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
+            "attribute": "UsageThresholdSupported"
+        },
+        {
+            "name": "java.lang:name=Metaspace.Valid",
+            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
+            "attribute": "Valid"
+        },
+        {
+            "name": "java.lang:name=PS Eden Space.CollectionUsage",
+            "objectName": "java.lang:name=PS Eden Space,type=MemoryPool",
+            "attribute": "CollectionUsage"
+        },
+        {
+            "name": "java.lang:name=PS Eden Space.CollectionUsageThreshold",
+            "objectName": "java.lang:name=PS Eden Space,type=MemoryPool",
+            "attribute": "CollectionUsageThreshold"
+        },
+        {
+            "name": "java.lang:name=PS Eden Space.CollectionUsageThresholdCount",
+            "objectName": "java.lang:name=PS Eden Space,type=MemoryPool",
+            "attribute": "CollectionUsageThresholdCount"
+        },
+        {
+            "name": "java.lang:name=PS Eden Space.CollectionUsageThresholdExceeded",
+            "objectName": "java.lang:name=PS Eden Space,type=MemoryPool",
+            "attribute": "CollectionUsageThresholdExceeded"
+        },
+        {
+            "name": "java.lang:name=PS Eden Space.CollectionUsageThresholdSupported",
+            "objectName": "java.lang:name=PS Eden Space,type=MemoryPool",
+            "attribute": "CollectionUsageThresholdSupported"
+        },
+        {
+            "name": "java.lang:name=PS Eden Space.MemoryManagerNames",
+            "objectName": "java.lang:name=PS Eden Space,type=MemoryPool",
+            "attribute": "MemoryManagerNames"
+        },
+        {
+            "name": "java.lang:name=PS Eden Space.Name",
+            "objectName": "java.lang:name=PS Eden Space,type=MemoryPool",
+            "attribute": "Name"
+        },
+        {
+            "name": "java.lang:name=PS Eden Space.ObjectName",
+            "objectName": "java.lang:name=PS Eden Space,type=MemoryPool",
+            "attribute": "ObjectName"
+        },
+        {
+            "name": "java.lang:name=PS Eden Space.PeakUsage",
+            "objectName": "java.lang:name=PS Eden Space,type=MemoryPool",
+            "attribute": "PeakUsage"
+        },
+        {
+            "name": "java.lang:name=PS Eden Space.Type",
+            "objectName": "java.lang:name=PS Eden Space,type=MemoryPool",
+            "attribute": "Type"
+        },
+        {
+            "name": "java.lang:name=PS Eden Space.Usage",
+            "objectName": "java.lang:name=PS Eden Space,type=MemoryPool",
+            "attribute": "Usage"
+        },
+        {
+            "name": "java.lang:name=PS Eden Space.UsageThreshold",
+            "objectName": "java.lang:name=PS Eden Space,type=MemoryPool",
+            "attribute": "UsageThreshold"
+        },
+        {
+            "name": "java.lang:name=PS Eden Space.UsageThresholdCount",
+            "objectName": "java.lang:name=PS Eden Space,type=MemoryPool",
+            "attribute": "UsageThresholdCount"
+        },
+        {
+            "name": "java.lang:name=PS Eden Space.UsageThresholdExceeded",
+            "objectName": "java.lang:name=PS Eden Space,type=MemoryPool",
+            "attribute": "UsageThresholdExceeded"
+        },
+        {
+            "name": "java.lang:name=PS Eden Space.UsageThresholdSupported",
+            "objectName": "java.lang:name=PS Eden Space,type=MemoryPool",
+            "attribute": "UsageThresholdSupported"
+        },
+        {
+            "name": "java.lang:name=PS Eden Space.Valid",
+            "objectName": "java.lang:name=PS Eden Space,type=MemoryPool",
+            "attribute": "Valid"
+        },
+        {
+            "name": "java.lang:name=PS MarkSweep.CollectionCount",
+            "objectName": "java.lang:name=PS MarkSweep,type=GarbageCollector",
+            "attribute": "CollectionCount"
+        },
+        {
+            "name": "java.lang:name=PS MarkSweep.CollectionTime",
+            "objectName": "java.lang:name=PS MarkSweep,type=GarbageCollector",
+            "attribute": "CollectionTime"
+        },
+        {
+            "name": "java.lang:name=PS MarkSweep.LastGcInfo",
+            "objectName": "java.lang:name=PS MarkSweep,type=GarbageCollector",
+            "attribute": "LastGcInfo"
+        },
+        {
+            "name": "java.lang:name=PS MarkSweep.MemoryPoolNames",
+            "objectName": "java.lang:name=PS MarkSweep,type=GarbageCollector",
             "attribute": "MemoryPoolNames"
         },
         {
-            "name": "java.lang:name=CodeCacheManager.Name",
-            "objectName": "java.lang:name=CodeCacheManager,type=MemoryManager",
+            "name": "java.lang:name=PS MarkSweep.Name",
+            "objectName": "java.lang:name=PS MarkSweep,type=GarbageCollector",
             "attribute": "Name"
         },
         {
-            "name": "java.lang:name=CodeCacheManager.ObjectName",
-            "objectName": "java.lang:name=CodeCacheManager,type=MemoryManager",
+            "name": "java.lang:name=PS MarkSweep.ObjectName",
+            "objectName": "java.lang:name=PS MarkSweep,type=GarbageCollector",
             "attribute": "ObjectName"
         },
         {
-            "name": "java.lang:name=CodeCacheManager",
-            "objectName": "java.lang:name=CodeCacheManager,type=MemoryManager",
+            "name": "java.lang:name=PS MarkSweep.Valid",
+            "objectName": "java.lang:name=PS MarkSweep,type=GarbageCollector",
             "attribute": "Valid"
         },
         {
-            "name": "java.lang:name=Metaspace.CollectionUsage",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
+            "name": "java.lang:name=PS Old Gen.CollectionUsage",
+            "objectName": "java.lang:name=PS Old Gen,type=MemoryPool",
             "attribute": "CollectionUsage"
         },
         {
-            "name": "java.lang:name=Metaspace.CollectionUsageThreshold",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
+            "name": "java.lang:name=PS Old Gen.CollectionUsageThreshold",
+            "objectName": "java.lang:name=PS Old Gen,type=MemoryPool",
             "attribute": "CollectionUsageThreshold"
         },
         {
-            "name": "java.lang:name=Metaspace.CollectionUsageThresholdCount",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
+            "name": "java.lang:name=PS Old Gen.CollectionUsageThresholdCount",
+            "objectName": "java.lang:name=PS Old Gen,type=MemoryPool",
             "attribute": "CollectionUsageThresholdCount"
         },
         {
-            "name": "java.lang:name=Metaspace.CollectionUsageThresholdExceeded",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
+            "name": "java.lang:name=PS Old Gen.CollectionUsageThresholdExceeded",
+            "objectName": "java.lang:name=PS Old Gen,type=MemoryPool",
             "attribute": "CollectionUsageThresholdExceeded"
         },
         {
-            "name": "java.lang:name=Metaspace.CollectionUsageThresholdSupported",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
+            "name": "java.lang:name=PS Old Gen.CollectionUsageThresholdSupported",
+            "objectName": "java.lang:name=PS Old Gen,type=MemoryPool",
             "attribute": "CollectionUsageThresholdSupported"
         },
         {
-            "name": "java.lang:name=Metaspace.MemoryManagerNames",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
+            "name": "java.lang:name=PS Old Gen.MemoryManagerNames",
+            "objectName": "java.lang:name=PS Old Gen,type=MemoryPool",
             "attribute": "MemoryManagerNames"
         },
         {
-            "name": "java.lang:name=Metaspace.Name",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
+            "name": "java.lang:name=PS Old Gen.Name",
+            "objectName": "java.lang:name=PS Old Gen,type=MemoryPool",
             "attribute": "Name"
         },
         {
-            "name": "java.lang:name=Metaspace.ObjectName",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
+            "name": "java.lang:name=PS Old Gen.ObjectName",
+            "objectName": "java.lang:name=PS Old Gen,type=MemoryPool",
             "attribute": "ObjectName"
         },
         {
-            "name": "java.lang:name=Metaspace.PeakUsage",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
+            "name": "java.lang:name=PS Old Gen.PeakUsage",
+            "objectName": "java.lang:name=PS Old Gen,type=MemoryPool",
             "attribute": "PeakUsage"
         },
         {
-            "name": "java.lang:name=Metaspace.Type",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
+            "name": "java.lang:name=PS Old Gen.Type",
+            "objectName": "java.lang:name=PS Old Gen,type=MemoryPool",
             "attribute": "Type"
         },
         {
-            "name": "java.lang:name=Metaspace.Usage",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
+            "name": "java.lang:name=PS Old Gen.Usage",
+            "objectName": "java.lang:name=PS Old Gen,type=MemoryPool",
             "attribute": "Usage"
         },
         {
-            "name": "java.lang:name=Metaspace.UsageThreshold",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
+            "name": "java.lang:name=PS Old Gen.UsageThreshold",
+            "objectName": "java.lang:name=PS Old Gen,type=MemoryPool",
             "attribute": "UsageThreshold"
         },
         {
-            "name": "java.lang:name=Metaspace.UsageThresholdCount",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
+            "name": "java.lang:name=PS Old Gen.UsageThresholdCount",
+            "objectName": "java.lang:name=PS Old Gen,type=MemoryPool",
             "attribute": "UsageThresholdCount"
         },
         {
-            "name": "java.lang:name=Metaspace.UsageThresholdExceeded",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
+            "name": "java.lang:name=PS Old Gen.UsageThresholdExceeded",
+            "objectName": "java.lang:name=PS Old Gen,type=MemoryPool",
             "attribute": "UsageThresholdExceeded"
         },
         {
-            "name": "java.lang:name=Metaspace.UsageThresholdSupported",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
+            "name": "java.lang:name=PS Old Gen.UsageThresholdSupported",
+            "objectName": "java.lang:name=PS Old Gen,type=MemoryPool",
             "attribute": "UsageThresholdSupported"
         },
         {
-            "name": "java.lang:name=Metaspace.Valid",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
+            "name": "java.lang:name=PS Old Gen.Valid",
+            "objectName": "java.lang:name=PS Old Gen,type=MemoryPool",
             "attribute": "Valid"
         },
         {
-            "name": "java.lang:name=Metaspace.CollectionUsage",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
-            "attribute": "CollectionUsage"
+            "name": "java.lang:name=PS Scavenge.CollectionCount",
+            "objectName": "java.lang:name=PS Scavenge,type=GarbageCollector",
+            "attribute": "CollectionCount"
         },
         {
-            "name": "java.lang:name=Metaspace.CollectionUsageThreshold",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
-            "attribute": "CollectionUsageThreshold"
+            "name": "java.lang:name=PS Scavenge.CollectionTime",
+            "objectName": "java.lang:name=PS Scavenge,type=GarbageCollector",
+            "attribute": "CollectionTime"
         },
         {
-            "name": "java.lang:name=Metaspace.CollectionUsageThresholdCount",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
-            "attribute": "CollectionUsageThresholdCount"
+            "name": "java.lang:name=PS Scavenge.LastGcInfo",
+            "objectName": "java.lang:name=PS Scavenge,type=GarbageCollector",
+            "attribute": "LastGcInfo"
         },
         {
-            "name": "java.lang:name=Metaspace.CollectionUsageThresholdExceeded",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
-            "attribute": "CollectionUsageThresholdExceeded"
+            "name": "java.lang:name=PS Scavenge.MemoryPoolNames",
+            "objectName": "java.lang:name=PS Scavenge,type=GarbageCollector",
+            "attribute": "MemoryPoolNames"
         },
         {
-            "name": "java.lang:name=Metaspace.CollectionUsageThresholdSupported",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
-            "attribute": "CollectionUsageThresholdSupported"
-        },
-        {
-            "name": "java.lang:name=Metaspace.MemoryManagerNames",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
-            "attribute": "MemoryManagerNames"
-        },
-        {
-            "name": "java.lang:name=Metaspace.Name",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
+            "name": "java.lang:name=PS Scavenge.Name",
+            "objectName": "java.lang:name=PS Scavenge,type=GarbageCollector",
             "attribute": "Name"
         },
         {
-            "name": "java.lang:name=Metaspace.ObjectName",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
+            "name": "java.lang:name=PS Scavenge.ObjectName",
+            "objectName": "java.lang:name=PS Scavenge,type=GarbageCollector",
             "attribute": "ObjectName"
         },
         {
-            "name": "java.lang:name=Metaspace.PeakUsage",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
-            "attribute": "PeakUsage"
-        },
-        {
-            "name": "java.lang:name=Metaspace.Type",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
-            "attribute": "Type"
-        },
-        {
-            "name": "java.lang:name=Metaspace.Usage",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
-            "attribute": "Usage"
-        },
-        {
-            "name": "java.lang:name=Metaspace.UsageThreshold",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
-            "attribute": "UsageThreshold"
-        },
-        {
-            "name": "java.lang:name=Metaspace.UsageThresholdCount",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
-            "attribute": "UsageThresholdCount"
-        },
-        {
-            "name": "java.lang:name=Metaspace.UsageThresholdExceeded",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
-            "attribute": "UsageThresholdExceeded"
-        },
-        {
-            "name": "java.lang:name=Metaspace.UsageThresholdSupported",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
-            "attribute": "UsageThresholdSupported"
-        },
-        {
-            "name": "java.lang:name=Metaspace.Valid",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
+            "name": "java.lang:name=PS Scavenge.Valid",
+            "objectName": "java.lang:name=PS Scavenge,type=GarbageCollector",
             "attribute": "Valid"
         },
         {
-            "name": "java.lang:name=Metaspace.CollectionUsage",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
+            "name": "java.lang:name=PS Survivor Space.CollectionUsage",
+            "objectName": "java.lang:name=PS Survivor Space,type=MemoryPool",
             "attribute": "CollectionUsage"
         },
         {
-            "name": "java.lang:name=Metaspace.CollectionUsageThreshold",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
+            "name": "java.lang:name=PS Survivor Space.CollectionUsageThreshold",
+            "objectName": "java.lang:name=PS Survivor Space,type=MemoryPool",
             "attribute": "CollectionUsageThreshold"
         },
         {
-            "name": "java.lang:name=Metaspace.CollectionUsageThresholdCount",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
+            "name": "java.lang:name=PS Survivor Space.CollectionUsageThresholdCount",
+            "objectName": "java.lang:name=PS Survivor Space,type=MemoryPool",
             "attribute": "CollectionUsageThresholdCount"
         },
         {
-            "name": "java.lang:name=Metaspace.CollectionUsageThresholdExceeded",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
+            "name": "java.lang:name=PS Survivor Space.CollectionUsageThresholdExceeded",
+            "objectName": "java.lang:name=PS Survivor Space,type=MemoryPool",
             "attribute": "CollectionUsageThresholdExceeded"
         },
         {
-            "name": "java.lang:name=Metaspace.CollectionUsageThresholdSupported",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
+            "name": "java.lang:name=PS Survivor Space.CollectionUsageThresholdSupported",
+            "objectName": "java.lang:name=PS Survivor Space,type=MemoryPool",
             "attribute": "CollectionUsageThresholdSupported"
         },
         {
-            "name": "java.lang:name=Metaspace.MemoryManagerNames",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
+            "name": "java.lang:name=PS Survivor Space.MemoryManagerNames",
+            "objectName": "java.lang:name=PS Survivor Space,type=MemoryPool",
             "attribute": "MemoryManagerNames"
         },
         {
-            "name": "java.lang:name=Metaspace.Name",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
+            "name": "java.lang:name=PS Survivor Space.Name",
+            "objectName": "java.lang:name=PS Survivor Space,type=MemoryPool",
             "attribute": "Name"
         },
         {
-            "name": "java.lang:name=Metaspace.ObjectName",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
+            "name": "java.lang:name=PS Survivor Space.ObjectName",
+            "objectName": "java.lang:name=PS Survivor Space,type=MemoryPool",
             "attribute": "ObjectName"
         },
         {
-            "name": "java.lang:name=Metaspace.PeakUsage",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
+            "name": "java.lang:name=PS Survivor Space.PeakUsage",
+            "objectName": "java.lang:name=PS Survivor Space,type=MemoryPool",
             "attribute": "PeakUsage"
         },
         {
-            "name": "java.lang:name=Metaspace.Type",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
+            "name": "java.lang:name=PS Survivor Space.Type",
+            "objectName": "java.lang:name=PS Survivor Space,type=MemoryPool",
             "attribute": "Type"
         },
         {
-            "name": "java.lang:name=Metaspace.Usage",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
+            "name": "java.lang:name=PS Survivor Space.Usage",
+            "objectName": "java.lang:name=PS Survivor Space,type=MemoryPool",
             "attribute": "Usage"
         },
         {
-            "name": "java.lang:name=Metaspace.UsageThreshold",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
+            "name": "java.lang:name=PS Survivor Space.UsageThreshold",
+            "objectName": "java.lang:name=PS Survivor Space,type=MemoryPool",
             "attribute": "UsageThreshold"
         },
         {
-            "name": "java.lang:name=Metaspace.UsageThresholdCount",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
+            "name": "java.lang:name=PS Survivor Space.UsageThresholdCount",
+            "objectName": "java.lang:name=PS Survivor Space,type=MemoryPool",
             "attribute": "UsageThresholdCount"
         },
         {
-            "name": "java.lang:name=Metaspace.UsageThresholdExceeded",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
+            "name": "java.lang:name=PS Survivor Space.UsageThresholdExceeded",
+            "objectName": "java.lang:name=PS Survivor Space,type=MemoryPool",
             "attribute": "UsageThresholdExceeded"
         },
         {
-            "name": "java.lang:name=Metaspace.UsageThresholdSupported",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
+            "name": "java.lang:name=PS Survivor Space.UsageThresholdSupported",
+            "objectName": "java.lang:name=PS Survivor Space,type=MemoryPool",
             "attribute": "UsageThresholdSupported"
         },
         {
-            "name": "java.lang:name=Metaspace.Valid",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
-            "attribute": "Valid"
-        },
-        {
-            "name": "java.lang:name=Metaspace.CollectionUsage",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
-            "attribute": "CollectionUsage"
-        },
-        {
-            "name": "java.lang:name=Metaspace.CollectionUsageThreshold",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
-            "attribute": "CollectionUsageThreshold"
-        },
-        {
-            "name": "java.lang:name=Metaspace.CollectionUsageThresholdCount",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
-            "attribute": "CollectionUsageThresholdCount"
-        },
-        {
-            "name": "java.lang:name=Metaspace.CollectionUsageThresholdExceeded",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
-            "attribute": "CollectionUsageThresholdExceeded"
-        },
-        {
-            "name": "java.lang:name=Metaspace.CollectionUsageThresholdSupported",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
-            "attribute": "CollectionUsageThresholdSupported"
-        },
-        {
-            "name": "java.lang:name=Metaspace.MemoryManagerNames",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
-            "attribute": "MemoryManagerNames"
-        },
-        {
-            "name": "java.lang:name=Metaspace.Name",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
-            "attribute": "Name"
-        },
-        {
-            "name": "java.lang:name=Metaspace.ObjectName",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
-            "attribute": "ObjectName"
-        },
-        {
-            "name": "java.lang:name=Metaspace.PeakUsage",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
-            "attribute": "PeakUsage"
-        },
-        {
-            "name": "java.lang:name=Metaspace.Type",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
-            "attribute": "Type"
-        },
-        {
-            "name": "java.lang:name=Metaspace.Usage",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
-            "attribute": "Usage"
-        },
-        {
-            "name": "java.lang:name=Metaspace.UsageThreshold",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
-            "attribute": "UsageThreshold"
-        },
-        {
-            "name": "java.lang:name=Metaspace.UsageThresholdCount",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
-            "attribute": "UsageThresholdCount"
-        },
-        {
-            "name": "java.lang:name=Metaspace.UsageThresholdExceeded",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
-            "attribute": "UsageThresholdExceeded"
-        },
-        {
-            "name": "java.lang:name=Metaspace.UsageThresholdSupported",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
-            "attribute": "UsageThresholdSupported"
-        },
-        {
-            "name": "java.lang:name=Metaspace.Valid",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
-            "attribute": "Valid"
-        },
-        {
-            "name": "java.lang:name=Metaspace.CollectionUsage",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
-            "attribute": "CollectionUsage"
-        },
-        {
-            "name": "java.lang:name=Metaspace.CollectionUsageThreshold",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
-            "attribute": "CollectionUsageThreshold"
-        },
-        {
-            "name": "java.lang:name=Metaspace.CollectionUsageThresholdCount",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
-            "attribute": "CollectionUsageThresholdCount"
-        },
-        {
-            "name": "java.lang:name=Metaspace.CollectionUsageThresholdExceeded",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
-            "attribute": "CollectionUsageThresholdExceeded"
-        },
-        {
-            "name": "java.lang:name=Metaspace.CollectionUsageThresholdSupported",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
-            "attribute": "CollectionUsageThresholdSupported"
-        },
-        {
-            "name": "java.lang:name=Metaspace.MemoryManagerNames",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
-            "attribute": "MemoryManagerNames"
-        },
-        {
-            "name": "java.lang:name=Metaspace.Name",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
-            "attribute": "Name"
-        },
-        {
-            "name": "java.lang:name=Metaspace.ObjectName",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
-            "attribute": "ObjectName"
-        },
-        {
-            "name": "java.lang:name=Metaspace.PeakUsage",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
-            "attribute": "PeakUsage"
-        },
-        {
-            "name": "java.lang:name=Metaspace.Type",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
-            "attribute": "Type"
-        },
-        {
-            "name": "java.lang:name=Metaspace.Usage",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
-            "attribute": "Usage"
-        },
-        {
-            "name": "java.lang:name=Metaspace.UsageThreshold",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
-            "attribute": "UsageThreshold"
-        },
-        {
-            "name": "java.lang:name=Metaspace.UsageThresholdCount",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
-            "attribute": "UsageThresholdCount"
-        },
-        {
-            "name": "java.lang:name=Metaspace.UsageThresholdExceeded",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
-            "attribute": "UsageThresholdExceeded"
-        },
-        {
-            "name": "java.lang:name=Metaspace.UsageThresholdSupported",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
-            "attribute": "UsageThresholdSupported"
-        },
-        {
-            "name": "java.lang:name=Metaspace.Valid",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
-            "attribute": "Valid"
-        },
-        {
-            "name": "java.lang:name=Metaspace.CollectionUsage",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
-            "attribute": "CollectionUsage"
-        },
-        {
-            "name": "java.lang:name=Metaspace.CollectionUsageThreshold",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
-            "attribute": "CollectionUsageThreshold"
-        },
-        {
-            "name": "java.lang:name=Metaspace.CollectionUsageThresholdCount",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
-            "attribute": "CollectionUsageThresholdCount"
-        },
-        {
-            "name": "java.lang:name=Metaspace.CollectionUsageThresholdExceeded",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
-            "attribute": "CollectionUsageThresholdExceeded"
-        },
-        {
-            "name": "java.lang:name=Metaspace.CollectionUsageThresholdSupported",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
-            "attribute": "CollectionUsageThresholdSupported"
-        },
-        {
-            "name": "java.lang:name=Metaspace.MemoryManagerNames",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
-            "attribute": "MemoryManagerNames"
-        },
-        {
-            "name": "java.lang:name=Metaspace.Name",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
-            "attribute": "Name"
-        },
-        {
-            "name": "java.lang:name=Metaspace.ObjectName",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
-            "attribute": "ObjectName"
-        },
-        {
-            "name": "java.lang:name=Metaspace.PeakUsage",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
-            "attribute": "PeakUsage"
-        },
-        {
-            "name": "java.lang:name=Metaspace.Type",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
-            "attribute": "Type"
-        },
-        {
-            "name": "java.lang:name=Metaspace.Usage",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
-            "attribute": "Usage"
-        },
-        {
-            "name": "java.lang:name=Metaspace.UsageThreshold",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
-            "attribute": "UsageThreshold"
-        },
-        {
-            "name": "java.lang:name=Metaspace.UsageThresholdCount",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
-            "attribute": "UsageThresholdCount"
-        },
-        {
-            "name": "java.lang:name=Metaspace.UsageThresholdExceeded",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
-            "attribute": "UsageThresholdExceeded"
-        },
-        {
-            "name": "java.lang:name=Metaspace.UsageThresholdSupported",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
-            "attribute": "UsageThresholdSupported"
-        },
-        {
-            "name": "java.lang:name=Metaspace",
-            "objectName": "java.lang:name=Metaspace,type=MemoryPool",
+            "name": "java.lang:name=PS Survivor Space.Valid",
+            "objectName": "java.lang:name=PS Survivor Space,type=MemoryPool",
             "attribute": "Valid"
         },
         {
@@ -579,7 +629,7 @@
             "attribute": "UnloadedClassCount"
         },
         {
-            "name": "java.lang:type=ClassLoading",
+            "name": "java.lang:type=ClassLoading.Verbose",
             "objectName": "java.lang:type=ClassLoading",
             "attribute": "Verbose"
         },
@@ -599,7 +649,7 @@
             "attribute": "ObjectName"
         },
         {
-            "name": "java.lang:type=Compilation",
+            "name": "java.lang:type=Compilation.TotalCompilationTime",
             "objectName": "java.lang:type=Compilation",
             "attribute": "TotalCompilationTime"
         },
@@ -624,7 +674,7 @@
             "attribute": "ObjectPendingFinalizationCount"
         },
         {
-            "name": "java.lang:type=Memory",
+            "name": "java.lang:type=Memory.Verbose",
             "objectName": "java.lang:type=Memory",
             "attribute": "Verbose"
         },
@@ -704,7 +754,7 @@
             "attribute": "TotalSwapSpaceSize"
         },
         {
-            "name": "java.lang:type=OperatingSystem",
+            "name": "java.lang:type=OperatingSystem.Version",
             "objectName": "java.lang:type=OperatingSystem",
             "attribute": "Version"
         },
@@ -789,7 +839,7 @@
             "attribute": "VmVendor"
         },
         {
-            "name": "java.lang:type=Runtime",
+            "name": "java.lang:type=Runtime.VmVersion",
             "objectName": "java.lang:type=Runtime",
             "attribute": "VmVersion"
         },
@@ -879,7 +929,7 @@
             "attribute": "ThreadCpuTimeSupported"
         },
         {
-            "name": "java.lang:type=Threading",
+            "name": "java.lang:type=Threading.TotalStartedThreadCount",
             "objectName": "java.lang:type=Threading",
             "attribute": "TotalStartedThreadCount"
         },
@@ -939,7 +989,7 @@
             "attribute": "SnapshotSize"
         },
         {
-            "name": "spark.worker.CodeGenerator.compilationTime",
+            "name": "spark.worker.CodeGenerator.compilationTime.StdDev",
             "objectName": "metrics:name=spark.0.CodeGenerator.compilationTime,type=histograms",
             "attribute": "StdDev"
         },
@@ -999,7 +1049,7 @@
             "attribute": "SnapshotSize"
         },
         {
-            "name": "spark.worker.CodeGenerator.generatedClassSize",
+            "name": "spark.worker.CodeGenerator.generatedClassSize.StdDev",
             "objectName": "metrics:name=spark.0.CodeGenerator.generatedClassSize,type=histograms",
             "attribute": "StdDev"
         },
@@ -1059,7 +1109,7 @@
             "attribute": "SnapshotSize"
         },
         {
-            "name": "spark.worker.CodeGenerator.generatedMethodSize",
+            "name": "spark.worker.CodeGenerator.generatedMethodSize.StdDev",
             "objectName": "metrics:name=spark.0.CodeGenerator.generatedMethodSize,type=histograms",
             "attribute": "StdDev"
         },
@@ -1119,7 +1169,7 @@
             "attribute": "SnapshotSize"
         },
         {
-            "name": "spark.worker.CodeGenerator.sourceCodeSize",
+            "name": "spark.worker.CodeGenerator.sourceCodeSize.StdDev",
             "objectName": "metrics:name=spark.0.CodeGenerator.sourceCodeSize,type=histograms",
             "attribute": "StdDev"
         },
