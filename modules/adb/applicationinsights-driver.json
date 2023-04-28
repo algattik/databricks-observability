@@ -3439,11 +3439,6 @@
             "attribute": "Count"
         },
         {
-            "name": "spark.driver.appStatus.tasks.blackListedExecutors",
-            "objectName": "metrics:name=spark.driver.appStatus.tasks.blackListedExecutors,type=counters",
-            "attribute": "Count"
-        },
-        {
             "name": "spark.driver.appStatus.tasks.completedTasks",
             "objectName": "metrics:name=spark.driver.appStatus.tasks.completedTasks,type=counters",
             "attribute": "Count"
@@ -3466,11 +3461,6 @@
         {
             "name": "spark.driver.appStatus.tasks.skippedTasks",
             "objectName": "metrics:name=spark.driver.appStatus.tasks.skippedTasks,type=counters",
-            "attribute": "Count"
-        },
-        {
-            "name": "spark.driver.appStatus.tasks.unblackListedExecutors",
-            "objectName": "metrics:name=spark.driver.appStatus.tasks.unblackListedExecutors,type=counters",
             "attribute": "Count"
         },
         {
