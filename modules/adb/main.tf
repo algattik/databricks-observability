@@ -93,7 +93,10 @@ resource "databricks_cluster" "shared_autoscaling" {
     "spark.executor.extraJavaOptions" : "${local.java_options}",
     "spark.driver.extraJavaOptions" : "${local.java_options}",
     "spark.metrics.conf.*.sink.jmx.class" : "org.apache.spark.metrics.sink.JmxSink",
-    "spark.metrics.namespace" : "databricks",
+    "spark.metrics.namespace" : "spark",
+    "spark.metrics.appStatusSource.enabled" : "true",
+    # TODO enable streaming metrics - currently not working
+    # "spark.sql.streaming.metricsEnabled" : "true",
   }
 
   spark_env_vars = {
