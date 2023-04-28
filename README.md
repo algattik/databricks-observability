@@ -73,6 +73,16 @@ customMetrics
 
 ![](assets/memory.png)
 
+```kql
+customMetrics
+| extend ip = iif(tobool(customDimensions["DB_IS_DRIVER"]), "driver", customDimensions["DB_CONTAINER_IP"])
+| where name in ('spark.driver.ExecutorMetrics.OnHeapUnifiedMemory', 'spark.worker.ExecutorMetrics.OnHeapUnifiedMemory')
+| project timestamp, ip, heap_memory_bytes = value
+| render timechart
+```
+
+![Heap memory](assets/heap_memory.png)
+
 ### Message processing time
 
 ```kql
