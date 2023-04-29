@@ -3,9 +3,9 @@
 set -euxo pipefail
 
 pushd deployments/infrastructure
-    # terraform init
-    # terraform apply -auto-approve -refresh=false
-    # terraform output > ../workspace/infrastructure.auto.tfvars
+    terraform init
+    terraform apply -auto-approve -refresh=false
+    terraform output > ../workspace/infrastructure.auto.tfvars
     databricks_workspace_host=$(terraform output -raw databricks_workspace_host)
 popd
 
@@ -20,6 +20,6 @@ set +x
 set -x
 
 pushd deployments/workspace
-    # terraform init
+    terraform init
     terraform apply -auto-approve -refresh=false
 popd
