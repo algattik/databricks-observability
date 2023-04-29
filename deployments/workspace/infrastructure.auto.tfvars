@@ -1,0 +1,8 @@
+app_insights_name = "appi-demo-adbobs"
+databricks_workspace_host = "https://adb-2849023724119149.9.azuredatabricks.net"
+databricks_workspace_name = "adbr-demo-adbobs"
+key_vault_name = "kv-demo-adbobs"
+metastore_jdbc_connection_string = "jdbc:sqlserver://sqlserver-demo-adbobs.database.windows.net:1433;database=metastoredb"
+metastore_password_secret_name = "db-password"
+metastore_username_secret_name = "db-username"
+resource_group_name = "rg-demo-adbobs"

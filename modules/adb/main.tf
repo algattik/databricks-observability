@@ -7,31 +7,56 @@ terraform {
   }
 }
 
+locals {
+  secret_scope = "VaultScope3"
+}
+
 data "databricks_node_type" "smallest" {
   local_disk = true
 }
 
 data "databricks_spark_version" "latest_lts" {
   long_term_support = true
-  depends_on        = [azurerm_databricks_workspace.adb]
 }
 
 data "azurerm_key_vault_secret" "db-un" {
-  name         = var.username_secret_name
+  name         = var.metastore_username_secret_name
   key_vault_id = var.key_vault_id
 }
-
 
 data "azurerm_key_vault_secret" "db-pw" {
-  name         = var.password_secret_name
+  name         = var.metastore_password_secret_name
   key_vault_id = var.key_vault_id
 }
 
-resource "azurerm_databricks_workspace" "adb" {
-  name                = format("adb-%s-%s", var.name_part1, var.name_part2)
-  resource_group_name = var.resource_group_name
-  location            = var.location
-  sku                 = "premium"
+resource "null_resource" "secret_scope" {
+  triggers = {
+    databricks_cli_profile = var.databricks_cli_profile
+    secret_scope           = local.secret_scope
+    key_vault_id           = var.key_vault_id
+    key_vault_uri          = var.key_vault_uri
+  }
+
+  provisioner "local-exec" {
+    command = <<EOT
+      databricks secrets create-scope \
+        --profile "${self.triggers.databricks_cli_profile}" \
+        --scope "${self.triggers.secret_scope}" \
+        --scope-backend-type AZURE_KEYVAULT \
+        --resource-id "${self.triggers.key_vault_id}" \
+        --dns-name "${self.triggers.key_vault_uri}"
+    EOT
+  }
+
+  provisioner "local-exec" {
+    when = destroy
+
+    command = <<EOT
+      databricks secrets delete-scope \
+        --profile "${self.triggers.databricks_cli_profile}" \
+        --scope "${self.triggers.secret_scope}"
+    EOT
+  }
 }
 
 resource "databricks_dbfs_file" "log4j2-properties" {
@@ -40,7 +65,7 @@ resource "databricks_dbfs_file" "log4j2-properties" {
 }
 
 resource "databricks_dbfs_file" "agent" {
-  source = "applicationinsights-agent.jar"
+  source = "../../applicationinsights-agent.jar"
   path   = "/observability/applicationinsights-agent.jar"
 }
 
@@ -75,7 +100,7 @@ locals {
 
 
 resource "databricks_cluster" "shared_autoscaling" {
-  cluster_name            = format("%s-%s-cluster", var.name_part1, var.name_part2)
+  cluster_name            = "demo-cluster"
   spark_version           = data.databricks_spark_version.latest_lts.id
   node_type_id            = data.databricks_node_type.smallest.id
   autotermination_minutes = 20
@@ -86,7 +111,7 @@ resource "databricks_cluster" "shared_autoscaling" {
   spark_conf = {
     # Metastore config
     "spark.hadoop.javax.jdo.option.ConnectionDriverName" : "com.microsoft.sqlserver.jdbc.SQLServerDriver",
-    "spark.hadoop.javax.jdo.option.ConnectionURL" : var.metastore_connection_string
+    "spark.hadoop.javax.jdo.option.ConnectionURL" : var.metastore_jdbc_connection_string
     "spark.hadoop.javax.jdo.option.ConnectionUserName" : data.azurerm_key_vault_secret.db-un.value,
     "spark.hadoop.javax.jdo.option.ConnectionPassword" : data.azurerm_key_vault_secret.db-pw.value,
     "datanucleus.fixedDatastore" : false,
