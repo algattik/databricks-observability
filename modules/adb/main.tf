@@ -135,8 +135,8 @@ resource "databricks_notebook" "sample-notebook" {
   path   = "/Shared/sample-notebook"
 }
 
-resource "databricks_job" "sql_aggregation_job" {
-  name = "Periodic job"
+resource "databricks_job" "sample-job" {
+  name = "Sample unreliable job"
 
   task {
     task_key = "a"
