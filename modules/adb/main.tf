@@ -113,7 +113,7 @@ resource "databricks_cluster" "shared_autoscaling" {
     "spark.hadoop.javax.jdo.option.ConnectionDriverName" : "com.microsoft.sqlserver.jdbc.SQLServerDriver",
     "spark.hadoop.javax.jdo.option.ConnectionURL" : var.metastore_jdbc_connection_string
     "spark.hadoop.javax.jdo.option.ConnectionUserName" : data.azurerm_key_vault_secret.db-un.value,
-    "spark.hadoop.javax.jdo.option.ConnectionPassword" : data.azurerm_key_vault_secret.db-pw.value,
+    "spark.hadoop.javax.jdo.option.ConnectionPassword" : " {{secrets/${local.secret_scope}/${var.metastore_password_secret_name}}}",
     "datanucleus.fixedDatastore" : false,
     "datanucleus.autoCreateSchema" : true,
     "hive.metastore.schema.verification" : false,
