@@ -8,14 +8,11 @@ else
   type="executor"
 fi
 
-echo "Installing envsubst and jq"
-apt-get install -y gettext jq
-
-echo "Generating /tmp/template.json"
-envsubst < /dbfs/observability/applicationinsights-$type.json > /tmp/template.json
+echo "Installing envsubst"
+apt-get install -y gettext
 
 echo "Generating /tmp/applicationinsights.json"
-/dbfs/observability/expand-appinsights-config.py -w "${MAX_WORKERS:-8}" /tmp/template.json /tmp/applicationinsights.json
+envsubst < /dbfs/observability/applicationinsights-$type.json > /tmp/applicationinsights.json
 
 echo "Copying /tmp/applicationinsights-agent.jar"
 cp /dbfs/observability/applicationinsights-agent.jar /tmp/
