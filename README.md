@@ -45,9 +45,9 @@ The cluster is configured to use an external Hive metastore in Azure SQL Databas
 
 The solution contains a cluster node initialization script that generates a configuration file for the agent, based on [templates](modules/adb) in the solution.
 
-Spark JMX MBeans on executor nodes are [prefixed with a configurable namespace named followed by the executor ID](https://github.com/apache/spark/blob/04816474bfcc05c7d90f7b7e8d35184d95c78cbd/core/src/main/scala/org/apache/spark/metrics/MetricsSystem.scala#L131), which is a different number on on every worker node. The Azure Monitor agent [does not allow regular expressions](https://learn.microsoft.com/en-us/azure/azure-monitor/app/java-jmx-metrics-configuration#types-of-collected-metrics-and-available-configuration-options) when defining JMX beans to monitor, and init scripts cannot know which executor ID will be assigned to the node they run on. Therefore, as a workaround, the agent configuration collects data for each MBean numbered up to the maximum number of nodes in the cluster. This value must be passed as the `MAX_WORKERS` cluster environment variable.
+Spark JMX MBeans on executor nodes are [prefixed with a configurable namespace named followed by the executor ID](https://github.com/apache/spark/blob/04816474bfcc05c7d90f7b7e8d35184d95c78cbd/core/src/main/scala/org/apache/spark/metrics/MetricsSystem.scala#L131), which is a different number on on every worker node. The Azure Monitor agent allows using an [object name pattern](https://docs.oracle.com/javase/8/docs/api/javax/management/ObjectName.html) when defining JMX beans to monitor, though this feature is [undocumented as of April 2023](https://learn.microsoft.com/en-us/azure/azure-monitor/app/java-jmx-metrics-configuration#types-of-collected-metrics-and-available-configuration-options) (a documentation update was submitted). Therefore, the agent configuration collects data for each MBean numbered up to the maximum number of nodes in the cluster. This value must be passed as the `MAX_WORKERS` cluster environment variable.
 
-For example, for the JMX metrics MBean named with the pattern `metrics:name=spark.<executorId>.executor.threadpool.startedTasks,type=gauges` , if `MAX_WORKERS=3`, the agent is configured on every executor node to monitor the MBeans:
+For example, the JMX metrics MBean pattern `metrics:name=spark.*.executor.threadpool.startedTasks,type=gauges` would match each of the following MBeans on a cluster with 3 worker nodes:
 
 ```
 metrics:name=spark.0.executor.threadpool.startedTasks,type=gauges
@@ -61,7 +61,7 @@ All MBeans are set up to report the same Application Insights metric name:
 spark.worker.executor.threadpool.startedTasks
 ```
 
-The agent ignores metrics for non-existing MBeans on each worker. Each executor agent reports its metric correctly under the common Application Insights metric name, so that the values can be tallied up.
+Each executor agent reports its metric under the common Application Insights metric name, so that the values can be tallied up.
 
 ## Logs and Metrics
 
