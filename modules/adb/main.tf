@@ -7,10 +7,6 @@ terraform {
   }
 }
 
-data "databricks_node_type" "smallest" {
-  local_disk = true
-}
-
 data "databricks_spark_version" "latest_lts" {
   long_term_support = true
   depends_on        = [azurerm_databricks_workspace.adb]
@@ -72,7 +68,7 @@ locals {
 resource "databricks_cluster" "shared_autoscaling" {
   cluster_name            = format("%s-%s-cluster", var.name_part1, var.name_part2)
   spark_version           = data.databricks_spark_version.latest_lts.id
-  node_type_id            = data.databricks_node_type.smallest.id
+  node_type_id            = "Standard_DS3_v2"
   autotermination_minutes = 20
   autoscale {
     min_workers = 2
