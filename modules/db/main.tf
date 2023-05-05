@@ -8,11 +8,10 @@ resource "random_password" "password" {
   special = true
 }
 
-resource "azurerm_key_vault_secret" "db_un" {
-  name         = "db-username"
-  value        = random_id.username.hex
-  key_vault_id = var.key_vault_id
+locals {
+  username = random_id.username.hex
 }
+
 resource "azurerm_key_vault_secret" "db_pw" {
   name         = "db-password"
   value        = random_password.password.result
@@ -24,7 +23,7 @@ resource "azurerm_mssql_server" "sql-server" {
   resource_group_name          = var.resource_group_name
   location                     = var.location
   version                      = "12.0"
-  administrator_login          = azurerm_key_vault_secret.db_un.value
+  administrator_login          = local.username
   administrator_login_password = azurerm_key_vault_secret.db_pw.value
 }
 

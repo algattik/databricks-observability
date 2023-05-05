@@ -12,14 +12,8 @@ data "databricks_spark_version" "latest_lts" {
   depends_on        = [azurerm_databricks_workspace.adb]
 }
 
-data "azurerm_key_vault_secret" "db-un" {
-  name         = var.username_secret_name
-  key_vault_id = var.key_vault_id
-}
-
-
 data "azurerm_key_vault_secret" "db-pw" {
-  name         = var.password_secret_name
+  name         = var.metastore_password_secret_name
   key_vault_id = var.key_vault_id
 }
 
@@ -28,6 +22,16 @@ resource "azurerm_databricks_workspace" "adb" {
   resource_group_name = var.resource_group_name
   location            = var.location
   sku                 = "premium"
+}
+
+resource "databricks_secret_scope" "default" {
+  name = "terraform-demo-scope"
+}
+
+resource "databricks_secret" "metastore-password" {
+  key          = var.metastore_password_secret_name
+  string_value = data.azurerm_key_vault_secret.db-pw.value
+  scope        = databricks_secret_scope.default.name
 }
 
 resource "databricks_dbfs_file" "log4j2-properties" {
@@ -78,8 +82,8 @@ resource "databricks_cluster" "shared_autoscaling" {
     # Metastore config
     "spark.hadoop.javax.jdo.option.ConnectionDriverName" : "com.microsoft.sqlserver.jdbc.SQLServerDriver",
     "spark.hadoop.javax.jdo.option.ConnectionURL" : var.metastore_connection_string
-    "spark.hadoop.javax.jdo.option.ConnectionUserName" : data.azurerm_key_vault_secret.db-un.value,
-    "spark.hadoop.javax.jdo.option.ConnectionPassword" : data.azurerm_key_vault_secret.db-pw.value,
+    "spark.hadoop.javax.jdo.option.ConnectionUserName" : var.metastore_username
+    "spark.hadoop.javax.jdo.option.ConnectionPassword" : "{{secrets/${databricks_secret_scope.default.name}/${databricks_secret.metastore-password.name}}}",
     "datanucleus.fixedDatastore" : false,
     "datanucleus.autoCreateSchema" : true,
     "hive.metastore.schema.verification" : false,
