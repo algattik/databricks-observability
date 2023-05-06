@@ -11,10 +11,10 @@ variable "resource_group_name" {
 variable "key_vault_id" {
 }
 
-variable "username_secret_name" {
+variable "metastore_username" {
 }
 
-variable "password_secret_name" {
+variable "metastore_password_secret_name" {
 }
 
 variable "metastore_connection_string" {
