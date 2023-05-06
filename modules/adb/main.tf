@@ -29,8 +29,14 @@ resource "databricks_secret_scope" "default" {
 }
 
 resource "databricks_secret" "metastore-password" {
-  key          = var.metastore_password_secret_name
+  key          = "metastore-password"
   string_value = data.azurerm_key_vault_secret.db-pw.value
+  scope        = databricks_secret_scope.default.name
+}
+
+resource "databricks_secret" "app-insights-connection-string" {
+  key          = "app-insights-connection-string"
+  string_value = var.app_insights_connection_string
   scope        = databricks_secret_scope.default.name
 }
 
@@ -80,27 +86,27 @@ resource "databricks_cluster" "shared_autoscaling" {
   }
   spark_conf = {
     # Metastore config
-    "spark.hadoop.javax.jdo.option.ConnectionDriverName" : "com.microsoft.sqlserver.jdbc.SQLServerDriver",
+    "spark.hadoop.javax.jdo.option.ConnectionDriverName" : "com.microsoft.sqlserver.jdbc.SQLServerDriver"
     "spark.hadoop.javax.jdo.option.ConnectionURL" : var.metastore_connection_string
     "spark.hadoop.javax.jdo.option.ConnectionUserName" : var.metastore_username
-    "spark.hadoop.javax.jdo.option.ConnectionPassword" : "{{secrets/${databricks_secret_scope.default.name}/${databricks_secret.metastore-password.key}}}",
-    "datanucleus.fixedDatastore" : false,
-    "datanucleus.autoCreateSchema" : true,
-    "hive.metastore.schema.verification" : false,
-    "datanucleus.schema.autoCreateTables" : true,
+    "spark.hadoop.javax.jdo.option.ConnectionPassword" : databricks_secret.metastore-password.config_reference
+    "datanucleus.fixedDatastore" : false
+    "datanucleus.autoCreateSchema" : true
+    "hive.metastore.schema.verification" : false
+    "datanucleus.schema.autoCreateTables" : true
 
     # Observability
-    "spark.executor.extraJavaOptions" : "${local.java_options}",
-    "spark.driver.extraJavaOptions" : "${local.java_options}",
-    "spark.metrics.conf.*.sink.jmx.class" : "org.apache.spark.metrics.sink.JmxSink",
-    "spark.metrics.namespace" : "spark",
-    "spark.metrics.appStatusSource.enabled" : "true",
+    "spark.executor.extraJavaOptions" : "${local.java_options}"
+    "spark.driver.extraJavaOptions" : "${local.java_options}"
+    "spark.metrics.conf.*.sink.jmx.class" : "org.apache.spark.metrics.sink.JmxSink"
+    "spark.metrics.namespace" : "spark"
+    "spark.metrics.appStatusSource.enabled" : "true"
     # TODO enable streaming metrics - currently not working
-    # "spark.sql.streaming.metricsEnabled" : "true",
+    # "spark.sql.streaming.metricsEnabled" : "true"
   }
 
   spark_env_vars = {
-    APPLICATIONINSIGHTS_CONNECTION_STRING = var.app_insights_connection_string
+    APPLICATIONINSIGHTS_CONNECTION_STRING = databricks_secret.app-insights-connection-string.config_reference
   }
 
   init_scripts {
@@ -114,7 +120,7 @@ resource "databricks_cluster" "shared_autoscaling" {
     databricks_dbfs_file.agent,
     databricks_dbfs_file.init-observability,
     databricks_dbfs_file.applicationinsights-driver-json,
-    databricks_dbfs_file.applicationinsights-executor-json
+    databricks_dbfs_file.applicationinsights-executor-json,
   ]
 
   cluster_log_conf {
