@@ -57,7 +57,7 @@ customMetrics
 | render timechart
 ```
 
-![tasks](tasks.png)
+![tasks](assets/tasks.png)
 
 ### Memory
 
