@@ -21,7 +21,7 @@ provider "azurerm" {
 }
 
 provider "databricks" {
-  azure_workspace_resource_id = module.adb.adb_id
+  azure_workspace_resource_id = module.databricks.adb_id
 }
 
 resource "random_id" "storage_account" {
@@ -48,8 +48,8 @@ module "app-insights" {
   location            = var.location
 }
 
-module "adb" {
-  source                         = "./modules/adb"
+module "databricks" {
+  source                         = "./modules/databricks"
   resource_group_name            = module.rg.name
   name_part1                     = local.name_part1
   name_part2                     = local.name_part2
