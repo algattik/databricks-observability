@@ -28,7 +28,7 @@ invalidOp = 0 / (datetime.now().minute % 2) # causes division by zero at even-nu
 
 # COMMAND ----------
 
-# MAGIC %md Run an operation that takes about 1 to 5 minutes to complete:
+# MAGIC %md Run an operation that takes a few minutes to complete:
 
 # COMMAND ----------
 
