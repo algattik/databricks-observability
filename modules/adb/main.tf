@@ -100,8 +100,8 @@ locals {
 }
 
 
-resource "databricks_cluster" "shared_autoscaling" {
-  cluster_name            = format("%s-%s-cluster", var.name_part1, var.name_part2)
+resource "databricks_cluster" "default" {
+  cluster_name            = "demo-cluster"
   spark_version           = data.databricks_spark_version.latest_lts.id
   node_type_id            = "Standard_DS3_v2"
   autotermination_minutes = 20
@@ -170,7 +170,7 @@ resource "databricks_job" "sql_aggregation_job" {
   task {
     task_key = "a"
 
-    existing_cluster_id = databricks_cluster.shared_autoscaling.id
+    existing_cluster_id = databricks_cluster.default.id
 
     notebook_task {
       notebook_path = databricks_notebook.sample-notebook.path

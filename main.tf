@@ -24,26 +24,35 @@ provider "databricks" {
   azure_workspace_resource_id = module.adb.adb_id
 }
 
+resource "random_id" "storage_account" {
+  byte_length = 8
+}
+
+locals {
+  name_part1 = var.base_resource_name
+  name_part2 = lower(random_id.storage_account.hex)
+}
+
 module "rg" {
   source     = "./modules/resource-group"
-  name_part1 = var.name_part1
-  name_part2 = var.name_part2
+  name_part1 = local.name_part1
+  name_part2 = local.name_part2
   location   = var.location
 }
 
 module "app-insights" {
   source              = "./modules/app-insights"
   resource_group_name = module.rg.name
-  name_part1          = var.name_part1
-  name_part2          = var.name_part2
+  name_part1          = local.name_part1
+  name_part2          = local.name_part2
   location            = var.location
 }
 
 module "adb" {
   source                         = "./modules/adb"
   resource_group_name            = module.rg.name
-  name_part1                     = var.name_part1
-  name_part2                     = var.name_part2
+  name_part1                     = local.name_part1
+  name_part2                     = local.name_part2
   location                       = var.location
   key_vault_id                   = module.keyvault.kv_id
   metastore_connection_string    = module.db.jdbc_connection_string
@@ -55,8 +64,8 @@ module "adb" {
 module "keyvault" {
   source              = "./modules/keyvault"
   resource_group_name = module.rg.name
-  name_part1          = var.name_part1
-  name_part2          = var.name_part2
+  name_part1          = local.name_part1
+  name_part2          = local.name_part2
   location            = var.location
 }
 
@@ -64,8 +73,8 @@ module "keyvault" {
 module "db" {
   source              = "./modules/db"
   resource_group_name = module.rg.name
-  name_part1          = var.name_part1
-  name_part2          = var.name_part2
+  name_part1          = local.name_part1
+  name_part2          = local.name_part2
   location            = var.location
   key_vault_id        = module.keyvault.kv_id
 }
