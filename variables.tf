@@ -1,7 +1,4 @@
-variable "name_part1" {
-}
-
-variable "name_part2" {
+variable "base_resource_name" {
 }
 
 variable "location" {

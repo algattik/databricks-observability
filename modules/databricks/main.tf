@@ -17,6 +17,21 @@ data "azurerm_key_vault_secret" "db-pw" {
   key_vault_id = var.key_vault_id
 }
 
+resource "azurerm_storage_account" "dbstorage" {
+  name                     = format("st%s%s", var.name_part1, var.name_part2)
+  resource_group_name      = var.resource_group_name
+  location                 = var.location
+  account_tier             = "Standard"
+  account_replication_type = "LRS"
+  min_tls_version          = "TLS1_2"
+}
+
+resource "azurerm_storage_container" "dbstorage" {
+  name                  = "data"
+  storage_account_name  = azurerm_storage_account.dbstorage.name
+  container_access_type = "private"
+}
+
 resource "azurerm_databricks_workspace" "adb" {
   name                = format("adb-%s-%s", var.name_part1, var.name_part2)
   resource_group_name = var.resource_group_name
@@ -40,6 +55,12 @@ resource "databricks_secret" "app-insights-connection-string" {
   scope        = databricks_secret_scope.default.name
 }
 
+resource "databricks_secret" "storage-key" {
+  key          = "storage-account-key-${azurerm_storage_account.dbstorage.name}"
+  string_value = azurerm_storage_account.dbstorage.primary_access_key
+  scope        = databricks_secret_scope.default.name
+}
+
 resource "databricks_dbfs_file" "log4j2-properties" {
   source = "${path.module}/log4j2.properties"
   path   = "/observability/log4j2.properties"
@@ -50,6 +71,10 @@ resource "databricks_dbfs_file" "agent" {
   path   = "/observability/applicationinsights-agent.jar"
 }
 
+# TODO: move this to a databricks_workspace_file after
+# https://github.com/databricks/terraform-provider-databricks/pull/2266
+# is merged. see:
+# https://www.databricks.com/blog/securing-databricks-cluster-init-scripts
 resource "databricks_dbfs_file" "init-observability" {
   source = "${path.module}/init-observability.sh"
   path   = "/observability/init-observability.sh"
@@ -75,8 +100,8 @@ locals {
 }
 
 
-resource "databricks_cluster" "shared_autoscaling" {
-  cluster_name            = format("%s-%s-cluster", var.name_part1, var.name_part2)
+resource "databricks_cluster" "default" {
+  cluster_name            = "demo-cluster"
   spark_version           = data.databricks_spark_version.latest_lts.id
   node_type_id            = "Standard_DS3_v2"
   autotermination_minutes = 20
@@ -94,6 +119,10 @@ resource "databricks_cluster" "shared_autoscaling" {
     "datanucleus.autoCreateSchema" : true
     "hive.metastore.schema.verification" : false
     "datanucleus.schema.autoCreateTables" : true
+
+    # Storage access
+    "fs.azure.account.key.${azurerm_storage_account.dbstorage.name}.dfs.core.windows.net" : databricks_secret.storage-key.config_reference
+    "storage_uri" : "abfss://${azurerm_storage_container.dbstorage.name}@${azurerm_storage_account.dbstorage.name}.dfs.core.windows.net"
 
     # Observability
     "spark.executor.extraJavaOptions" : "${local.java_options}"
@@ -141,7 +170,7 @@ resource "databricks_job" "sql_aggregation_job" {
   task {
     task_key = "a"
 
-    existing_cluster_id = databricks_cluster.shared_autoscaling.id
+    existing_cluster_id = databricks_cluster.default.id
 
     notebook_task {
       notebook_path = databricks_notebook.sample-notebook.path

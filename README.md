@@ -20,6 +20,8 @@ The demo is automated and can be deployed using Terraform with a single command.
 
 ## Deploying the solution
 
+Install [Terraform](https://www.terraform.io/downloads.html).
+
 Download the latest [Application Insights Java agent JAR](https://github.com/microsoft/ApplicationInsights-Java/releases) to the project directory.
 
 Rename the file to `applicationinsights-agent.jar`.
@@ -32,6 +34,78 @@ terraform apply
 ```
 
 ⚠️ This sets up a cluster of two nodes, and a recurring job every minute, so that the cluster never automatically shuts down. This will incur high costs if you forget to tear down the resources!
+
+## Destroying the solution
+
+Run:
+
+```shell
+terraform destroy
+```
+
+## Logs and Metrics
+
+In the [Azure Portal](https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/microsoft.insights%2Fcomponents), open the deployed Application Insights resource. Open the `Logs` pane.
+
+Run the sample queries provided to visualize different metrics and logs.
+
+### Tasks
+
+```kql
+customMetrics
+| where name endswith 'Tasks'
+| render timechart
+```
+
+![tasks](assets/tasks.png)
+
+### Memory
+
+```kql
+customMetrics
+| where name startswith "spark"
+| where name contains 'Memory'
+| project-rename memory_bytes = value
+| render timechart
+```
+
+![](assets/memory.png)
+
+```kql
+customMetrics
+| extend ip = iif(tobool(customDimensions["DB_IS_DRIVER"]), "driver", customDimensions["DB_CONTAINER_IP"])
+| where name in ('spark.driver.ExecutorMetrics.OnHeapUnifiedMemory', 'spark.worker.ExecutorMetrics.OnHeapUnifiedMemory')
+| project timestamp, ip, heap_memory_bytes = value
+| render timechart
+```
+
+![Heap memory](assets/heap_memory.png)
+
+### Scheduler message processing time
+
+```kql
+customMetrics
+| where name contains "messageProcessingTime"
+| project-rename messageProcessingTime_ms = value
+| where not(name contains "count")
+| render timechart
+```
+
+![](assets/messageProcessingTime.png)
+
+### Logs
+
+```kql
+traces
+```
+
+![Traces](assets/traces.png)
+
+### Application Map
+
+In Application Insights, open the `Application Map` pane.
+
+![Application Map](assets/application_map.png)
 
 ## About the solution
 
@@ -62,72 +136,6 @@ spark.worker.executor.threadpool.startedTasks
 ```
 
 Each executor agent reports its metric under the common Application Insights metric name, so that the values can be tallied up.
-
-## Logs and Metrics
-
-In the [Azure Portal](https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/microsoft.insights%2Fcomponents), open the deployed Application Insights resource. Open the `Logs` pane.
-
-Run the sample queries provided to visualize different metrics and logs.
-
-### Tasks
-
-```kql
-customMetrics
-| where name endswith 'Tasks'
-| render timechart
-```
-
-![tasks](tasks.png)
-
-### Memory
-
-```kql
-customMetrics
-| where name startswith "spark"
-| where name contains 'Memory'
-| project-rename memory_bytes = value
-| render timechart
-```
-
-![](assets/memory.png)
-
-```kql
-customMetrics
-| extend ip = iif(tobool(customDimensions["DB_IS_DRIVER"]), "driver", customDimensions["DB_CONTAINER_IP"])
-| where name in ('spark.driver.ExecutorMetrics.OnHeapUnifiedMemory', 'spark.worker.ExecutorMetrics.OnHeapUnifiedMemory')
-| project timestamp, ip, heap_memory_bytes = value
-| render timechart
-```
-
-![Heap memory](assets/heap_memory.png)
-
-### Message processing time
-
-```kql
-customMetrics
-| where name contains "messageProcessingTime"
-| project-rename messageProcessingTime_ms = value
-| where not(name contains "count")
-| render timechart
-```
-
-![](assets/messageProcessingTime.png)
-
-### Logs
-
-```kql
-traces
-```
-
-![Traces](assets/traces.png)
-
-### Application Map
-
-In Application Insights, open the `Application Map` pane.
-
-![Application Map](assets/application_map.png)
-
-## More information
 
 The configuration for the `applicationinsights.json` files was initially generated with this [notebook](assets/dump-jmx.ipynb) to collect MBean information from each cluster node.
 
