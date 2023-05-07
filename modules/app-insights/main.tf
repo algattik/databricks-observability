@@ -12,6 +12,6 @@ resource "azurerm_application_insights" "default" {
   name                = format("appi-%s-%s", var.name_part1, var.name_part2)
   resource_group_name = var.resource_group_name
   location            = var.location
-  workspace_id        = azurerm_log_analytics_workspace.example.id
+  workspace_id        = azurerm_log_analytics_workspace.default.id
   application_type    = "other"
 }
