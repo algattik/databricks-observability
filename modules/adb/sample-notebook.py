@@ -7,11 +7,15 @@
 
 # COMMAND ----------
 
-# MAGIC %md Run a Spark job:
+# MAGIC %md Run a Spark job hitting the Azure Data Lake Storage Gen2 account:
 
 # COMMAND ----------
 
-# MAGIC %sql SELECT * FROM samples.nyctaxi.trips LIMIT 10
+(spark.table("samples.nyctaxi.trips")
+.write
+.mode("overwrite")
+.option("path", spark.conf.get("storage_uri") + "/trips")
+.saveAsTable("trips"))
 
 # COMMAND ----------
 
@@ -28,5 +32,34 @@ invalidOp = 0 / (datetime.now().minute % 2) # causes division by zero at even-nu
 
 # COMMAND ----------
 
-from pyspark.sql.functions import *
-spark.range(1,10000000).repartition(10).agg(median('id'), sum('id')).collect()
+import pyspark.sql.functions as F
+from pyspark.ml.feature import VectorAssembler
+from pyspark.ml.regression import GBTRegressor
+
+# COMMAND ----------
+
+# Train/Test splitting
+data = spark.table("trips")
+data = data.withColumn('dayofweek', F.dayofweek(F.col('tpep_pickup_datetime')))
+data = data.withColumn('hour', F.hour(F.col('tpep_pickup_datetime')))
+
+(trainingData, testData) = data.randomSplit([0.7, 0.3], seed=1)
+
+assembler = VectorAssembler(
+    inputCols=['trip_distance', 'dayofweek', 'hour'],
+    outputCol='features')
+    
+trainingData = assembler.setHandleInvalid("skip").transform(trainingData)
+testData = assembler.setHandleInvalid("skip").transform(testData)
+
+# COMMAND ----------
+
+gbt = GBTRegressor(featuresCol='features', labelCol='fare_amount', maxDepth = 15, maxIter = 40, maxMemoryInMB = 2000)
+m = gbt.fit(trainingData)
+predictions = m.transform(testData)
+
+evaluator = RegressionEvaluator(
+    labelCol='fare_amount',  predictionCol="prediction", metricName="rmse")
+
+rmse = evaluator.evaluate(predictions)
+print("RMSE = %g" % rmse)
