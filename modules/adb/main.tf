@@ -122,7 +122,7 @@ resource "databricks_cluster" "default" {
 
     # Storage access
     "fs.azure.account.key.${azurerm_storage_account.dbstorage.name}.dfs.core.windows.net" : databricks_secret.storage-key.config_reference
-    "storage_uri": "abfss://${azurerm_storage_container.dbstorage.name}@${azurerm_storage_account.dbstorage.name}.dfs.core.windows.net"
+    "storage_uri" : "abfss://${azurerm_storage_container.dbstorage.name}@${azurerm_storage_account.dbstorage.name}.dfs.core.windows.net"
 
     # Observability
     "spark.executor.extraJavaOptions" : "${local.java_options}"
