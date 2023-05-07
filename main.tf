@@ -55,9 +55,9 @@ module "adb" {
   name_part2                     = local.name_part2
   location                       = var.location
   key_vault_id                   = module.keyvault.kv_id
-  metastore_connection_string    = module.db.jdbc_connection_string
-  metastore_username             = module.db.username
-  metastore_password_secret_name = module.db.password_secret_name
+  metastore_connection_string    = module.sql-database.jdbc_connection_string
+  metastore_username             = module.sql-database.username
+  metastore_password_secret_name = module.sql-database.password_secret_name
   app_insights_connection_string = module.app-insights.connection_string
 }
 
@@ -70,8 +70,8 @@ module "keyvault" {
 }
 
 
-module "db" {
-  source              = "./modules/db"
+module "sql-database" {
+  source              = "./modules/sql-database"
   resource_group_name = module.rg.name
   name_part1          = local.name_part1
   name_part2          = local.name_part2
