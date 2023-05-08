@@ -32,7 +32,7 @@ terraform init
 terraform apply
 ```
 
-⚠️ This sets up a cluster of two nodes, and a recurring job every minute, so that the cluster never automatically shuts down. This will incur high costs if you forget to tear down the resources!
+⚠️ This sets up a cluster of two nodes, and a continous streaming job as well as a recurring job running every minute, so that the cluster never automatically shuts down. **This will incur high costs if you forget to tear down the resources!**
 
 ## Destroying the solution
 
@@ -97,7 +97,6 @@ customMetrics
 ```kql
 customMetrics
 | where name startswith 'spark.streaming.'
-| extend value = iff(name=='spark.streaming.latency', toint(value)/1000, toint(value))
 | render timechart
 ```
 
