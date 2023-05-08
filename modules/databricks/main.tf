@@ -2,7 +2,6 @@ terraform {
   required_providers {
     databricks = {
       source  = "databricks/databricks"
-      version = "=1.14.3"
     }
   }
 }
@@ -36,11 +35,12 @@ resource "azurerm_databricks_workspace" "adb" {
   name                = format("adb-%s-%s", var.name_part1, var.name_part2)
   resource_group_name = var.resource_group_name
   location            = var.location
-  sku                 = "premium"
+  sku                 = "standard"
 }
 
 resource "databricks_secret_scope" "default" {
   name = "terraform-demo-scope"
+  initial_manage_principal = "users"
 }
 
 resource "databricks_secret" "metastore-password" {
@@ -130,8 +130,7 @@ resource "databricks_cluster" "default" {
     "spark.metrics.conf.*.sink.jmx.class" : "org.apache.spark.metrics.sink.JmxSink"
     "spark.metrics.namespace" : "spark"
     "spark.metrics.appStatusSource.enabled" : "true"
-    # TODO enable streaming metrics - currently not working
-    # "spark.sql.streaming.metricsEnabled" : "true"
+    "spark.sql.streaming.metricsEnabled" : "true"
   }
 
   spark_env_vars = {
@@ -159,26 +158,16 @@ resource "databricks_cluster" "default" {
   }
 }
 
-resource "databricks_notebook" "sample-notebook" {
-  source = "${path.module}/sample-notebook.py"
-  path   = "/Shared/sample-notebook"
+module "periodic-job" {
+  source              = "./notebook-job"
+  notebook_name = "sample-notebook"
+  job_name = "Periodic job"
+  cluster_id = databricks_cluster.default.id
 }
 
-resource "databricks_job" "sql_aggregation_job" {
-  name = "Periodic job"
-
-  task {
-    task_key = "a"
-
-    existing_cluster_id = databricks_cluster.default.id
-
-    notebook_task {
-      notebook_path = databricks_notebook.sample-notebook.path
-    }
-  }
-
-  schedule {
-    quartz_cron_expression = "0 * * * * ?" # every minute
-    timezone_id            = "UTC"
-  }
+module "streaming-job" {
+  source              = "./notebook-job"
+  notebook_name = "sample-streaming-notebook"
+  job_name = "Streaming job"
+  cluster_id = databricks_cluster.default.id
 }
