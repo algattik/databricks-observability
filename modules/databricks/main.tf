@@ -40,6 +40,7 @@ resource "azurerm_databricks_workspace" "adb" {
 
 resource "databricks_secret_scope" "default" {
   name = "terraform-demo-scope"
+  initial_manage_principal = "users"
 }
 
 resource "databricks_secret" "metastore-password" {
