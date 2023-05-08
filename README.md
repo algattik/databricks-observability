@@ -11,7 +11,6 @@ This demo showcases:
 
 Future scope:
 
-- Collecting streaming metrics
 - Collecting custom metrics
 - Collecting custom Python logs and spans
 - Automatically deployed Azure Monitor Workbook or Dashboard
@@ -92,6 +91,17 @@ customMetrics
 ```
 
 ![](assets/messageProcessingTime.png)
+
+### Structured streaming
+
+```kql
+customMetrics
+| where name startswith 'spark.streaming.'
+| extend value = iff(name=='spark.streaming.latency', toint(value)/1000, toint(value))
+| render timechart
+```
+
+![Streaming](assets/streaming.png)
 
 ### Logs
 

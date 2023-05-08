@@ -3467,6 +3467,36 @@
             "name": "spark.driver.appStatus.tasks.unexcludedExecutors",
             "objectName": "metrics:name=spark.driver.appStatus.tasks.unexcludedExecutors,type=counters",
             "attribute": "Count"
+        },
+        {
+            "name": "spark.streaming.eventTime-watermark",
+            "objectName": "metrics:name=spark.driver.spark.streaming.*.eventTime-watermark,type=gauges",
+            "attribute": "Number"
+        },
+        {
+            "name": "spark.streaming.inputRate-total",
+            "objectName": "metrics:name=spark.driver.spark.streaming.*.inputRate-total,type=gauges",
+            "attribute": "Number"
+        },
+        {
+            "name": "spark.streaming.latency",
+            "objectName": "metrics:name=spark.driver.spark.streaming.*.latency,type=gauges",
+            "attribute": "Number"
+        },
+        {
+            "name": "spark.streaming.processingRate-total",
+            "objectName": "metrics:name=spark.driver.spark.streaming.*.processingRate-total,type=gauges",
+            "attribute": "Number"
+        },
+        {
+            "name": "spark.streaming.states-rowsTotal",
+            "objectName": "metrics:name=spark.driver.spark.streaming.*.states-rowsTotal,type=gauges",
+            "attribute": "Number"
+        },
+        {
+            "name": "spark.streaming.states-usedBytes",
+            "objectName": "metrics:name=spark.driver.spark.streaming.*.states-usedBytes,type=gauges",
+            "attribute": "Number"
         }
     ]
 }

@@ -17,6 +17,9 @@ provider "azurerm" {
       purge_soft_delete_on_destroy    = true
       recover_soft_deleted_key_vaults = true
     }
+    resource_group {
+      prevent_deletion_if_contains_resources = false
+    }
   }
 }
 
@@ -36,7 +39,6 @@ locals {
 module "rg" {
   source     = "./modules/resource-group"
   name_part1 = local.name_part1
-  name_part2 = local.name_part2
   location   = var.location
 }
 

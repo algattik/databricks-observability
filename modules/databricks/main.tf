@@ -36,7 +36,7 @@ resource "azurerm_databricks_workspace" "adb" {
   name                = format("adb-%s-%s", var.name_part1, var.name_part2)
   resource_group_name = var.resource_group_name
   location            = var.location
-  sku                 = "premium"
+  sku                 = "standard"
 }
 
 resource "databricks_secret_scope" "default" {
@@ -130,8 +130,7 @@ resource "databricks_cluster" "default" {
     "spark.metrics.conf.*.sink.jmx.class" : "org.apache.spark.metrics.sink.JmxSink"
     "spark.metrics.namespace" : "spark"
     "spark.metrics.appStatusSource.enabled" : "true"
-    # TODO enable streaming metrics - currently not working
-    # "spark.sql.streaming.metricsEnabled" : "true"
+    "spark.sql.streaming.metricsEnabled" : "true"
   }
 
   spark_env_vars = {
