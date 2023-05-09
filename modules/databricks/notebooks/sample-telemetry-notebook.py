@@ -7,15 +7,11 @@
 
 # COMMAND ----------
 
-trips_metric = meter.create_histogram(
-    name="trips", description="Number of trips"
-)
-
 with tracer.start_as_current_span("process trips"):
 
     with tracer.start_as_current_span("write trips table"):
 
-        logger.critical("Saving data to table %s", "trips2")
+        logger.info("Saving data to table %s", "trips2")
 
         (spark.table("samples.nyctaxi.trips")
         .write
@@ -27,7 +23,5 @@ with tracer.start_as_current_span("process trips"):
 
         trips_saved = spark.table("trips2").count()
 
-        trips_metric.record(trips_saved)
-
-    logger.critical("%d trips completed", trips_saved)
+        logger.info("%d trips completed", trips_saved)
 
