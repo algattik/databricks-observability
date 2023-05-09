@@ -7,7 +7,7 @@ terraform {
 }
 
 resource "databricks_notebook" "main" {
-  source = "${path.module}/${var.notebook_name}.py"
+  source = "${path.module}/../notebooks/${var.notebook_name}.py"
   path   = "/Shared/${var.notebook_name}"
 }
 
