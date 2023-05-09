@@ -1,7 +1,7 @@
 terraform {
   required_providers {
     databricks = {
-      source  = "databricks/databricks"
+      source = "databricks/databricks"
     }
   }
 }
@@ -39,7 +39,7 @@ resource "azurerm_databricks_workspace" "adb" {
 }
 
 resource "databricks_secret_scope" "default" {
-  name = "terraform-demo-scope"
+  name                     = "terraform-demo-scope"
   initial_manage_principal = "users"
 }
 
@@ -158,16 +158,24 @@ resource "databricks_cluster" "default" {
   }
 }
 
-module "periodic-job" {
-  source              = "./notebook-job"
-  notebook_name = "sample-notebook"
-  job_name = "Periodic job"
+
+resource "databricks_library" "cli" {
   cluster_id = databricks_cluster.default.id
+  pypi {
+    package = "azure-monitor-opentelemetry~=1.0.0b10"
+  }
+}
+
+module "periodic-job" {
+  source        = "./notebook-job"
+  notebook_name = "sample-notebook"
+  job_name      = "Periodic job"
+  cluster_id    = databricks_cluster.default.id
 }
 
 module "streaming-job" {
-  source              = "./notebook-job"
+  source        = "./notebook-job"
   notebook_name = "sample-streaming-notebook"
-  job_name = "Streaming job"
-  cluster_id = databricks_cluster.default.id
+  job_name      = "Streaming job"
+  cluster_id    = databricks_cluster.default.id
 }

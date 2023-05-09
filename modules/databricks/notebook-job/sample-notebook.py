@@ -35,6 +35,7 @@ invalidOp = 0 / (datetime.now().minute % 2) # causes division by zero at even-nu
 import pyspark.sql.functions as F
 from pyspark.ml.feature import VectorAssembler
 from pyspark.ml.regression import GBTRegressor
+from pyspark.ml.evaluation import RegressionEvaluator
 
 # COMMAND ----------
 
