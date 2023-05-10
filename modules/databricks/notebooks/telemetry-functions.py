@@ -94,7 +94,6 @@ def execute_with_telemetry_export(
     from opentelemetry import trace, metrics, _logs
 
     try:
-        # XXX configuration.configure()
         return func()
     finally:
         # Ensure that the telemetry processors and exporters finished processing
@@ -104,8 +103,8 @@ def execute_with_telemetry_export(
         _logs.get_logger_provider().force_flush()
 
 
-def run(path: str, timeout_seconds: int, arguments: Any = dict()) -> str:
+def run_with_telemetry(path: str, timeout_seconds: int, arguments: Any = dict()) -> str:
     """This method runs a notebook and returns its exit value."""
     execute_with_telemetry_export(
-        lambda: dbutils.notebook.run(path, timeout_seconds, arguments), # XXX default_notebook_configuration()
+        lambda: dbutils.notebook.run(path, timeout_seconds, arguments)
     )
