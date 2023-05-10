@@ -12,7 +12,6 @@ This demo showcases:
 Future scope:
 
 - Collecting custom metrics
-- Collecting custom Python logs and spans
 - Automatically deployed Azure Monitor Workbook or Dashboard
 
 The demo is automated and can be deployed using Terraform with a single command.
@@ -34,6 +33,8 @@ terraform apply
 
 ⚠️ This sets up a cluster of two nodes, and a continous streaming job as well as a recurring job running every minute, so that the cluster never automatically shuts down. **This will incur high costs if you forget to tear down the resources!**
 
+In case transient deployment errors are reported, run the `terraform apply` command again.
+
 ## Destroying the solution
 
 Run:
@@ -42,7 +43,9 @@ Run:
 terraform destroy
 ```
 
-## Logs and Metrics
+## Spark Logs and Metrics
+
+Spark Logs and Metrics are collected automatically by the JVM agent.
 
 In the [Azure Portal](https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/microsoft.insights%2Fcomponents), open the deployed Application Insights resource. Open the `Logs` pane.
 
@@ -110,11 +113,29 @@ traces
 
 ![Traces](assets/traces.png)
 
+## JVM Traces
+
+Traces are automatically collected, allowing to trace distributed requests to services like Azure Storage, SQL Server and other types of storage.
+
 ### Application Map
 
 In Application Insights, open the `Application Map` pane.
 
 ![Application Map](assets/application_map.png)
+
+## Python Telemetry
+
+Instrumenting Python code requires additional code. The [telemetry notebooks](modules/databricks/notebooks/) illustrate how that can be achieved.
+
+### Custom logs and spans
+
+In Application Insights, open the `Transaction search` pane. In the `Event types` filter, select `Dependency`. In the `Place search terms here` box, type `process`.  In the `Results` pane, select any result with `Name: process trips`.
+
+![End-to-end transaction](assets/transaction.png)
+
+Open the `Traces & events` pane for the transaction at the bottom of the screen.
+
+![End-to-end transaction traces](assets/transaction_traces.png)
 
 ## About the solution
 
