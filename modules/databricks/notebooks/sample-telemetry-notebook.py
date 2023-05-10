@@ -24,4 +24,3 @@ with tracer.start_as_current_span("process trips"):
         trips_saved = spark.table("trips2").count()
 
         logger.info("%d trips completed", trips_saved)
-

@@ -126,5 +126,6 @@ tracer = trace.get_tracer(notebook_name)
 tracer.start_as_current_span(notebook_name)
 
 logger = logging.getLogger(notebook_name)
+logger.setLevel(logging.DEBUG)
 
 meter = metrics.get_meter(notebook_name)

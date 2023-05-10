@@ -106,7 +106,7 @@ resource "databricks_cluster" "default" {
   node_type_id            = "Standard_DS3_v2"
   autotermination_minutes = 20
   autoscale {
-    min_workers = 2
+    min_workers = 1
     max_workers = 3
   }
   spark_conf = {
