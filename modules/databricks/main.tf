@@ -195,8 +195,8 @@ module "telemetry-job" {
   job_name      = "Telemetry job"
   cluster_id    = databricks_cluster.default.id
 
-  depends_on = [ 
-      databricks_notebook.sample-telemetry-notebook,
-      databricks_notebook.telemetry-helper,
-   ]
+  depends_on = [
+    databricks_notebook.sample-telemetry-notebook,
+    databricks_notebook.telemetry-helper,
+  ]
 }
