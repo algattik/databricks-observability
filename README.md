@@ -11,7 +11,7 @@ This demo showcases:
 
 Future scope:
 
-- Collecting custom metrics
+- Collecting Spark events
 - Automatically deployed Azure Monitor Workbook or Dashboard
 
 The demo is automated and can be deployed using Terraform with a single command.
@@ -125,17 +125,23 @@ In Application Insights, open the `Application Map` pane.
 
 ## Python Telemetry
 
-Instrumenting Python code requires additional code. The [telemetry notebooks](modules/databricks/notebooks/) illustrate how that can be achieved.
+Instrumenting Python code requires additional code. The [telemetry notebooks](modules/databricks/notebooks/) illustrate how that can be achieved.
 
 ### Custom logs and spans
 
-In Application Insights, open the `Transaction search` pane. In the `Event types` filter, select `Dependency`. In the `Place search terms here` box, type `process`.  In the `Results` pane, select any result with `Name: process trips`.
+In Application Insights, open the `Transaction search` pane. In the `Event types` filter, select `Dependency`. In the `Place search terms here` box, type `process`.  In the `Results` pane, select any result with `Name: process trips`.
 
 ![End-to-end transaction](assets/transaction.png)
 
 Open the `Traces & events` pane for the transaction at the bottom of the screen.
 
 ![End-to-end transaction traces](assets/transaction_traces.png)
+
+### Custom metrics
+
+In Application Insights, open the `Metrics` pane. In the `Metric Namespace` filter, select `/shared/sample-telemetry-notebook`.  In the `Metric` filter, select `save_duration`.
+
+![Metric](assets/metric.png)
 
 ## About the solution
 
