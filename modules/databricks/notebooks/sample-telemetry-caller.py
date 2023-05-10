@@ -1,10 +1,6 @@
 # Databricks notebook source
-# azure-monitor-opentelemetry~=1.0.0b10 
+# MAGIC %run ./telemetry-functions
 
 # COMMAND ----------
 
-# MAGIC %run ./telemetry-helper
-
-# COMMAND ----------
-
-run("sample-telemetry-notebook", timeout_seconds=0)
+run_with_telemetry("sample-telemetry-notebook", timeout_seconds=0)
