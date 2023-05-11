@@ -8,6 +8,7 @@ This demo showcases:
 - Collecting detailed Spark metrics through JMX
 - Collecting request traces to external services
 - Collecting Spark logs
+- Collecting custom spans and metrics
 
 Future scope:
 
