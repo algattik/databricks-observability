@@ -92,9 +92,11 @@ del(trace_context_carrier)
 import logging
 from opentelemetry import trace, metrics
 
-default_notebook_configuration().configure()
+app_insights_config = default_notebook_configuration()
+app_insights_config.configure()
 
-notebook_name = dbutils.notebook.entry_point.getDbutils().notebook().getContext().notebookPath().get()
+notebook_name = app_insights_config.service_name
+del(app_insights_config)
 
 tracer = trace.get_tracer(notebook_name)
 
