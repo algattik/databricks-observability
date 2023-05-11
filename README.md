@@ -10,12 +10,7 @@ This demo showcases:
 - Collecting Spark logs
 - Collecting custom spans and metrics, including streaming metrics
 
-Future scope:
-
-- Collecting Spark events
-- Automatically deployed Azure Monitor Workbook or Dashboard
-
-The demo is automated and can be deployed using Terraform with a single command.
+The demo is automated and can be deployed using Terraform with just two commands.
 
 ## Deploying the solution
 
@@ -172,7 +167,7 @@ The cluster is configured to use an external Hive metastore in Azure SQL Databas
 
 ### Init script
 
-The solution contains a cluster node initialization script that generates a configuration file for the agent, based on [templates](modules/adb) in the solution.
+The solution contains a cluster node initialization script that generates a configuration file for the agent, based on [templates](modules/databricks) in the solution.
 
 Spark JMX MBeans on executor nodes are [prefixed with a configurable namespace named followed by the executor ID](https://github.com/apache/spark/blob/04816474bfcc05c7d90f7b7e8d35184d95c78cbd/core/src/main/scala/org/apache/spark/metrics/MetricsSystem.scala#L131), which is a different number on on every worker node. The Azure Monitor agent allows using an [object name pattern](https://docs.oracle.com/javase/8/docs/api/javax/management/ObjectName.html) when defining JMX beans to monitor, though this feature is [undocumented as of April 2023](https://learn.microsoft.com/en-us/azure/azure-monitor/app/java-jmx-metrics-configuration#types-of-collected-metrics-and-available-configuration-options) (a documentation update was submitted).
 
