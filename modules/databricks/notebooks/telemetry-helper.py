@@ -45,7 +45,6 @@ class ApplicationInsightsConfiguration(NamedTuple):
 
         # Configure Azure Monitor exporters for the OpenTelemetry SDK.
         global _initialized
-        print(f"initialized: {_initialized}")
         if not _initialized:
             configure_azure_monitor(
                 resource=Resource.create({
@@ -84,7 +83,7 @@ notebook_name = dbutils.notebook.entry_point.getDbutils().notebook().getContext(
 tracer = trace.get_tracer(notebook_name)
 
 # Create a new root span, set it as the current span in context
-notebook_span = tracer.start_as_current_span(notebook_name)
+tracer.start_as_current_span(notebook_name)
 
 logger = logging.getLogger(notebook_name)
 logger.setLevel(logging.DEBUG)
