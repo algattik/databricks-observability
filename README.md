@@ -151,7 +151,7 @@ In Application Insights, open the `Metrics` pane. In the `Metric Namespace` filt
 
 ### Custom streaming metrics
 
-The notebook [sample-streaming-notebook](modules/databricks/notebooks/sample-streaming-notebook.py) contains code to capture custom metrics from a streaming query.
+The notebook [sample-streaming-notebook](modules/databricks/notebooks/sample-streaming-notebook.py) contains code to capture custom metrics from a streaming query.
 
 In Application Insights, open the `Metrics` pane. In the `Metric Namespace` filter, select `/shared/sample-streaming-notebook`.  In the `Metric` filter, select `avg_value`.
 
