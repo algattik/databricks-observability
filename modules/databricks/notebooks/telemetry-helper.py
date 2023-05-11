@@ -107,8 +107,17 @@ meter = metrics.get_meter(notebook_name)
 
 # COMMAND ----------
 
-def run(path: str, timeout_seconds: int, arguments: Any = None) -> str:
-    """This method runs a notebook and returns its exit value."""
+def run_with_telemetry(path: str, timeout_seconds: int, arguments: Any = None) -> str:
+    """This method runs a notebook and returns its exit value.
+
+    It invokes dbutils.notebook.run() with the provided parameters.
+
+    In addition, it wraps the invocation in telemetry spans for the current
+    and invoked notebook, and passes the telemetry context to the notebook.
+    Calling "%run ./telemetry-helper" causes the telemetry context to be
+    restored in the invoked notebook, attaching spans and traces to the
+    notebook span.
+    """
 
     from opentelemetry.trace.propagation.tracecontext import TraceContextTextMapPropagator
     import json
