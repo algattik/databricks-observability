@@ -6,7 +6,7 @@ Application Insights. Use the following APIs to _raise_ telemetry:
 - Metrics: `opentelemetry.metrics`
 - Logs: `logging`
 """
-from typing import NamedTuple
+from typing import Any, NamedTuple
 
 _initialized = False  # Stores whether Application Insights was already configured.
 
@@ -71,6 +71,7 @@ def default_notebook_configuration() -> ApplicationInsightsConfiguration:
         service_name=dbutils.notebook.entry_point.getDbutils().notebook().getContext().notebookPath().get(),
         service_version="1.0")
 
+
 # COMMAND ----------
 
 import logging
@@ -82,10 +83,15 @@ notebook_name = dbutils.notebook.entry_point.getDbutils().notebook().getContext(
 
 tracer = trace.get_tracer(notebook_name)
 
-# Create a new root span, set it as the current span in context
-tracer.start_as_current_span(notebook_name)
-
 logger = logging.getLogger(notebook_name)
 logger.setLevel(logging.DEBUG)
 
 meter = metrics.get_meter(notebook_name)
+
+# COMMAND ----------
+
+def run(path: str, timeout_seconds: int, arguments: Any = dict()) -> str:
+    """This method runs a notebook and returns its exit value."""
+
+    with tracer.start_as_current_span(notebook_name):
+        dbutils.notebook.run(path, timeout_seconds, arguments)
