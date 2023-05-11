@@ -8,7 +8,7 @@ This demo showcases:
 - Collecting detailed Spark metrics through JMX
 - Collecting request traces to external services
 - Collecting Spark logs
-- Collecting custom spans and metrics, including streaming metrics
+- Collecting custom spans and metrics
 
 Future scope:
 
@@ -32,7 +32,7 @@ terraform init
 terraform apply
 ```
 
-⚠️ This sets up a cluster of two nodes, and recurring jobs running every minute, so that the cluster never automatically shuts down. **This will incur high costs if you forget to tear down the resources!**
+⚠️ This sets up a cluster of two nodes, and a continous streaming job as well as a recurring job running every minute, so that the cluster never automatically shuts down. **This will incur high costs if you forget to tear down the resources!**
 
 In case transient deployment errors are reported, run the `terraform apply` command again.
 
@@ -51,8 +51,6 @@ Spark Logs and Metrics are collected automatically by the JVM agent.
 In the [Azure Portal](https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/microsoft.insights%2Fcomponents), open the deployed Application Insights resource. Open the `Logs` pane.
 
 Run the sample queries provided to visualize different metrics and logs.
-
-Note that there might be a log of a few minutes until the data appears.
 
 ### Tasks
 
@@ -108,8 +106,6 @@ customMetrics
 
 ![Streaming](assets/streaming.png)
 
-Note these are high-level metrics for all streaming queries. For capturing detailed metrics, see *Custom streaming metrics* below. 
-
 ### Logs
 
 ```kql
@@ -134,10 +130,6 @@ Instrumenting Python code requires additional code. The [telemetry notebooks](mo
 
 ### Custom logs and spans
 
-The notebook [sample-telemetry-notebook](modules/databricks/notebooks/sample-telemetry-notebook.py) contains code to capture custom logs and spans.
-
-The notebook is wrapped in a [sample-telemetry-caller](modules/databricks/notebooks/sample-telemetry-caller.py) notebook to ensure the end of the root span is recorded.
-
 In Application Insights, open the `Transaction search` pane. In the `Event types` filter, select `Dependency`. In the `Place search terms here` box, type `process`.  In the `Results` pane, select any result with `Name: process trips`.
 
 ![End-to-end transaction](assets/transaction.png)
@@ -148,25 +140,15 @@ Open the `Traces & events` pane for the transaction at the bottom of the screen.
 
 ### Custom metrics
 
-The notebook [sample-telemetry-notebook](modules/databricks/notebooks/sample-telemetry-notebook.py) also contains code to capture custom metrics.
-
 In Application Insights, open the `Metrics` pane. In the `Metric Namespace` filter, select `/shared/sample-telemetry-notebook`.  In the `Metric` filter, select `save_duration`.
 
 ![Metric](assets/metric.png)
-
-### Custom streaming metrics
-
-The notebook [sample-streaming-notebook](modules/databricks/notebooks/sample-streaming-notebook.py) contains code to capture custom metrics from a streaming query.
-
-In Application Insights, open the `Metrics` pane. In the `Metric Namespace` filter, select `/shared/sample-streaming-notebook`.  In the `Metric` filter, select `avg_value`.
-
-![Metric](assets/streaming_custom.png)
 
 ## About the solution
 
 ### Overview
 
-The solution deploys Azure Databricks connected to Azure Application Insights for monitoring via the [Spark JMX Sink](https://spark.apache.org/docs/latest/monitoring.html). One Databricks job runs periodically and is set up to fail about 50% of the time, to provide "interesting" logs. Other jobs are also set up to demonstrate different types of telemetry.
+The solution deploys Azure Databricks connected to Azure Application Insights for monitoring via the [Spark JMX Sink](https://spark.apache.org/docs/latest/monitoring.html). A Databricks job runs periodically and is set up to fail about 50% of the time, to provide "interesting" logs.
 
 The cluster is configured to use an external Hive metastore in Azure SQL Database.
 
