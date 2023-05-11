@@ -135,6 +135,9 @@ resource "databricks_cluster" "default" {
 
   spark_env_vars = {
     APPLICATIONINSIGHTS_CONNECTION_STRING = databricks_secret.app-insights-connection-string.config_reference
+
+    # The time interval (in milliseconds) for exporting metrics. Default: 60000.
+    OTEL_METRIC_EXPORT_INTERVAL = 5000
   }
 
   init_scripts {
@@ -179,11 +182,6 @@ module "streaming-job" {
   cluster_id    = databricks_cluster.default.id
 }
 
-resource "databricks_notebook" "sample-telemetry-notebook" {
-  source = "${path.module}/notebooks/sample-telemetry-notebook.py"
-  path   = "/Shared/sample-telemetry-notebook"
-}
-
 resource "databricks_notebook" "telemetry-helper" {
   source = "${path.module}/notebooks/telemetry-helper.py"
   path   = "/Shared/telemetry-helper"
@@ -191,12 +189,11 @@ resource "databricks_notebook" "telemetry-helper" {
 
 module "telemetry-job" {
   source        = "./notebook-job"
-  notebook_name = "sample-telemetry-caller"
+  notebook_name = "sample-telemetry-notebook"
   job_name      = "Telemetry job"
   cluster_id    = databricks_cluster.default.id
 
   depends_on = [
-    databricks_notebook.sample-telemetry-notebook,
     databricks_notebook.telemetry-helper,
   ]
 }
