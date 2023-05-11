@@ -107,16 +107,20 @@ meter = metrics.get_meter(notebook_name)
 
 # COMMAND ----------
 
-def run(path: str, timeout_seconds: int, arguments: Any = dict()) -> str:
+def run(path: str, timeout_seconds: int, arguments: Any = None) -> str:
     """This method runs a notebook and returns its exit value."""
 
     from opentelemetry.trace.propagation.tracecontext import TraceContextTextMapPropagator
     import json
 
+    if arguments is None:
+        arguments = dict()
+
     with tracer.start_as_current_span(notebook_name):
-        carrier = {}
-        # Write the current context into the carrier.
-        TraceContextTextMapPropagator().inject(carrier)
-        token = json.dumps(carrier)
-        arguments["_opentelemetry_trace_context"] = token
-        dbutils.notebook.run(path, timeout_seconds, arguments)
+        with tracer.start_as_current_span(path):
+            carrier = {}
+            # Write the current context into the carrier.
+            TraceContextTextMapPropagator().inject(carrier)
+            token = json.dumps(carrier)
+            arguments["_opentelemetry_trace_context"] = token
+            dbutils.notebook.run(path, timeout_seconds, arguments)
