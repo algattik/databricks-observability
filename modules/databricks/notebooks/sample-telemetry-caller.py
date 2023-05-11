@@ -3,4 +3,4 @@
 
 # COMMAND ----------
 
-run("sample-telemetry-notebook", timeout_seconds=0)
+run_with_telemetry("sample-telemetry-notebook", timeout_seconds=0)
