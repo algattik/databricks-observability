@@ -71,6 +71,21 @@ def default_notebook_configuration() -> ApplicationInsightsConfiguration:
         service_name=dbutils.notebook.entry_point.getDbutils().notebook().getContext().notebookPath().get(),
         service_version="1.0")
 
+# COMMAND ----------
+
+trace_context_carrier = None
+try:
+    trace_context_carrier = dbutils.widgets.get("_opentelemetry_trace_context")
+except:
+    pass
+
+if trace_context_carrier:
+    from opentelemetry import context
+    from opentelemetry.trace.propagation.tracecontext import TraceContextTextMapPropagator
+    import json
+    ctx = TraceContextTextMapPropagator().extract(carrier=json.loads(trace_context_carrier))
+    token = context.attach(ctx)
+del(trace_context_carrier)
 
 # COMMAND ----------
 
@@ -93,5 +108,13 @@ meter = metrics.get_meter(notebook_name)
 def run(path: str, timeout_seconds: int, arguments: Any = dict()) -> str:
     """This method runs a notebook and returns its exit value."""
 
+    from opentelemetry.trace.propagation.tracecontext import TraceContextTextMapPropagator
+    import json
+
     with tracer.start_as_current_span(notebook_name):
+        carrier = {}
+        # Write the current context into the carrier.
+        TraceContextTextMapPropagator().inject(carrier)
+        token = json.dumps(carrier)
+        arguments["_opentelemetry_trace_context"] = token
         dbutils.notebook.run(path, timeout_seconds, arguments)
