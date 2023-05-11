@@ -6,7 +6,7 @@ Application Insights. Use the following APIs to _raise_ telemetry:
 - Metrics: `opentelemetry.metrics`
 - Logs: `logging`
 """
-from typing import NamedTuple
+from typing import Any, NamedTuple
 
 _initialized = False  # Stores whether Application Insights was already configured.
 
@@ -73,19 +73,63 @@ def default_notebook_configuration() -> ApplicationInsightsConfiguration:
 
 # COMMAND ----------
 
+trace_context_carrier = None
+try:
+    trace_context_carrier = dbutils.widgets.get("_opentelemetry_trace_context")
+except:
+    pass
+
+if trace_context_carrier:
+    from opentelemetry import context
+    from opentelemetry.trace.propagation.tracecontext import TraceContextTextMapPropagator
+    import json
+    ctx = TraceContextTextMapPropagator().extract(carrier=json.loads(trace_context_carrier))
+    token = context.attach(ctx)
+del(trace_context_carrier)
+
+# COMMAND ----------
+
 import logging
 from opentelemetry import trace, metrics
 
-default_notebook_configuration().configure()
+app_insights_config = default_notebook_configuration()
+app_insights_config.configure()
 
-notebook_name = dbutils.notebook.entry_point.getDbutils().notebook().getContext().notebookPath().get()
+notebook_name = app_insights_config.service_name
+del(app_insights_config)
 
 tracer = trace.get_tracer(notebook_name)
-
-# Create a new root span, set it as the current span in context
-tracer.start_as_current_span(notebook_name)
 
 logger = logging.getLogger(notebook_name)
 logger.setLevel(logging.DEBUG)
 
 meter = metrics.get_meter(notebook_name)
+
+# COMMAND ----------
+
+def run_with_telemetry(path: str, timeout_seconds: int, arguments: Any = None) -> str:
+    """This method runs a notebook and returns its exit value.
+
+    It invokes dbutils.notebook.run() with the provided parameters.
+
+    In addition, it wraps the invocation in telemetry spans for the current
+    and invoked notebook, and passes the telemetry context to the notebook.
+    Calling "%run ./telemetry-helper" causes the telemetry context to be
+    restored in the invoked notebook, attaching spans and traces to the
+    notebook span.
+    """
+
+    from opentelemetry.trace.propagation.tracecontext import TraceContextTextMapPropagator
+    import json
+
+    if arguments is None:
+        arguments = dict()
+
+    with tracer.start_as_current_span(notebook_name):
+        with tracer.start_as_current_span(path):
+            carrier = {}
+            # Write the current context into the carrier.
+            TraceContextTextMapPropagator().inject(carrier)
+            token = json.dumps(carrier)
+            arguments["_opentelemetry_trace_context"] = token
+            dbutils.notebook.run(path, timeout_seconds, arguments)
