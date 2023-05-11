@@ -6,7 +6,7 @@ Application Insights. Use the following APIs to _raise_ telemetry:
 - Metrics: `opentelemetry.metrics`
 - Logs: `logging`
 """
-from typing import Any, NamedTuple
+from typing import NamedTuple
 
 _initialized = False  # Stores whether Application Insights was already configured.
 
@@ -25,9 +25,9 @@ class ApplicationInsightsConfiguration(NamedTuple):
     OTEL_METRIC_EXPORT_INTERVAL environment variable.
     """
 
-    connection_string: str
     service_name: str
     service_version: str
+    connection_string: str = None
     logging_level: int = logging.INFO
     tracing_export_interval_ms: int = 15000
     logging_export_interval_ms: int = 15000
